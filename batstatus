@@ -1,0 +1,45 @@
+#! /bin/bash 
+#
+. $HOME/.bash_colors
+
+read total_bat < /sys/class/power_supply/BAT0/charge_full
+read current_bat < /sys/class/power_supply/BAT0/charge_now
+
+res=$(( (current_bat * 100) / total_bat ))
+
+# Recuperation du temps estime restant
+acpiline=`acpi`
+length=`expr length "$acpiline"`
+pos=`expr index "$acpiline" ","`
+acpiline=`expr substr "$acpiline" $(( pos+1 )) $length`
+pos=`expr index "$acpiline" ","`
+acpiline=`expr substr "$acpiline" $(( pos+2 )) $length`
+acpiline=`expr substr "$acpiline" 1 8`
+
+if [[ $# -eq 0 ]]; then
+	if [[ $res -ge 100 ]]; then
+		echo "Battery Full"
+	else
+		echo -n "BAT "
+		if [[ $res -gt 50 ]]; then
+			echo -e "${Green}$res% ($acpiline)${NC}"
+		elif [[ $res -gt 25 ]]; then
+			echo -e "${Yellow}$res% ($acpiline)${NC}"
+		else
+			echo -e "${Red}$res% ($acpiline)${NC}"
+		fi
+	fi
+else
+	if [[ $res -ge 100 ]]; then
+		echo "Battery Full"
+	else
+		echo -n "BAT: "
+		if [[ $res -gt 50 ]]; then
+			echo -e "#[fg=colour10]$res% ($acpiline)#[fg=colour15]"
+		elif [[ $res -gt 25 ]]; then
+			echo -e "#[fg=colour11]$res% ($acpiline)#[fg=colour15]"
+		else
+			echo -e "#[fg=colour9]$res% ($acpiline)#[fg=colour15]"
+		fi
+	fi
+fi
