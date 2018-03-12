@@ -248,7 +248,7 @@ mode "resize" {
 #
 
 # Set background image scaled
-exec /home/walter/bin/bg_changer ~/images/wallpapers/selected/ 3600 &
+exec $HOME/bin/bg_changer $HOME/images/wallpapers/selected/ 3600 &
 # Start composite manager
 exec compton -f --fade-delta=3 &
 # Start polybar

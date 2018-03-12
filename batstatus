@@ -1,5 +1,7 @@
 #! /bin/bash 
-#
+# Author : TheWatermelon
+# batstatus : get colored battery percentage and remaining time
+
 . $HOME/.bash_colors
 
 read total_bat < /sys/class/power_supply/BAT0/charge_full
@@ -7,7 +9,7 @@ read current_bat < /sys/class/power_supply/BAT0/charge_now
 
 res=$(( (current_bat * 100) / total_bat ))
 
-# Recuperation du temps estime restant
+# Remaining time
 acpiline=`acpi`
 length=`expr length "$acpiline"`
 pos=`expr index "$acpiline" ","`
