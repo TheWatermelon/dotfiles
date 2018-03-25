@@ -14,7 +14,7 @@
  }
 
  .front {
-  border: 1px solid grey;
+  border: 1px solid blue;
   //box-shadow: 3px 3px 3px grey;
   margin: auto;
   margin-top: 2em;
@@ -26,7 +26,7 @@
   margin: auto;
   margin-bottom: 1em;
   width: 100%;
-  border: 1px solid grey;
+  border: 1px solid blue;
   //box-shadow: 1px 1px 1px grey;
  }
 
@@ -49,7 +49,11 @@
  ul ul li, ol ol li, ul ol li, ol ul li {
   font-size: 0.94em;
   padding: 0.2em 0 0 0;
- } 
+ }
+
+ .img {
+  max-width: 75%;
+ }
 }
 
 @media(min-width: 400px) {
@@ -68,7 +72,7 @@
  }
 
  .front {
-  border: 1px solid grey;
+  border: 1px solid blue;
   //box-shadow: 3px 3px 3px grey;
   margin: auto;
   margin-top: 2em;
@@ -80,7 +84,7 @@
   margin: auto;
   margin-bottom: 1em;
   width: 100%;
-  border: 1px solid grey;
+  border: 1px solid blue;
   font-size: 1.5em;
   //box-shadow: 1px 1px 1px grey;
  }
@@ -106,6 +110,10 @@
   font-size: 0.94em;
   padding: 0.2em 0 0 0;
  } 
+
+ .img {
+  max-width: 60%;
+ }
 }
 
 @media(min-width: 700px) {
@@ -124,7 +132,7 @@
  }
 
  .front {
-  border: 1px solid grey;
+  border: 1px solid blue;
   //box-shadow: 3px 3px 3px grey;
   margin: auto;
   margin-top: 1em;
@@ -135,7 +143,7 @@
  .front-side {
   margin: auto;
   width: 100%;
-  border: 1px solid grey;
+  border: 1px solid blue;
   margin-bottom: 1em;
   //box-shadow: 1px 1px 1px grey;
   font-size: 1em;
@@ -162,4 +170,8 @@
   font-size: 0.94em;
   padding: 0.2em 0 0 0;
  } 
+
+ img {
+  max-width: 45%;
+ }
 }

@@ -53,7 +53,11 @@
  ul ul li, ol ol li, ul ol li, ol ul li {
   font-size: 0.94em;
   padding: 0.2em 0 0 0;
- } 
+ }
+
+ img {
+ max-width: 75%;
+}
 }
 
 @media(min-width: 400px) {
@@ -109,7 +113,11 @@
  ul ul li, ol ol li, ul ol li, ol ul li {
   font-size: 0.94em;
   padding: 0.2em 0 0 0;
- } 
+ }
+
+ img {
+ max-width: 60%;
+}
 }
 
 @media(min-width: 700px) {
@@ -165,5 +173,9 @@
  ul ul li, ol ol li, ul ol li, ol ul li {
   font-size: 0.94em;
   padding: 0.2em 0 0 0;
- } 
+ }
+
+ img {
+ max-width: 45%;
+}
 }
