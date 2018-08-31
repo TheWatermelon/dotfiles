@@ -37,7 +37,7 @@
 
  .author {
   text-align: right;
-   font-size: 0.8em;
+   font-weight: bold;
  }
 }
 
@@ -82,7 +82,7 @@
 
  .author {
   text-align: right;
-   font-size: 1.2em;
+   font-weight: bold;
  }
 }
 
@@ -127,6 +127,6 @@
 
  .author {
   text-align: right;
-   font-size: 0.8em;
+   font-weight: bold;
  }
 }
