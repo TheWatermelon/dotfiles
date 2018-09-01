@@ -2,87 +2,52 @@
 # Pomodoro timer
 # Author : TheWatermelon
 
-get_seconds()
-(
-	datetmp=`date +%M`
-	if [[ ${datetmp:0:1} -eq 0 ]]; then
-		datetmp=${datetmp:1:1}
-	fi
-	sec=$(( datetmp * 60 ))
-	datetmp=`date +%S`
-	if [[ ${datetmp:0:1} -eq 0 ]]; then
-		datetmp=${datetmp:1:1}
-	fi
-	return $(( sec + datetmp ))
-)
-
-read_tomato()
-(
-	# Time argument: reading tomato time file
-	read active init_time < /tmp/tomato_time
-	echo $active
-	if [[ $active -eq 0 ]]; then
-		echo 
-	else
-		# Getting actual minutes and seconds converted into seconds
-		get_seconds
-		sec=$?
-		# Elapsed time
-		delta=$(( sec - init_time ))
-		# Remaining time based on 25'
-		tomato=$1
-		tomato=$(( tomato * 60 ))
-		remaining=$(( tomato - delta ))
-		if [[ $remaining -le 0 ]]; then
-			echo "0 0" > /tmp/tomato_timer
-		else
-			echo -n $(( remaining / 60 ))
-			echo -n :
-			echo $(( remaining % 60 ))
-		fi
-	fi
-)
-
-write_tomato()
-(
-	# No argument: writing tomato time file
-	get_seconds
-	sec=$?
-	if [[ -f /tmp/tomato_time ]]; then
-		read v1 v2 < /tmp/tomato_time
-		echo "$(( (v1 + 1) % 2 )) $sec" > /tmp/tomato_time
-	else
-		echo "1 $sec" > /tmp/tomato_time
-	fi
-)
-
-old_tomato()
-(
-	if [[ $# -ne 0 ]]; then
-		read_tomato
-	else
-		write_tomato
-	fi
-)
-
 new_tomato()
 (
 	if [[ $# -eq 0 ]]; then
+		# No argument : start pomodoro
 		if [[ -f /tmp/tomato_timer ]]; then
-			read sec < /tmp/tomato_timer
+			# Reading active status and pomodoro duration from file
+			read active sec < /tmp/tomato_timer
+			remaining=0
 			for i in `seq $sec`; do
-				remaining=$(( sec - i ))
-				echo "$(( remaining/60 )):$(( remaining%60 ))"
-				sleep 1
+				if [[ $active -ne 0 ]]; then
+					# Pomodoro in progress
+					sleep 1 &
+					remaining=$(( sec - i ))
+					printf "%02d:%02d" $(( remaining/60 )) $(( remaining%60 ))
+					echo 
+					wait
+				else
+					# Pomodoro in pause
+					while [[ $active -eq 0 ]]; do
+						read active sec < /tmp/tomato_timer
+						printf "(%02d:%02d)" $(( remaining/60 )) $(( remaining%60 ))
+						echo 
+						sleep 1
+					done
+				fi
+				# Updating active status and pomodoro duration
+				read active sec < /tmp/tomato_timer
 			done
+			# Pomodoro is over, destructing temporary file
 			rm -f /tmp/tomato_timer
 		else
+			# No file : pomodoro icon
 			echo 
 		fi
 	else
+		# Getting pomodoro duration from argument
 		sec=$1
 		sec=$(( sec * 60 ))
-		echo $sec > /tmp/tomato_timer
+		if [[ -f /tmp/tomato_timer ]]; then
+			# Toggling pomodoro active status and updating duration
+			read active old_sec < /tmp/tomato_timer
+			echo "$(( (active + 1) % 2 )) $sec" > /tmp/tomato_timer
+		else
+			# Initializing pomodoro
+			echo "1 $sec" > /tmp/tomato_timer
+		fi
 	fi
 )
 
