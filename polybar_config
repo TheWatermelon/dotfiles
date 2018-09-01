@@ -76,7 +76,7 @@ wm-restack = i3
 
 modules-left = i3
 modules-center = date
-modules-right = backlight-acpi volume wlan eth battery powermenu
+modules-right = tomatoscript backlight-acpi volume wlan eth battery powermenu
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -472,6 +472,26 @@ menu-2-0 = power off
 menu-2-0-exec = shutdown -h now
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+[module/tomatoscript]
+type = custom/script
+exec = $HOME/bin/tomato-timer
+tail = true
+click-left = $HOME/bin/tomato-timer 25
+click-right = $HOME/bin/tomato-timer 5
+click-middle = $HOME/bin/tomato-timer 15
+
+[module/tomatohook]
+type = custom/ipc
+hook-0 = echo 
+hook-1 = $HOME/bin/tomato-timer 5 && polybar-msg hook tomatohook 4
+hook-2 = $HOME/bin/tomato-timer 15 && polybar-msg hook tomatohook 5
+hook-3 = sleep 1 && polybar-msg hook tomatohook 2
+hook-4 = sleep 1 && polybar-msg hook tomatohook 3
+initial = 1
+click-middle = polybar-msg hook tomatohook 1
+click-left = $HOME/bin/tomato-timer && polybar-msg hook tomatohook 2
+click-right = polybar-msg hook tomatohook 3
 
 [settings]
 screenchange-reload = true
