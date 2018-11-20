@@ -1,0 +1,45 @@
+####################################
+# Config file used by `sequestrum` #
+####################################
+
+options:
+  base: &base
+    dotfileDirectory: programmation/dotfiles
+
+  termitePackage:
+    directoryName: termite
+    links:
+      - termiterc: .config/termite/config
+
+  zshPackage:
+    directoryName: zsh
+    links:
+      - zshrc: .zshrc
+      - shell_aliases: .sh_aliases
+      - shell_colors: .sh_colors
+      - shell_functions: .sh_functions
+      - spaceship-promptrc_classic: .config/spaceship-prompt/spaceship-promptrc_classic
+      - spaceship-promptrc_fancy: .config/spaceship-prompt/spaceship-promptrc_fancy
+
+  vimPackage:
+    directoryName: vim
+    links:
+      - vimrc: .vimrc
+      - vim_plugins: .vim/plugin_list.txt
+      - vim_colorscheme: .vim/colors/white.vim
+  
+  tmuxPackage:
+    directoryName: tmux
+    links:
+      - tmuxrc: .tmux.conf
+      - conkyrc_tmux: .conkyrc_tmux
+      - batstatus: bin/batstatus
+
+  xPackage:
+    directoryName: x
+    links:
+      - i3_config: .i3/config
+      - Xresources: .Xresources
+      - polybar_config: .config/polybar/config
+      - tomato-timer: bin/tomato-timer
+      - bg_changer: bin/bg_changer

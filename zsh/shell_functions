@@ -57,13 +57,13 @@ extract ()
 
 man() {
     env \
-    LESS_TERMCAP_mb=$${BRed} \
-    LESS_TERMCAP_md=$${BRed} \
-    LESS_TERMCAP_me=$${NC} \
-    LESS_TERMCAP_se=$${NC} \
+    LESS_TERMCAP_mb=$'\e[01;31m' \
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
     LESS_TERMCAP_so=$'\e[01;44;33m' \
-    LESS_TERMCAP_ue=$${NC} \
-    LESS_TERMCAP_us=$${BGreen} \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
     man "$@"
 }
 
@@ -77,3 +77,18 @@ exitstatus()
     fi
 
 }
+
+countdown()
+(
+	IFS=:
+	set -- $*
+	secs=$(( ${1#0} * 3600 + ${2#0} * 60 + ${3#0}  ))
+	while [ $secs -gt 0  ]
+	do
+		sleep 1 &
+		printf "\r%02d:%02d:%02d" $((secs/3600)) $(( (secs/60)%60 )) $((secs%60))
+	secs=$(( $secs - 1  ))
+		wait
+	done
+	echo
+)

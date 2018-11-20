@@ -1,24 +1,24 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-PATH=.:~/bin:~/bin/linux_detect_tablet_mode/:/sbin:~/.gem/ruby/2.5.0/bin:$PATH
+PATH=.:~/bin:~/bin/linux_detect_tablet_mode/:/sbin:~/.local/bin:~/.gem/ruby/2.5.0/bin:$PATH
+
+# Setting default editor
+export EDITOR='vim'
 
 # Vi-mode : disable default "<<<" NORMAL mode indicator in right prompt
 export RPS1="%{$reset_color%}"
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/walter/.oh-my-zsh"
+export ZSH="/home/walter/.oh-my-zsh"
 
 # Include aliases
-[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+[[ -f ~/.sh_aliases ]] && . ~/.sh_aliases
 
 # Include colors
-[[ -f ~/.bash_colors ]] && . ~/.bash_colors
+[[ -f ~/.sh_colors ]] && . ~/.sh_colors
 
 # Include functions
-[[ -f ~/.bash_functions ]] && . ~/.bash_functions
-
-# Zsh syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[[ -f ~/.sh_functions ]] && . ~/.sh_functions
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -40,7 +40,7 @@ fi
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
- CASE_SENSITIVE="true"
+# CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -80,12 +80,6 @@ fi
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Shell completion
-autoload -Uz compinit promptinit
-compinit
-promptinit
-zstyle ':completion:*' menu select
-
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -93,9 +87,20 @@ zstyle ':completion:*' menu select
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  sudo
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
+
+# Shell completion
+autoload -Uz compinit bashcompinit
+compinit
+bashcompinit
+zstyle ':completion:*' menu select
+
+# Enable compleat
+source ~/.local/share/compleat/compleat_setup
 
 # User configuration
 
@@ -127,5 +132,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Colorls
-source .gem/ruby/2.5.0/gems/colorls-1.1.1/lib/tab_complete.sh 
+source ~/.gem/ruby/2.5.0/gems/colorls-1.1.1/lib/tab_complete.sh 
 alias ls='colorls --sort-dirs'

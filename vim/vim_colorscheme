@@ -1,6 +1,6 @@
 " This is a 256 color colorscheme.
-" Maintainer:   TheWatermelon
-" Last Change:  March, 07 2018
+" Maintainer:   Bastien Chapusot
+" Last Change:  Mai, 07 2015
 
 hi clear
 if exists("syntax_on")

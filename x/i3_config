@@ -11,6 +11,7 @@
 
 # modifier : Mod1:Alt, Mod4:Win
 set $mod Mod1
+set $win Mod4
 
 # font for window titles. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -23,6 +24,12 @@ floating_modifier $mod
 # Set window border
 new_window 1pixel
 new_float 1pixel
+
+# Hide borders when there is only 1 window in current workspace
+hide_edge_borders smart
+
+# Self-explanatory
+popup_during_fullscreen smart
 
 #
 # Colors
@@ -61,6 +68,10 @@ bindsym $mod+Shift+Return exec termite -e 'tmux -2'
 bindsym $mod+space focus mode_toggle 
 ## toggle tiling / floating
 bindsym $mod+Shift+space floating toggle 
+## Go to next workspace
+bindsym $win+Tab workspace next
+## Go to previous workspace
+bindsym $win+Shift+Tab workspace prev
 ## switch to workspace
 bindsym $mod+ampersand workspace $workspace1
 bindsym $mod+1 workspace $workspace1
@@ -140,7 +151,7 @@ bindsym $mod+i resize grow height 2 px or 2 ppt
 bindsym $mod+o resize grow width 2 px or 2 ppt
 #bindsym $mod+Shift+o
 ## start rofi ()program launcher)
-bindsym $mod+p exec rofi -show run -theme custom_monokai 
+bindsym $mod+p exec rofi -show run -theme custom_monokai -modi ToDo:~/bin/todo.sh
 ## start dmenu (program launcher)
 bindsym $mod+Shift+p exec dmenu_run 
 ## focus parent container
@@ -154,8 +165,10 @@ bindsym $mod+d focus child
 #bindsym $mod+Shift+d
 ## set focused window on fullscreen
 bindsym $mod+f fullscreen 
-#bindsym $mod+Shift+f
-#bindsym $mod+g
+## change background wallpaper
+bindsym $mod+Shift+f exec ~/bin/bg_changer ~/images/wallpapers/selected/
+## show/hide polybar
+bindsym $mod+g exec ~/bin/toggle_polybar.sh
 #bindsym $mod+Shift+g
 ## focus left
 bindsym $mod+h focus left 
@@ -248,7 +261,7 @@ mode "resize" {
 #
 
 # Set background image scaled
-exec $HOME/bin/bg_changer $HOME/images/wallpapers/selected/ 3600 &
+exec /home/walter/bin/bg_changer ~/images/wallpapers/selected/ 7200 &
 # Start composite manager
 exec compton -f --fade-delta=3 &
 # Start polybar

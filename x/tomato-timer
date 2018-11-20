@@ -2,13 +2,15 @@
 # Pomodoro timer
 # Author : TheWatermelon
 
+pomodoro_file=/tmp/tomato_timer
+
 new_tomato()
 (
 	if [[ $# -eq 0 ]]; then
 		# No argument : start pomodoro
 		if [[ -f /tmp/tomato_timer ]]; then
 			# Reading active status and pomodoro duration from file
-			read active sec < /tmp/tomato_timer
+			read active sec < $pomodoro_file
 			remaining=0
 			for i in `seq $sec`; do
 				if [[ $active -ne 0 ]]; then
@@ -21,17 +23,19 @@ new_tomato()
 				else
 					# Pomodoro in pause
 					while [[ $active -eq 0 ]]; do
-						read active sec < /tmp/tomato_timer
+						read active sec < $pomodoro_file
 						printf "(%02d:%02d)" $(( remaining/60 )) $(( remaining%60 ))
 						echo 
 						sleep 1
 					done
 				fi
 				# Updating active status and pomodoro duration
-				read active sec < /tmp/tomato_timer
+				read active sec < $pomodoro_file
 			done
 			# Pomodoro is over, destructing temporary file
-			rm -f /tmp/tomato_timer
+			rm -f $pomodoro_file
+			# Warn the user using i3-nagbar
+			i3-nagbar -t warning -m "Pomodoro's over" -b "Start 25'" 'echo "1 $(( 25 * 60 ))" > /tmp/tomato_timer' -b "Start 15'" 'echo "1 $(( 15 * 60 ))" > /tmp/tomato_timer' -b "Start 5'" 'echo "1 $(( 5 * 60 ))" > /tmp/tomato_timer' 2&>/dev/null
 		else
 			# No file : pomodoro icon
 			echo 
@@ -42,11 +46,11 @@ new_tomato()
 		sec=$(( sec * 60 ))
 		if [[ -f /tmp/tomato_timer ]]; then
 			# Toggling pomodoro active status and updating duration
-			read active old_sec < /tmp/tomato_timer
-			echo "$(( (active + 1) % 2 )) $sec" > /tmp/tomato_timer
+			read active old_sec < $pomodoro_file
+			echo "$(( (active + 1) % 2 )) $sec" > $pomodoro_file
 		else
 			# Initializing pomodoro
-			echo "1 $sec" > /tmp/tomato_timer
+			echo "1 $sec" > $pomodoro_file
 		fi
 	fi
 )

@@ -1,0 +1,10 @@
+*.font: xft: System Sans Francisco Display 12
+
+Xft.rgba:								rgb
+
+URxvt.termName:					rxvt-256color
+URxvt.lineSpace:				0
+URxvt.scrollBar:				false
+URxvt.url-launcher:			firefox
+URxvt.foreground:				#ffeefc
+URxvt.background:				#141021

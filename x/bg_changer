@@ -1,0 +1,38 @@
+#!/bin/bash
+# Author : TheWatermelon
+# bg_changer : a background changer using feh
+
+function get_wallpapers() {
+	wallpapers=();
+	for i in `ls $wallpapers_dir`; do
+		wallpapers=(${wallpapers[@]} $wallpapers_dir$i);
+	done
+	echo ${wallpapers[@]}
+}
+
+if [[ $# -eq 0 ]]; then
+	# help
+	echo "Usage : $0 <imgs directory> [sleep time]"
+	exit
+elif [[ $# -eq 1 ]]; then
+	# directory only : change background once
+	wallpapers_dir=$1
+	wallpapers=($( get_wallpapers ));
+
+	rnd=$(( RANDOM % ${#wallpapers[@]} ))
+	feh --bg-fill ${wallpapers[rnd]} &
+elif [[ $# -eq 2 ]]; then
+	# directory and sleep time : change background each sleep time
+	wallpapers_dir=$1
+	wallpapers=($( get_wallpapers ));
+	wait_time=$2
+
+	while true; do
+		rnd=$(( ( RANDOM % ${#wallpapers[@]} ) + 1 ))
+		feh --bg-fill ${wallpapers[rnd]} &
+		sleep $wait_time
+	done
+fi
+
+
+
