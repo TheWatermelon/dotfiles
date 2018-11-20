@@ -1,0 +1,11 @@
+!URxvt.termName:				rxvt-256color
+URxvt.saveLines:				5000
+URxvt.transparent:			false
+URxvt.scrollBar:				false
+URxvt.url-launcher:			opera
+URxvt.foreground:				#dcdccc
+URxvt.background:				[75]#101218
+URxvt.fading:						35%
+URxvt.font:							xft:Monospace:size=12
+URxvt.depth:						32
+

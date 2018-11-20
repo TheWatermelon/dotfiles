@@ -6,11 +6,6 @@ options:
   base: &base
     dotfileDirectory: programmation/dotfiles
 
-  termitePackage:
-    directoryName: termite
-    links:
-      - termiterc: .config/termite/config
-
   zshPackage:
     directoryName: zsh
     links:
@@ -40,6 +35,8 @@ options:
     links:
       - i3_config: .i3/config
       - Xresources: .Xresources
+      - Xdefaults: .Xdefaults
       - polybar_config: .config/polybar/config
       - tomato-timer: bin/tomato-timer
       - bg_changer: bin/bg_changer
+      - termiterc: .config/termite/config
