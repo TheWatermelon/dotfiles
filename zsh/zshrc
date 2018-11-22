@@ -30,7 +30,8 @@ ZSH_THEME="spaceship"
 if [[ $TERM == "linux" ]]; then
   source ~/.config/spaceship-prompt/spaceship-promptrc_classic
 else
-  source ~/.config/spaceship-prompt/spaceship-promptrc_fancy
+  #source ~/.config/spaceship-prompt/spaceship-promptrc_fancy
+  source ~/.config/spaceship-prompt/spaceship-promptrc_classic
 fi
 
 # Set list of themes to pick from when loading at random
@@ -133,4 +134,4 @@ source ~/.local/share/compleat/compleat_setup
 
 # Colorls
 source ~/.gem/ruby/2.5.0/gems/colorls-1.1.1/lib/tab_complete.sh 
-alias ls='colorls --sort-dirs'
+alias cls='colorls --sort-dirs'
