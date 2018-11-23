@@ -34,9 +34,10 @@ options:
     directoryName: x
     links:
       - i3_config: .i3/config
-      - Xresources: .Xresources
-      - Xdefaults: .Xdefaults
       - polybar_config: .config/polybar/config
+      - rofi_theme.rasi: .config/rofi/custom_monokai.rasi
       - tomato-timer: bin/tomato-timer
       - bg_changer: bin/bg_changer
       - termiterc: .config/termite/config
+      - Xresources: .Xresources
+      - Xdefaults: .Xdefaults
