@@ -1,5 +1,5 @@
 # reload .tmux.conf
-bind r source-file ~/.tmux.conf \; display-message "Config reloaded..."
+bind r source-file ~/.tmux.conf \; display-message "Config reloaded!"
 
 # mouse support
 set -g mouse on
@@ -14,7 +14,6 @@ bind-key v copy-mode
 # status bar
 set -g status-bg colour235
 set -g status-fg colour15
-#set -g status-left "%d/%m %H:%M "
 set -g status-right "#($HOME/bin/batstatus tmux) #(conky -c ~/.conkyrc_tmux) %d/%m %H:%M"
 
 # Powerline

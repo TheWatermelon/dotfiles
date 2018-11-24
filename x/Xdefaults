@@ -8,4 +8,3 @@ URxvt.background:				[75]#101218
 URxvt.fading:						35%
 URxvt.font:							xft:Monospace:size=12
 URxvt.depth:						32
-

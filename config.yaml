@@ -35,9 +35,11 @@ options:
     links:
       - i3_config: .i3/config
       - polybar_config: .config/polybar/config
+      - rofirc: .config/rofi/config
       - rofi_theme.rasi: .config/rofi/custom_monokai.rasi
       - tomato-timer: bin/tomato-timer
       - bg_changer: bin/bg_changer
+      - todo.sh: bin/todo.sh
       - termiterc: .config/termite/config
       - Xresources: .Xresources
       - Xdefaults: .Xdefaults
