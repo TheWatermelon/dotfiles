@@ -22,8 +22,8 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 # Set window border
-new_window 1pixel
-new_float 1pixel
+default_border pixel 2
+default_floating_border pixel 2
 
 # Hide borders when there is only 1 window in current workspace
 hide_edge_borders smart
@@ -36,7 +36,7 @@ popup_during_fullscreen smart
 #
 
 # class                 border  backgr. text    indicator
-client.focused          #8A1319 #7F0305 #0C0C0C #7F0305
+client.focused          #8A1319 #7F0305 #FFFFFF #7F0305
 client.focused_inactive #333333 #444444 #ffffff #484e50
 client.unfocused        #333333 #222222 #888888 #292d2e
 client.urgent           #2f343a #900000 #ffffff #900000
