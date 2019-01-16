@@ -33,6 +33,7 @@ options:
   xPackage:
     directoryName: x
     links:
+      - dunstrc: .config/dunst/dunstrc
       - i3_config: .i3/config
       - polybar_config: .config/polybar/config
       - rofirc: .config/rofi/config
