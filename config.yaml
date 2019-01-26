@@ -42,5 +42,6 @@ options:
       - bg_changer: bin/bg_changer
       - todo.sh: bin/todo.sh
       - termiterc: .config/termite/config
+      - qutebrowser_config: .config/qutebrowser/config.py
       - Xresources: .Xresources
       - Xdefaults: .Xdefaults

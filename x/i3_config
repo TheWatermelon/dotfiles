@@ -384,7 +384,8 @@ mode "$mode_gaps_inner" {
 #
 
 # Set background image scaled
-exec /home/walter/bin/bg_changer ~/images/wallpapers/selected/ 7200 &
+#exec /home/walter/bin/bg_changer ~/images/wallpapers/selected/ 7200 &
+exec feh --bg-scale ~/images/wallpapers/selected/mountain_mars.png &
 # Start composite manager
 exec compton -f --fade-delta=3 &
 # Start polybar
