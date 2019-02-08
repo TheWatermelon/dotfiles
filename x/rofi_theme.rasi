@@ -5,7 +5,7 @@
  */
 
 * {
-    skin:                        rgba ( 149, 42, 47, 100 % ); 
+    skin:                        rgba ( 234, 22, 70, 100 % ); 
     selected-normal-foreground:  @skin;
     background:                  rgba ( 10, 12, 18, 75 % );
     foreground:                  rgba ( 248, 248, 242, 100 % );
@@ -39,7 +39,10 @@
 #window {
     background-color: @background;
     border:           0;
-    padding:          0px 0px 0px 0px;
+    padding:          0px 0px 10px 0px;
+    width: 400px;
+    location: north west;
+    y-offset: 20px;
 }
 #mainbox {
     border:  0;

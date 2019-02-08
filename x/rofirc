@@ -1,9 +1,9 @@
 ! "Enabled modi" 
 ! rofi.modi:                           window,run,ssh
 ! "Window width" 
-rofi.width:                          20
+!rofi.width:                          20
 ! "Number of lines" 
-rofi.lines:                          5
+rofi.lines:                          23
 ! "Number of columns" 
 ! rofi.columns:                        1
 ! "Font to use"
@@ -13,15 +13,15 @@ rofi.font:                           xft: System Sans Francisco Display 14
 ! "Location on screen" 
 ! rofi.location:                       0
 ! "Padding" 
-rofi.padding:                        0
+!rofi.padding:                        0
 ! "Y-offset relative to location" 
-rofi.yoffset:                        0
+!rofi.yoffset:                        0
 ! "X-offset relative to location" 
 ! rofi.xoffset:                        0
 ! "Always show number of lines" 
 rofi.fixed-num-lines:                true
 ! "Whether to load and show icons" 
-! rofi.show-icons:                     false
+rofi.show-icons:                     false
 ! "Terminal to use" 
 rofi.terminal:                       termite
 ! "Ssh client to use" 
@@ -47,7 +47,7 @@ rofi.terminal:                       termite
 ! "Use sorting" 
 ! rofi.sort:                           false
 ! "Use levenshtein sorting also for fuzzy matching" 
-! rofi.levenshtein-sort:               false
+rofi.levenshtein-sort:               true
 ! "Set case-sensitivity" 
 ! rofi.case-sensitive:                 false
 ! "Cycle through the results list" 
@@ -81,7 +81,7 @@ rofi.sidebar-mode:                   true
 ! "Hide scroll-bar *DEPRECATED*" 
 ! rofi.hide-scrollbar:                 false
 ! "Fullscreen" 
-! rofi.fullscreen:                     false
+!rofi.fullscreen:                     false
 ! "Fake transparency *DEPRECATED*" 
 ! rofi.fake-transparency:              false
 ! "DPI" 
