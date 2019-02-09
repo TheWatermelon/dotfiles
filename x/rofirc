@@ -7,7 +7,7 @@ rofi.lines:                          23
 ! "Number of columns" 
 ! rofi.columns:                        1
 ! "Font to use"
-rofi.font:                           xft: System Sans Francisco Display 14
+!rofi.font:                           xft: System Sans Francisco Display 14
 ! "Border width" 
 ! rofi.bw:                             1
 ! "Location on screen" 

@@ -12,13 +12,15 @@ margin-top = 15
 margin-bottom = 15
 
 [colors]
-background = #170420
-background-alt = #2E1D36
+background-dark = #170420
+background-light = #2E1D36
+bg-test = #770b26
 foreground = #DFDFDF
 foreground-alt = #777
-primary = #C71340
-secondary = #EA1646
+skin-light = #EA1646
+skin-dark = #C71340
 alert = #BD2C40
+white = #FFFFFF
 clear = #00FFFFFF
 
 [bar/traybar]
@@ -83,7 +85,7 @@ module-margin-right = 0
 
 tray-position = right
 tray-transparent = true
-tray-background = ${colors.primary}
+tray-background = ${colors.skin-dark}
 
 enable-ipc = true
 
@@ -103,15 +105,15 @@ blacklist-0 = num lock
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-;format-prefix-underline = ${colors.secondary}
+;format-prefix-underline = ${colors.skin-light}
 
 label-layout = %layout%
-;label-layout-underline = ${colors.secondary}
+;label-layout-underline = ${colors.skin-light}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-;label-indicator-underline = ${colors.secondary}
+label-indicator-background = ${colors.skin-light}
+;label-indicator-underline = ${colors.skin-light}
 
 [module/filesystem]
 type = internal/fs
@@ -128,8 +130,8 @@ label-unmounted-foreground = ${colors.foreground-alt}
 type = internal/bspwm
 
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
-;label-focused-underline= ${colors.primary}
+label-focused-background = ${colors.background-light}
+;label-focused-underline= ${colors.skin-dark}
 label-focused-padding = 2
 
 label-occupied = %index%
@@ -227,8 +229,8 @@ label-mode-padding = 0
 ;   %output%
 ; Default: %icon%  %name%
 label-focused = %icon%
-label-focused-background = ${colors.background-alt}
-;label-focused-underline = ${colors.primary}
+label-focused-background = ${colors.background-light}
+;label-focused-underline = ${colors.skin-dark}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -264,6 +266,7 @@ label-visible-padding = ${self.label-focused-padding}
 ; Default: %icon%  %name%
 label-urgent = %icon%
 label-urgent-foreground = ${colors.alert}
+label-urgent-background = ${colors.background-light}
 label-urgent-padding = 2
 
 ; Separator in between workspaces
@@ -274,89 +277,89 @@ label-urgent-padding = 2
 [module/pspace]
 type = custom/text
 content = " "
-content-font = 0
-content-foreground = ${colors.primary}
-;content-background = ${colors.primary}
+;content-font = 0
+content-foreground = ${colors.skin-dark}
+;content-background = ${colors.skin-dark}
 
 [module/hspace]
 type = custom/text
 content = " "
-content-font = 0
-content-background = ${colors.background-alt}
+;content-font = 0
+content-background = ${colors.background-light}
 
 [module/hspace-alt]
 type = custom/text
 content = " "
-content-font = 0
-content-background = ${colors.foreground-alt}
+;content-font = 0
+content-background = ${colors.bg-test}
 
 [module/prarrow]
 type = custom/text
 content = ""
-content-font = 2
-content-foreground = ${colors.primary}
-content-background = ${colors.background-alt}
+;content-font = 2
+content-foreground = ${colors.skin-dark}
+content-background = ${colors.background-light}
 
 [module/prarrow-alt]
 type = custom/text
 content = ""
-content-font = 2
-content-foreground = ${colors.background-alt}
+;content-font = 2
+content-foreground = ${colors.background-light}
 
 [module/plarrow]
 type = custom/text
 content = ""
-content-font = 2
-content-foreground = ${colors.primary}
-content-background = ${colors.background-alt}
+;content-font = 2
+content-foreground = ${colors.skin-dark}
+content-background = ${colors.background-light}
 
 [module/plarrow-alt]
 type = custom/text
 content = ""
-content-font = 2
-content-foreground = ${colors.background-alt}
+;content-font = 2
+content-foreground = ${colors.background-light}
 
 [module/rarrow-sep-1]
 type = custom/text
 content = ""
-content-font = 2
-content-foreground = ${colors.foreground-alt}
-content-background = ${colors.background-alt}
+;content-font = 2
+content-foreground = ${colors.bg-test}
+content-background = ${colors.background-light}
 
 [module/rarrow-sep-1-alt]
 type = custom/text
 content = ""
-content-font = 2
-content-foreground = ${colors.primary}
-content-background = ${colors.foreground-alt}
+;content-font = 2
+content-foreground = ${colors.skin-dark}
+content-background = ${colors.bg-test}
 
 [module/rarrow-sep-2]
 type = custom/text
 content = ""
-content-font = 2
-content-foreground = ${colors.background-alt}
+;content-font = 2
+content-foreground = ${colors.background-light}
 content-background = ${colors.foreground-alt}
 
 [module/larrow-sep-1]
 type = custom/text
 content = ""
-content-font = 2
-content-foreground = ${colors.foreground-alt}
-content-background = ${colors.background-alt}
+;content-font = 2
+content-foreground = ${colors.bg-test}
+content-background = ${colors.background-light}
 
 [module/larrow-sep-1-alt]
 type = custom/text
 content = ""
-content-font = 2
-content-foreground = ${colors.primary}
-content-background = ${colors.foreground-alt}
+;content-font = 2
+content-foreground = ${colors.skin-dark}
+content-background = ${colors.bg-test}
 
 [module/larrow-sep-2]
 type = custom/text
 content = ""
-content-font = 2
-content-foreground = ${colors.background-alt}
-content-background = ${colors.foreground-alt}
+;content-font = 2
+content-foreground = ${colors.background-light}
+content-background = ${colors.bg-test}
 
 
 
@@ -385,9 +388,9 @@ card = intel_backlight
 
 ;format-prefix = 
 format-prefix = 
-format-prefix-background = ${colors.background-alt}
+format-prefix-background = ${colors.background-light}
 label = %percentage%
-label-background = ${colors.background-alt}
+label-background = ${colors.background-light}
 
 [module/cpu]
 type = internal/cpu
@@ -415,11 +418,11 @@ format-connected = <ramp-signal><label-connected>
 ;label-connected = %upspeed:7% %essid% %downspeed:7%
 label-connected = "%upspeed:6% %downspeed:6%"
 label-connected-foreground = ${colors.foreground-alt}
-label-connected-background = ${colors.background-alt}
+label-connected-background = ${colors.background-light}
 
 format-disconnected = 
 format-disconnected-foreground = ${colors.foreground-alt}
-format-disconnected-background = ${colors.background-alt}
+format-disconnected-background = ${colors.background-light}
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
@@ -427,19 +430,19 @@ format-disconnected-background = ${colors.background-alt}
 
 ramp-signal-0 = 
 ramp-signal-0-foreground = #dc3016
-ramp-signal-0-background = ${colors.background-alt}
+ramp-signal-0-background = ${colors.background-light}
 ramp-signal-1 = 
 ramp-signal-1-foreground = #dca016
-ramp-signal-1-background = ${colors.background-alt}
+ramp-signal-1-background = ${colors.background-light}
 ramp-signal-2 = 
 ramp-signal-2-foreground = #dcdc16
-ramp-signal-2-background = ${colors.background-alt}
+ramp-signal-2-background = ${colors.background-light}
 ramp-signal-3 = 
 ramp-signal-3-foreground = #a0dc16
-ramp-signal-3-background = ${colors.background-alt}
+ramp-signal-3-background = ${colors.background-light}
 ramp-signal-4 = 
 ramp-signal-4-foreground = #30dc16
-ramp-signal-4-background = ${colors.background-alt}
+ramp-signal-4-background = ${colors.background-light}
 
 [module/eth]
 type = internal/network
@@ -479,40 +482,40 @@ type = internal/volume
 format-volume = <label-volume><bar-volume>
 label-volume = " %percentage%"
 label-volume-foreground = ${root.foreground}
-label-volume-background = ${colors.background-alt}
+label-volume-background = ${colors.background-light}
 
 format-muted-prefix = 
 format-muted-foreground = ${colors.foreground-alt}
-format-muted-background = ${colors.background-alt}
+format-muted-background = ${colors.background-light}
 ;label-muted = 
 label-muted = 
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
-bar-volume-background-0 = ${colors.background-alt}
+bar-volume-background-0 = ${colors.background-light}
 bar-volume-foreground-1 = #55aa55
-bar-volume-background-1 = ${colors.background-alt}
+bar-volume-background-1 = ${colors.background-light}
 bar-volume-foreground-2 = #55aa55
-bar-volume-background-2 = ${colors.background-alt}
+bar-volume-background-2 = ${colors.background-light}
 bar-volume-foreground-3 = #55aa55
-bar-volume-background-3 = ${colors.background-alt}
+bar-volume-background-3 = ${colors.background-light}
 bar-volume-foreground-4 = #55aa55
-bar-volume-background-4 = ${colors.background-alt}
+bar-volume-background-4 = ${colors.background-light}
 bar-volume-foreground-5 = #f5a70a
-bar-volume-background-5 = ${colors.background-alt}
+bar-volume-background-5 = ${colors.background-light}
 bar-volume-foreground-6 = #ff5555
-bar-volume-background-6 = ${colors.background-alt}
+bar-volume-background-6 = ${colors.background-light}
 bar-volume-gradient = true
 bar-volume-indicator = |
-bar-volume-indicator-background = ${colors.background-alt}
-bar-volume-indicator-font = 2
+bar-volume-indicator-background = ${colors.background-light}
+;bar-volume-indicator-font = 2
 bar-volume-fill = ―
-bar-volume-fill-background = ${colors.background-alt}
-bar-volume-fill-font = 2
+bar-volume-fill-background = ${colors.background-light}
+;bar-volume-fill-font = 2
 bar-volume-empty = ―
-bar-volume-empty-font = 2
+;bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
-bar-volume-empty-background = ${colors.background-alt}
+bar-volume-empty-background = ${colors.background-light}
 
 [module/battery]
 type = internal/battery
@@ -539,7 +542,7 @@ time-format = %H:%M
 ;   %consumption% (shows current charge rate in watts)
 label-charging = " (%time%)"
 label-charging-foreground = ${colors.foreground-alt}
-label-charging-background = ${colors.background-alt}
+label-charging-background = ${colors.background-light}
 ; Available tags:
 ;   <label-charging> (default)
 ;   <bar-capacity>
@@ -550,19 +553,19 @@ format-charging = <animation-charging><label-charging>
 
 label-discharging = " (%time%)"
 label-discharging-foreground = ${colors.foreground-alt}
-label-discharging-background = ${colors.background-alt}
+label-discharging-background = ${colors.background-light}
 ; Available tags:
 ;   <label-discharging> (default)
 ;   <bar-capacity>
 ;   <ramp-capacity>
 format-discharging = <ramp-capacity><label-discharging>
-format-discharging-background = ${colors.background-alt}
+format-discharging-background = ${colors.background-light}
 ;format-discharging-underline = #dcdc16
 
 label-full = 
 format-full = <label-full>
 format-full-foreground = #30dc16
-format-full-background = ${colors.background-alt}
+format-full-background = ${colors.background-light}
 ;format-full-prefix-foreground = ${colors.foreground-alt}
 ;format-full-underline = ${self.format-charging-underline}
 
@@ -577,19 +580,19 @@ format-full-background = ${colors.background-alt}
 
 ramp-capacity-0 = 
 ramp-capacity-0-foreground = #dc3016
-ramp-capacity-0-background = ${colors.background-alt}
+ramp-capacity-0-background = ${colors.background-light}
 ramp-capacity-1 = 
 ramp-capacity-1-foreground = #dca016
-ramp-capacity-1-background = ${colors.background-alt}
+ramp-capacity-1-background = ${colors.background-light}
 ramp-capacity-2 = 
 ramp-capacity-2-foreground = #dcdc16
-ramp-capacity-2-background = ${colors.background-alt}
+ramp-capacity-2-background = ${colors.background-light}
 ramp-capacity-3 = 
 ramp-capacity-3-foreground = #a0dc16
-ramp-capacity-3-background = ${colors.background-alt}
+ramp-capacity-3-background = ${colors.background-light}
 ramp-capacity-4 = 
 ramp-capacity-4-foreground = #30dc16
-ramp-capacity-4-background = ${colors.background-alt}
+ramp-capacity-4-background = ${colors.background-light}
 
 animation-charging-0 = 
 animation-charging-1 = 
@@ -597,7 +600,7 @@ animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-foreground = #30dc16
-animation-charging-background = ${colors.background-alt}
+animation-charging-background = ${colors.background-light}
 animation-charging-framerate = 750
 
 [module/temperature]
@@ -612,7 +615,7 @@ format-warn = <ramp> <label-warn>
 
 label = %temperature%
 label-warn = %temperature%
-label-warn-foreground = ${colors.secondary}
+label-warn-foreground = ${colors.skin-light}
 
 ramp-0 = T°
 ramp-1 = T°
@@ -627,34 +630,38 @@ expand-right = true
 format-spacing = 0
 
 label-open = "  "
-label-open-foreground = ${colors.foreground}
-label-open-background = ${colors.primary}
+label-open-foreground = ${colors.white}
+label-open-background = ${colors.skin-dark}
 label-close = "cancel"
-label-close-foreground = ${colors.background}
-label-close-background = ${colors.primary}
+label-close-foreground = ${colors.background-dark}
+label-close-background = ${colors.skin-dark}
 label-separator = " | "
 label-separator-foreground = ${colors.foreground-alt}
-label-separator-background = ${colors.primary}
+label-separator-background = ${colors.skin-dark}
 
 menu-0-0 = reboot
-menu-0-0-background = ${colors.primary}
+menu-0-0-foreground = ${colors.white}
+menu-0-0-background = ${colors.skin-dark}
 menu-0-0-exec = menu-open-1
 menu-0-1 = power off
-menu-0-1-background = ${colors.primary}
+menu-0-1-foreground = ${colors.white}
+menu-0-1-background = ${colors.skin-dark}
 menu-0-1-exec = menu-open-2
 
 menu-1-0 = cancel
-menu-1-0-background = ${colors.primary}
+menu-1-0-foreground = ${colors.white}
+menu-1-0-background = ${colors.skin-dark}
 menu-1-0-exec = menu-open-0
 menu-1-1 = reboot
-menu-1-1-background = ${colors.primary}
+menu-1-1-foreground = ${colors.white}
+menu-1-1-background = ${colors.skin-dark}
 menu-1-1-exec = shutdown -r now
 
 menu-2-0 = power off
-menu-2-0-background = ${colors.primary}
+menu-2-0-background = ${colors.skin-dark}
 menu-2-0-exec = shutdown -h now
 menu-2-1 = cancel
-menu-2-1-background = ${colors.primary}
+menu-2-1-background = ${colors.skin-dark}
 menu-2-1-exec = menu-open-0
 
 [module/tomatoscript]
@@ -665,7 +672,7 @@ click-left = $HOME/bin/tomato-timer 25
 click-right = $HOME/bin/tomato-timer 5
 click-middle = $HOME/bin/tomato-timer 15
 format = <label>
-format-background = ${colors.background-alt}
+format-background = ${colors.background-light}
 
 [module/tomatohook]
 type = custom/ipc
@@ -682,10 +689,10 @@ click-right = polybar-msg hook tomatohook 3
 [module/rofi]
 type = custom/script
 exec = echo -e " \uF002 "
-click-left = "rofi -modi run,todo:$HOME/bin/todo.sh,window -show run -theme $HOME/.config/rofi/left_panel.rasi"
+click-left = "rofi -modi drun,run,window -show drun -theme $HOME/.config/rofi/left_panel.rasi"
 format = <label>
-format-foreground = ${colors.foreground}
-format-background = ${colors.primary}
+format-foreground = ${colors.white}
+format-background = ${colors.skin-dark}
 
 [settings]
 screenchange-reload = true
