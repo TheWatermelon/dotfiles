@@ -7,7 +7,7 @@
     display-drun:    "Launch";
     display-run:     "Execute";
     display-window:  "Window";
-    show-icons:      true;
+    show-icons:      false;
     sidebar-mode:    true;
     font:            "Roboto 12";
 }

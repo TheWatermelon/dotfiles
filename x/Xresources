@@ -1,4 +1,6 @@
-*.font: xft: System Sans Francisco Display 12
+!*.font: Roboto:12
 
 Xft.rgba:								rgb
 
+!emacs.font: Source Code Pro:17
+!emacs.background: #FE0000

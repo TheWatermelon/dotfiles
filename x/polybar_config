@@ -24,14 +24,10 @@ white = #FFFFFF
 clear = #00FFFFFF
 
 [bar/traybar]
-;monitor = ${env:MONITOR:DP-0}
+monitor = HDMI1
 width = 100%
 height = 20
-bottom = true
-
-padding-top = 20
-padding-bottom = 20
-padding-left = 20
+bottom = false
 
 background = #00000000
 foreground = ${colors.foreground}
@@ -44,14 +40,18 @@ tray-position = left
 tray-padding = 10
 tray-transparent = true
 
-override-redirect = true
+;override-redirect = true
 wm-restack = i3
 
+; font-0 : i3 icons
+font-0 = unifont:fontformat=truetype:size=12:antialias=false;3
+
 [bar/cleanbar]
+;monitor = eDP1
 width = 100%
 height = 20
 ;offset-x = 
-offset-y = 10
+;offset-y = 10
 ;radius = j
 fixed-center = true
 
@@ -84,7 +84,7 @@ module-margin-left = 0
 module-margin-right = 0
 
 tray-position = right
-tray-transparent = true
+tray-transparent = false
 tray-background = ${colors.skin-dark}
 
 enable-ipc = true
@@ -415,8 +415,8 @@ interval = 3.0
 ;format-prefix = "WLAN"
 format-connected = <ramp-signal><label-connected>
 ;format-connected-underline = #9f78e1
-;label-connected = %upspeed:7% %essid% %downspeed:7%
-label-connected = "%upspeed:6% %downspeed:6%"
+;label-connected = " %signal%% %upspeed:6% %downspeed:6%"
+label-connected = " %signal%%"
 label-connected-foreground = ${colors.foreground-alt}
 label-connected-background = ${colors.background-light}
 
@@ -551,7 +551,7 @@ label-charging-background = ${colors.background-light}
 format-charging = <animation-charging><label-charging>
 ;format-charging-underline = #30dc16
 
-label-discharging = " (%time%)"
+label-discharging = " %percentage%%"
 label-discharging-foreground = ${colors.foreground-alt}
 label-discharging-background = ${colors.background-light}
 ; Available tags:
@@ -658,9 +658,11 @@ menu-1-1-background = ${colors.skin-dark}
 menu-1-1-exec = shutdown -r now
 
 menu-2-0 = power off
+menu-2-0-foreground = ${colors.white}
 menu-2-0-background = ${colors.skin-dark}
 menu-2-0-exec = shutdown -h now
 menu-2-1 = cancel
+menu-2-1-foreground = ${colors.white}
 menu-2-1-background = ${colors.skin-dark}
 menu-2-1-exec = menu-open-0
 

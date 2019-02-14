@@ -6,42 +6,44 @@ options:
   base: &base
     dotfileDirectory: programmation/dotfiles
 
-  zshPackage:
-    directoryName: zsh
+  editorsPackage:
+    directoryName: editors
     links:
-      - zshrc: .zshrc
-      - shell_aliases: .sh_aliases
-      - shell_colors: .sh_colors
-      - shell_functions: .sh_functions
-      - spaceship-promptrc_classic: .config/spaceship-prompt/spaceship-promptrc_classic
-      - spaceship-promptrc_fancy: .config/spaceship-prompt/spaceship-promptrc_fancy
+      - vimrc:            .vimrc
+      - vim_plugins:      .vim/plugin_list.txt
+      - vim_colorscheme:  .vim/colors/white.vim
+      - emacs.el:         .emacs
 
-  vimPackage:
-    directoryName: vim
+  scriptsPackage:
+    directoryName: scripts
     links:
-      - vimrc: .vimrc
-      - vim_plugins: .vim/plugin_list.txt
-      - vim_colorscheme: .vim/colors/white.vim
-  
-  tmuxPackage:
-    directoryName: tmux
+      - batstatus:    bin/batstatus
+      - tomato-timer: bin/tomato-timer
+      - bg_changer:   bin/bg_changer
+      - todo.sh:      bin/todo.sh
+
+
+  termPackage:
+    directoryName: term
     links:
-      - tmuxrc: .tmux.conf
-      - conkyrc_tmux: .conkyrc_tmux
-      - batstatus: bin/batstatus
+      - tmuxrc:             .tmux.conf
+      - conkyrc_tmux:       .conkyrc_tmux
+      - zshrc:              .zshrc
+      - shell_aliases:      .sh_aliases
+      - shell_colors:       .sh_colors
+      - shell_functions:    .sh_functions
+      - spaceship-promptrc: .config/spaceship-prompt/spaceship-promptrc_classic
 
   xPackage:
     directoryName: x
     links:
-      - dunstrc: .config/dunst/dunstrc
-      - i3_config: .i3/config
-      - polybar_config: .config/polybar/config
-      - rofirc: .config/rofi/config
-      - rofi_theme.rasi: .config/rofi/left_panel.rasi
-      - tomato-timer: bin/tomato-timer
-      - bg_changer: bin/bg_changer
-      - todo.sh: bin/todo.sh
-      - termiterc: .config/termite/config
-      - qutebrowser_config: .config/qutebrowser/config.py
-      - Xresources: .Xresources
-      - Xdefaults: .Xdefaults
+      - dunstrc:                .config/dunst/dunstrc
+      - i3_config:              .i3/config
+      - polybar_config:         .config/polybar/config
+      - rofirc:                 .config/rofi/config
+      - rofi_theme.rasi:        .config/rofi/left_panel.rasi
+      - termiterc:              .config/termite/config
+      - qutebrowser_config:     .config/qutebrowser/config.py
+      - libinput-gestures.conf: .config/libinput-gestures.conf
+      - Xresources:             .Xresources
+      - Xdefaults:              .Xdefaults

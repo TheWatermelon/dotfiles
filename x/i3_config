@@ -11,8 +11,8 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # modifier : Mod1:Alt, Mod4:Win
-set $mod Mod1
-set $win Mod4
+set $mod Mod4
+set $win Mod1
 
 # font for window titles. ISO 10646 = Unicode
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -201,7 +201,7 @@ bindsym $mod+w split v
 #bindsym $mod+Shift+w
 bindsym $mod+x exec termite
 ## lock the screen
-bindsym $mod+Shift+X exec $HOME/bin/i3lock_random_color.sh 
+#bindsym $mod+Shift+X exec $HOME/bin/i3lock_random_color.sh 
 ## focus parent container
 bindsym $mod+c focus parent 
 #bindsym $mod+v

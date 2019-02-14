@@ -103,6 +103,9 @@ zstyle ':completion:*' menu select
 # Enable compleat
 source ~/.local/share/compleat/compleat_setup
 
+# Register to toggl
+export TOGGL_KEY=eb98080a91077ac40993ebb9f65c132e
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
