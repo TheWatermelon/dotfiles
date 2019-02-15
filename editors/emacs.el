@@ -51,8 +51,9 @@
 (global-set-key (kbd "C-c /") 'org-match-sparse-tree)
 
 ;; Org bullets
-(require 'org-bullets)
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(use-package org-bullets
+             :config
+             (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 (setq org-bullets-bullet-list '("◉" "○" "■" "◆" "▲" "▶"))
 
 ;; Properties ;;
@@ -67,7 +68,7 @@
                              "~/Dropbox/org_ugo/notes_2_canards.org"))
 ;; state keywords
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t)" "NEXT(n)" "DONE(d)" "NOTE(o)"))))
+      (quote ((sequence "NOTE(o)" "TODO(t)" "NEXT(n)" "|" "DONE(d)"))))
 ;; state colors
 (setq org-todo-keyword-faces
       (quote (("NOTE" :foreground "dark orange" :weight bold)
@@ -77,11 +78,19 @@
 ;; Capture templates for: TODO tasks, Notes
 (setq org-capture-templates
       (quote (("t" "todo" entry (file "~/Dropbox/org-mode/todo.org")
-               "* TODO %?\n")
+               "\n* TODO %?\n")
               ("n" "note" entry (file "~/Dropbox/org-mode/notes.org")
-               "* NOTE %?\n"))))
+               "\n* NOTE %?\n"))))
 ;; Custom agenda command definitions
 (setq org-agenda-custom-commands
       (quote (("N" "Notes" tags "NOTE"
                ((org-agenda-overriding-header "Notes")
                 (org-tags-match-list-sublevels t))))))
+;; Hide the emphasis markup (e.g. /.../ for italics, *...* for bold, etc.)
+(setq org-hide-emphasis-markers t)
+;; Font-lock substitution for list markers
+(font-lock-add-keywords 'org-mode
+                        '(("^ *\\([-]\\) "
+                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+;; Long lines will flow and adjust to the width of the window
+(add-hook 'org-mode-hook 'visual-line-mode)

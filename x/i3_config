@@ -397,3 +397,5 @@ exec feh --bg-scale ~/images/wallpapers/selected/mountain_mars.png &
 exec compton -f --fade-delta=3 &
 # Start polybar
 exec_always $HOME/bin/polybarstart
+# Gestures for the trackpad
+exec libinput-gestures &
