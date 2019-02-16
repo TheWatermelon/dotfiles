@@ -28,7 +28,7 @@ follow = keyboard
 # the top and down respectively.
 # The width can be negative.  In this case the actual width is the
 # screen width minus the width defined in within the geometry option.
-geometry = "0x5-0+20"
+geometry = "0x0-10+30"
 
 # Show how many messages are currently hidden (because of geometry).
 indicate_hidden = yes
@@ -40,7 +40,7 @@ shrink = no
 # The transparency of the window.  Range: [0; 100].
 # This option will only work if a compositing window manager is
 # present (e.g. xcompmgr, compiz, etc.).
-transparency = 25
+transparency = 0
 
 # The height of the entire notification.  If the height is smaller
 # than the font height and padding combined, it will be raised
@@ -60,10 +60,10 @@ horizontal_padding = 8
 
 # Defines width in pixels of frame around the notification window.
 # Set to 0 to disable.
-frame_width = 2
+frame_width = 3
 
 # Defines color of the frame around the notification window.
-frame_color = "#282c34"
+frame_color = "#C71340"
 
 # Define a color for the separator.
 # possible values are:
@@ -74,7 +74,7 @@ frame_color = "#282c34"
 separator_color = frame
 
 # Sort messages by urgency.
-sort = yes
+sort = true
 
 # Don't remove messages, if the user is idle (no mouse or keyboard input)
 # for longer than idle_threshold seconds.
@@ -109,8 +109,9 @@ markup = full
 #   %I  iconname (without its path)
 #   %p  progress value if set ([  0%] to [100%]) or nothing
 #   %n  progress value if set without any extra characters
+#   %%  a literal %
 # Markup is allowed
-format = "<span size="smaller">%a</span>\n<b>%s</b>\n%b"
+format = "<b>%s</b>%p\n%b"
 
 # Alignment of message text.
 # Possible values are "left", "center" and "right".
@@ -119,14 +120,14 @@ alignment = right
 # Show age of message if message is older than show_age_threshold
 # seconds.
 # Set to -1 to disable.
-show_age_threshold = 60
+show_age_threshold = -1
 
 # Split notifications into multiple lines if they don't fit into
 # geometry.
-word_wrap = yes
+word_wrap = true
 
 # Ignore newlines '\n' in notifications.
-ignore_newline = no
+ignore_newline = false
 
 # Merge multiple notifications with the same content
 stack_duplicates = true
@@ -135,7 +136,7 @@ stack_duplicates = true
 hide_duplicate_count = false
 
 # Display indicators for URLs (U) and actions (A).
-show_indicators = no
+show_indicators = true
 
 # Align icons left/right/off
 icon_position = right
@@ -175,7 +176,7 @@ startup_notification = false
 
 
 [experimental]
-per_monitor_dpi = false
+#per_monitor_dpi = false
 
 
 [shortcuts]
@@ -183,29 +184,23 @@ per_monitor_dpi = false
 #close_all = ctrl+shift+space
 #history = ctrl+grave
 # Context menu (to operate on notification)
-#context = ctrl+shift+period
+context = mod4+shift+O
 
 
 [urgency_low]
-background = "#24272e"
-foreground = "#abb2bf"
-timeout = 7
-
-
-[urgency_normal]
-background = "#24272e"
+background = "#170420"
 foreground = "#DFDFDF"
 timeout = 7
 
 
-[urgency_critical]
-background = "#24272e"
-foreground = "#abb2bf"
-frame_color = "#e06c75"
-timeout = 0
+[urgency_normal]
+background = "#170420"
+foreground = "#FFFFFF"
+timeout = 7
 
-# Per app rules
-[Spotify]
-appname = Spotify
-new_icon = Spotify
+
+[urgency_critical]
+background = "#170420"
+foreground = "#EA1646"
+frame_color = "#BD2C40"
 timeout = 3
