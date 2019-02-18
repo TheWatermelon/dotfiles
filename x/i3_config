@@ -39,15 +39,21 @@ popup_during_fullscreen smart
 # dark red border : #8A1319
 # dark red background : #7F0305
 
-set $clr_fg #FFFFFF
-set $clr_bg_main #EA1646
-set $clr_bg_alt #C71340
+set $white #FFFFFF
+set $skin-light #EA1646
+set $skin-main #C71340
+set $skin-dark #770B26
+set $foreground #DFDFDF
+set $foreground-alt #777
+set $background-light #2E1D36
+set $background-dark #170420
+set $alert #BD2C40
 
-# class                 border       backgr.     text    indicator
-client.focused          $clr_bg_main $clr_bg_alt $clr_fg #7F0305
-client.focused_inactive #333333      #444444     #ffffff #484e50
-client.unfocused        #333333      #222222     #888888 #292d2e
-client.urgent           #2f343a      #900000     #ffffff #900000
+# class                 border            backgr.           text        indicator
+client.focused          $skin-light       $skin-main        $white      $alert
+client.focused_inactive $skin-dark        $skin-dark        $foreground $alert
+client.unfocused        $background-light $background-dark  $foreground $alert
+client.urgent           $skin-dark        $alert            $white      $alert
 #client.placeholder      #000000      #0c0c0c     #ffffff #000000
 
 #

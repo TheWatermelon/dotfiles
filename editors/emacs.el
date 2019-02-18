@@ -15,6 +15,7 @@
 ;; Properties ;;
 (setq package-enable-at-startup nil)
 (set-default-font "Source Code Pro-13")
+(setq inhibit-startup-screen nil)
 
 ;; Initialization ;;
 (package-initialize)
@@ -68,7 +69,7 @@
                              "~/Dropbox/org_ugo/notes_2_canards.org"))
 ;; state keywords
 (setq org-todo-keywords
-      (quote ((sequence "NOTE(o)" "TODO(t)" "NEXT(n)" "|" "DONE(d)"))))
+      (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)" "NOTE(o)"))))
 ;; state colors
 (setq org-todo-keyword-faces
       (quote (("NOTE" :foreground "dark orange" :weight bold)
@@ -87,10 +88,11 @@
                ((org-agenda-overriding-header "Notes")
                 (org-tags-match-list-sublevels t))))))
 ;; Hide the emphasis markup (e.g. /.../ for italics, *...* for bold, etc.)
-(setq org-hide-emphasis-markers t)
+;; /!\ 'bug' in org-mode when making headlines : *** (three stars showed) → bold * (one star showed)
+;(setq org-hide-emphasis-markers t)
 ;; Font-lock substitution for list markers
 (font-lock-add-keywords 'org-mode
                         '(("^ *\\([-]\\) "
                            (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 ;; Long lines will flow and adjust to the width of the window
-(add-hook 'org-mode-hook 'visual-line-mode)
+;(add-hook 'org-mode-hook 'visual-line-mode)

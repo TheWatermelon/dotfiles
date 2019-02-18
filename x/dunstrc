@@ -184,7 +184,7 @@ startup_notification = false
 #close_all = ctrl+shift+space
 #history = ctrl+grave
 # Context menu (to operate on notification)
-context = mod4+shift+O
+#context = mod4+shift+O
 
 
 [urgency_low]
