@@ -14,7 +14,7 @@ margin-bottom = 15
 [colors]
 background-dark = #170420
 background-light = #2E1D36
-bg-test = #770b26
+bg-test = #770B26
 foreground = #DFDFDF
 foreground-alt = #777
 skin-light = #EA1646
