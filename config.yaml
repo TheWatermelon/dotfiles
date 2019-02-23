@@ -45,5 +45,6 @@ options:
       - termiterc:              .config/termite/config
       - qutebrowser_config:     .config/qutebrowser/config.py
       - libinput-gestures.conf: .config/libinput-gestures.conf
+      - splatmoji_config:       .config/splatmoji/splatmoji.config
       - Xresources:             .Xresources
       - Xdefaults:              .Xdefaults
