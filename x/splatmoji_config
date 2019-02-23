@@ -1,1 +1,1 @@
-rofi_command=rofi -dmenu -p 'Search:' -i -monitor -2 -theme /home/walter/programmation/dotfiles/x/rofi_theme.rasi
+rofi_command=rofi -dmenu -p 'Search:' -i -monitor -1 -theme $HOME/.config/rofi/left_panel.rasi

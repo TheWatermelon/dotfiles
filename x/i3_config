@@ -132,8 +132,8 @@ bindsym $mod+Shift+Right move right
 bindsym XF86MonBrightnessUp exec xbacklight -inc 1
 bindsym XF86MonBrightnessDown exec xbacklight -dec 1
 ## Volume control
-#bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+
-#bindsym XF86AudioLowerVolume exec amixer sset Master 5%-
+bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+
+bindsym XF86AudioLowerVolume exec amixer sset Master 5%-
 
 ### Controls are ordered by azerty keyboard layout ###
 ## change container layout to stacked
@@ -154,7 +154,7 @@ bindsym $mod+Shift+e exec --no-startup-id \
 #bindsym $mod+r mode "resize" 
 ## restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+R restart 
-#bindsym $mod+t
+bindsym $mod+t exec "splatmoji type"
 #bindsym $mod+Shift+t
 bindsym $mod+y resize shrink width 2 px or 2 ppt
 #bindsym $mod+Shift+y
