@@ -398,10 +398,12 @@ mode "$mode_gaps_inner" {
 
 # Set background image scaled
 #exec /home/walter/bin/bg_changer ~/images/wallpapers/selected/ 7200 &
-exec feh --bg-scale ~/images/wallpapers/selected/mountain_mars.png &
+exec_always feh --bg-scale ~/images/wallpapers/selected/mountain_mars.png &
 # Start composite manager
 exec compton -f --fade-delta=3 &
 # Start polybar
 exec_always $HOME/bin/polybarstart
 # Gestures for the trackpad
 exec libinput-gestures &
+# Hide the cursor after 3 seconds
+exec unclutter -b --timeout 3

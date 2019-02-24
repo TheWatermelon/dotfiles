@@ -26,13 +26,14 @@ options:
   termPackage:
     directoryName: term
     links:
-      - tmuxrc:             .tmux.conf
-      - conkyrc_tmux:       .conkyrc_tmux
-      - zshrc:              .zshrc
-      - shell_aliases:      .sh_aliases
-      - shell_colors:       .sh_colors
-      - shell_functions:    .sh_functions
-      - spaceship-promptrc: .config/spaceship-prompt/spaceship-promptrc_classic
+      - tmuxrc:               .tmux.conf
+      - conkyrc_tmux:         .conkyrc_tmux
+      - zshrc:                .zshrc
+      - main-highlighter.zsh: .oh-my-zsh/plugins/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh
+      - shell_aliases:        .sh_aliases
+      - shell_colors:         .sh_colors
+      - shell_functions:      .sh_functions
+      - spaceship-promptrc:   .config/spaceship-prompt/spaceship-promptrc_classic
 
   xPackage:
     directoryName: x
