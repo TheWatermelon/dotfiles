@@ -171,8 +171,7 @@ bindsym $mod+Shift+p exec dmenu_run
 ## kill focused window
 bindsym $mod+q kill 
 #bindsym $mod+Shift+q
-## split in horizontal orientation
-bindsym $mod+s split h
+#bindsym $mod+s
 #bindsym $mod+Shift+s
 ## focus the child
 bindsym $mod+d focus child 
@@ -210,7 +209,8 @@ bindsym $mod+x exec termite
 #bindsym $mod+Shift+X exec $HOME/bin/i3lock_random_color.sh 
 ## focus parent container
 bindsym $mod+c focus parent 
-#bindsym $mod+v
+## split in horizontal orientation
+bindsym $mod+v split h
 #bindsym $mod+Shift+v
 #bindsym $mod+b 
 #bindsym $mod+Shift+b
