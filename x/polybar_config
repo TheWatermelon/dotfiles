@@ -12,13 +12,13 @@ margin-top = 15
 margin-bottom = 15
 
 [colors]
-background-dark = #170420
-background-light = #2E1D36
-bg-test = #770B26
-foreground = #DFDFDF
-foreground-alt = #777
-skin-light = #EA1646
-skin-dark = #C71340
+background-dark = ${xrdb:color0:#170420}
+background-light = ${xrdb:color1:#2E1D36}
+bg-test = ${xrdb:color6:#770B26}
+foreground = ${xrdb:color7:#DFDFDF}
+foreground-alt = ${xrdb:color8:#777}
+skin-light = ${xrdb:color3:#EA1646}
+skin-dark = ${xrdb:color4:#C71340}
 alert = #BD2C40
 white = #FFFFFF
 clear = #00FFFFFF
@@ -241,7 +241,7 @@ label-focused-padding = 2
 ;   %output%
 ; Default: %icon%  %name%
 label-unfocused = %icon%
-label-unfocused-background = #2e1d36
+label-unfocused-background = ${colors.background-light}
 label-unfocused-foreground = ${colors.foreground-alt}
 label-unfocused-padding = 2
 

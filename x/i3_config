@@ -36,24 +36,43 @@ popup_during_fullscreen smart
 # Colors
 #
 
-# dark red border : #8A1319
-# dark red background : #7F0305
-
+# Set colors from Xresources
+# color[0-15] available
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+set_from_resource $color0 i3wm.color0 #f0f0f0
+set_from_resource $color1 i3wm.color1 #f0f0f0
+set_from_resource $color2 i3wm.color2 #f0f0f0
+set_from_resource $color3 i3wm.color3 #f0f0f0
+set_from_resource $color4 i3wm.color4 #f0f0f0
+set_from_resource $color5 i3wm.color5 #f0f0f0
+set_from_resource $color6 i3wm.color6 #f0f0f0
+set_from_resource $color7 i3wm.color7 #f0f0f0
+set_from_resource $color8 i3wm.color8 #f0f0f0
+set_from_resource $color9 i3wm.color9 #f0f0f0
+set_from_resource $color10 i3wm.color10 #f0f0f0
+set_from_resource $color11 i3wm.color11 #f0f0f0
+set_from_resource $color12 i3wm.color12 #f0f0f0
+set_from_resource $color13 i3wm.color13 #f0f0f0
+set_from_resource $color14 i3wm.color14 #f0f0f0
+set_from_resource $color15 i3wm.color15 #f0f0f0
 set $white #FFFFFF
-set $skin-light #EA1646
-set $skin-main #C71340
-set $skin-dark #770B26
-set $foreground #DFDFDF
-set $foreground-alt #777
-set $background-light #2E1D36
-set $background-dark #170420
-set $alert #BD2C40
 
-# class                 border            backgr.           text        indicator
-client.focused          $skin-light       $skin-main        $white      $alert
-client.focused_inactive $skin-dark        $skin-dark        $foreground $alert
-client.unfocused        $background-light $background-dark  $foreground $alert
-client.urgent           $skin-dark        $alert            $white      $alert
+# old theme
+#set $skin-light #EA1646
+#set $skin-main #C71340
+#set $skin-dark #770B26
+#set $foreground #DFDFDF
+#set $foreground-alt #777
+#set $background-light #2E1D36
+#set $background-dark #170420
+#set $alert #BD2C40
+
+# class                 border     backgr.    text       indicator
+client.focused          $color2    $color1    $white     $color3
+client.focused_inactive $color5    $color4    $color7    $color3
+client.unfocused        $color8    $color0    $color7    $color3
+client.urgent           $color4    $color11   $white     $color3
 #client.placeholder      #000000      #0c0c0c     #ffffff #000000
 
 #
@@ -77,7 +96,7 @@ set $workspace10 "10"
 ## start a terminal
 #bindsym $mod+Return exec termite 
 ## start a terminal with tmux
-bindsym $mod+Shift+Return exec termite -e 'tmux -2' 
+#bindsym $mod+Shift+Return exec termite -e 'tmux -2' 
 ## change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle 
 ## toggle tiling / floating
@@ -165,7 +184,7 @@ bindsym $mod+i resize grow height 2 px or 2 ppt
 bindsym $mod+o resize grow width 2 px or 2 ppt
 #bindsym $mod+Shift+o
 ## start rofi ()program launcher)
-bindsym $mod+p exec "rofi -modi drun,run,window -show drun -theme $HOME/.config/rofi/left_panel.rasi"
+bindsym $mod+p exec "rofi -modi drun,run,window -show drun -theme $HOME/.cache/wal/rofi_theme.rasi"
 ## start dmenu (program launcher)
 bindsym $mod+Shift+p exec dmenu_run 
 ## kill focused window
@@ -179,7 +198,7 @@ bindsym $mod+d focus child
 ## set focused window on fullscreen
 bindsym $mod+f fullscreen 
 ## change background wallpaper
-bindsym $mod+Shift+f exec ~/bin/bg_changer ~/images/wallpapers/selected/
+bindsym $mod+Shift+f exec wal -i images/wallpapers/selected
 ## show/hide polybar
 bindsym $mod+g exec ~/bin/toggle_polybar.sh
 #bindsym $mod+Shift+g
@@ -204,7 +223,7 @@ bindsym $mod+Shift+l move right
 ## split in vertical orientation
 bindsym $mod+w split v
 #bindsym $mod+Shift+w
-bindsym $mod+x exec termite
+bindsym $mod+x exec termite -c $HOME/.cache/wal/termite.config
 ## lock the screen
 #bindsym $mod+Shift+X exec $HOME/bin/i3lock_random_color.sh 
 ## focus parent container
@@ -398,7 +417,8 @@ mode "$mode_gaps_inner" {
 
 # Set background image scaled
 #exec /home/walter/bin/bg_changer ~/images/wallpapers/selected/ 7200 &
-exec_always feh --bg-scale ~/images/wallpapers/selected/mountain_mars.png &
+#exec_always feh --bg-scale ~/images/wallpapers/selected/mountain_mars.png &
+exec_always wal -i images/wallpapers/selected
 # Start composite manager
 exec compton -f --fade-delta=3 &
 # Start polybar

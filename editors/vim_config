@@ -60,7 +60,7 @@ set statusline=%<%h%r\ %f\ %m%=\ %y\ %l,%c\ %P
 " Change colorscheme
 set t_Co=256
 "set termguicolors
-colorscheme white
+colorscheme colors-wal
 
 " Neocomplcache
 "let g:neocomplcache_enable_at_startup = 1

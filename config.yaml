@@ -9,10 +9,10 @@ options:
   editorsPackage:
     directoryName: editors
     links:
-      - vimrc:            .vimrc
-      - vim_plugins:      .vim/plugin_list.txt
-      - vim_colorscheme:  .vim/colors/white.vim
-      - emacs.el:         .emacs
+      - vim_config:   .vimrc
+      - vim_plugins:  .vim/plugin_list.txt
+      - vim_theme:    .vim/colors/white.vim
+      - emacs_config: .emacs
 
   scriptsPackage:
     directoryName: scripts
@@ -26,26 +26,26 @@ options:
   termPackage:
     directoryName: term
     links:
-      - tmuxrc:               .tmux.conf
-      - conkyrc_tmux:         .conkyrc_tmux
-      - zshrc:                .zshrc
-      - main-highlighter.zsh: .oh-my-zsh/plugins/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh
-      - shell_aliases:        .sh_aliases
-      - shell_colors:         .sh_colors
-      - shell_functions:      .sh_functions
-      - spaceship-promptrc:   .config/spaceship-prompt/spaceship-promptrc_classic
+      - tmux_config:              .tmux.conf
+      - tmux_conky_config:        .conkyrc_tmux
+      - zsh_config:               .zshrc
+      - main-highlighter.zsh:     .oh-my-zsh/plugins/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh
+      - shell_aliases:            .sh_aliases
+      - shell_colors:             .sh_colors
+      - shell_functions:          .sh_functions
+      - spaceship-prompt_config:  .config/wal/templates/spaceship-promptrc
 
   xPackage:
     directoryName: x
     links:
-      - dunstrc:                .config/dunst/dunstrc
-      - i3_config:              .i3/config
-      - polybar_config:         .config/polybar/config
-      - rofirc:                 .config/rofi/config
-      - rofi_theme.rasi:        .config/rofi/left_panel.rasi
-      - termiterc:              .config/termite/config
-      - qutebrowser_config:     .config/qutebrowser/config.py
-      - libinput-gestures.conf: .config/libinput-gestures.conf
-      - splatmoji_config:       .config/splatmoji/splatmoji.config
-      - Xresources:             .Xresources
-      - Xdefaults:              .Xdefaults
+      - dunst_config:             .config/dunst/dunstrc
+      - i3_config:                .i3/config
+      - polybar_config:           .config/polybar/config
+      - rofi_config:              .config/rofi/config
+      - rofi_theme:               .config/wal/templates/rofi_theme.rasi
+      - termite_config:           .config/wal/templates/termite.config
+      - qutebrowser_config:       .config/qutebrowser/config.py
+      - libinput-gestures_config: .config/libinput-gestures.conf
+      - splatmoji_config:         .config/splatmoji/splatmoji.config
+      - Xresources:               .Xresources
+      - Xdefaults:                .Xdefaults

@@ -3,32 +3,32 @@
  * User: TheWalternemo
  */
 
- configuration {
+ configuration {{
     display-drun:    "Launch";
     display-run:     "Execute";
     display-window:  "Window";
     show-icons:      false;
     sidebar-mode:    true;
     font:            "Roboto 12";
-}
+}}
 
-* {
-    skin-light:                  rgba ( 234, 22, 70, 100 % );
-    skin-dark:                   rgba ( 199, 19, 64, 100 % ); 
-    background-light:            rgba ( 46, 29, 54, 100 % );
-    background-dark:             rgba ( 23, 4, 32, 100 % );
-    foreground-light:            rgba ( 223, 223, 223, 100 % );
-    foreground-dark:             rgba ( 119, 119, 119, 100 % );
+* {{
+    skin-light:                  {color3};
+    skin-dark:                   {color4};
+    background-light:            {color1};
+    background-dark:             {color0};
+    foreground-light:            #FFFFFF;
+    foreground-dark:             {foreground};
 
-    background-color:            @background-dark;
+    background-color:            {color0};
 
     line-margin:                 2;
     line-padding:                2;
     margin:                      0;
     padding:                     0;
-}
+}}
 
-window {
+window {{
     location:    north west;
     height:      97.5%;
 		//height: calc(100% - 20);
@@ -37,45 +37,45 @@ window {
     y-offset:    20px;
     children:    [mainbox];
     background:  @background-light;
-}
+}}
 
-mainbox {
+mainbox {{
     children: [ entry,listview,sidebar ];
-}
+}}
 
-entry {
+entry {{
     expand:           false;
     text-color:       @foreground-light;
     background-color: @background-light;
     vertical-align:   1;
     padding:          0px 0px 0px 1em;
     height:           20px;
-}
+}}
 
-listview {
+listview {{
     background-color: @background-dark;
     dynamic: false;
     cycle:   true;
-}
+}}
 
-button { 
+button {{ 
     padding:          5px 2px; 
     background-color: @background-light;
     text-color:       @foreground-dark;
-}
+}}
 
-button selected {
+button selected {{
     background-color: @skin-dark;
     text-color:       @foreground-light;
-}
+}}
 
-element { 
+element {{ 
     padding: 6px;
     background-color:  @background-dark;
     text-color:        @foreground-dark;
-}
+}}
 
-element selected {
+element selected {{
     background-color: @skin-dark;
     text-color:       @foreground-light;
-}
+}}
