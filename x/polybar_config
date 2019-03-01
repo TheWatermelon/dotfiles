@@ -69,7 +69,7 @@ font-3 = siji:pixelsize=16;1
 ; font-4 : i3 icons
 font-4 = unifont:fontformat=truetype:size=12:antialias=false;3
 
-background = ${colors.clear}
+background = ${colors.background-dark}
 foreground = ${colors.foreground}
 
 border-size = 0

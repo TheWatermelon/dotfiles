@@ -28,10 +28,10 @@ ZSH_THEME="spaceship"
 
 # Spaceship prompt configuration
 if [[ $TERM == "linux" ]]; then
-  source ~/.config/spaceship-prompt/spaceship-promptrc_classic
+  source ~/.cache/wal/spaceship-promptrc
 else
   #source ~/.config/spaceship-prompt/spaceship-promptrc_fancy
-  source ~/.config/spaceship-prompt/spaceship-promptrc_classic
+  source ~/.cache/wal/spaceship-promptrc
 fi
 
 # Set list of themes to pick from when loading at random
