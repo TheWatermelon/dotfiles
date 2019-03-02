@@ -3,6 +3,7 @@
 ## see https://denysdovhan.com/spaceship-prompt/docs for configuration details
 ##
 
+
 # prompt order
 ## unused : [user,host]
 SPACESHIP_PROMPT_ORDER=(
@@ -25,4 +26,4 @@ SPACESHIP_DIR_COLOR="{color6}"
 SPACESHIP_CHAR_SYMBOL="$>"
 SPACESHIP_CHAR_SUFFIX=(" ")
 SPACESHIP_CHAR_COLOR_SUCCESS="#FFFFFF"
-SPACESHIP_CHAR_COLOR_ERROR="#777"
+SPACESHIP_CHAR_COLOR_ERROR="{color4}"

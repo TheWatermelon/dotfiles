@@ -21,6 +21,7 @@ options:
       - tomato-timer: bin/tomato-timer
       - bg_changer:   bin/bg_changer
       - todo.sh:      bin/todo.sh
+      - polybarstart: bin/polybarstart
 
 
   termPackage:
@@ -38,14 +39,13 @@ options:
   xPackage:
     directoryName: x
     links:
-      - dunst_config:             .config/dunst/dunstrc
+      - dunst_config:             .config/wal/templates/dunst.config
       - i3_config:                .i3/config
-      - polybar_config:           .config/polybar/config
+      - polybar_config:           .config/wal/templates/polybar_config
       - rofi_config:              .config/rofi/config
       - rofi_theme:               .config/wal/templates/rofi_theme.rasi
       - termite_config:           .config/wal/templates/termite.config
       - qutebrowser_config:       .config/qutebrowser/config.py
       - libinput-gestures_config: .config/libinput-gestures.conf
       - splatmoji_config:         .config/splatmoji/splatmoji.config
-      - Xresources:               .Xresources
-      - Xdefaults:                .Xdefaults
+      - Xresources:               .config/wal/templates/colors.Xresources

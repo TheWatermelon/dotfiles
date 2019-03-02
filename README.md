@@ -13,6 +13,7 @@
 * `sequestrum` : dotfiles manager
 * `pywal` : theme changer
 * `feh` : image manager (background setter)
+* `qutebrowser` : web browser
 
 ## Usage
 Clone the repo

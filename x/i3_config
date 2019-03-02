@@ -17,7 +17,7 @@ set $mod1 Mod1
 # font for window titles. ISO 10646 = Unicode
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # Mac-like font
-font pango:SFNS Display 10
+font pango:SFNS Display 0
 
 # Use Mouse+$mod4 to drag floating windows to their wanted position
 floating_modifier $mod4
@@ -36,11 +36,12 @@ popup_during_fullscreen smart
 # Exec programs
 #
 set $compton "compton -f --fade-delta=3 &"
+set $dunst "dunst -config $HOME/.cache/wal/dunst.config &"
 set $i3exit "i3-nagbar -t warning -m 'You pressed the exit \
             shortcut. Do you really want to exit i3? This \
             will end your X session.' -b 'Yes, exit i3' \
             'i3-msg exit'"
-set $pywal "wal -i images/wallpapers/landscapes &"
+set $pywal "wal -i images/wallpapers/minimalist &"
 set $rofi "rofi -modi drun,run,window -show drun -theme $HOME/.cache/wal/rofi_theme.rasi"
 set $termite "termite -c $HOME/.cache/wal/termite.config"
 set $unclutter "unclutter -b --timeout 3"
@@ -82,9 +83,9 @@ set $white #FFFFFF
 #set $alert #BD2C40
 
 # class                 border     backgr.    text       indicator
-client.focused          $color2    $color1    $white     $color3
-client.focused_inactive $color5    $color4    $color7    $color3
-client.unfocused        $color8    $color0    $color7    $color3
+client.focused          $color2    $color3    $white     $color3
+client.focused_inactive $color3    $color4    $color7    $color3
+client.unfocused        $color0    $color1    $color7    $color3
 client.urgent           $color4    $color11   $white     $color3
 #client.placeholder      #000000      #0c0c0c     #ffffff #000000
 
@@ -326,6 +327,8 @@ mode "$mode_gaps_inner" {
 exec $compton
 # Start polybar
 exec_always $HOME/bin/polybarstart
+# Dunst notifications
+exec $dunst
 # Gestures for the trackpad
 exec libinput-gestures &
 # Hide the cursor after 3 seconds

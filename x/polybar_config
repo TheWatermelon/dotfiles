@@ -12,39 +12,15 @@ margin-top = 15
 margin-bottom = 15
 
 [colors]
-background-dark = ${xrdb:color0:#170420}
-background-light = ${xrdb:color1:#2E1D36}
-bg-test = ${xrdb:color6:#770B26}
-foreground = ${xrdb:color7:#DFDFDF}
-foreground-alt = ${xrdb:color8:#777}
-skin-light = ${xrdb:color3:#EA1646}
-skin-dark = ${xrdb:color4:#C71340}
+background-light = {color1}
+background-dark = {color0}
+foreground-light = #F0F0F0
+foreground-dark = {foreground}
+skin-light = {color3}
+skin-dark = {color4}
 alert = #BD2C40
 white = #FFFFFF
 clear = #00FFFFFF
-
-[bar/traybar]
-monitor = HDMI1
-width = 100%
-height = 20
-bottom = false
-
-background = #00000000
-foreground = ${colors.foreground}
-
-modules-left =
-modules-center = i3
-modules-right =
-
-tray-position = left
-tray-padding = 10
-tray-transparent = true
-
-;override-redirect = true
-wm-restack = i3
-
-; font-0 : i3 icons
-font-0 = unifont:fontformat=truetype:size=12:antialias=false;3
 
 [bar/cleanbar]
 ;monitor = eDP1
@@ -69,8 +45,8 @@ font-3 = siji:pixelsize=16;1
 ; font-4 : i3 icons
 font-4 = unifont:fontformat=truetype:size=12:antialias=false;3
 
-background = ${colors.background-dark}
-foreground = ${colors.foreground}
+background = ${{colors.background-dark}}
+foreground = ${{colors.foreground-light}}
 
 border-size = 0
 ;border-color = #F00
@@ -85,7 +61,7 @@ module-margin-right = 0
 
 tray-position = right
 tray-transparent = false
-tray-background = ${colors.skin-dark}
+tray-background = ${{colors.skin-light}}
 
 enable-ipc = true
 
@@ -95,55 +71,6 @@ modules-right = plarrow-alt tomatoscript hspace hspace hspace backlight-acpi hsp
 
 ;bottom = false
 
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:70:...%
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-;format-prefix-underline = ${colors.skin-light}
-
-label-layout = %layout%
-;label-layout-underline = ${colors.skin-light}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.skin-light}
-;label-indicator-underline = ${colors.skin-light}
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-format-prefix = "fs"
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
-
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = %index%
-label-focused-background = ${colors.background-light}
-;label-focused-underline= ${colors.skin-dark}
-label-focused-padding = 2
-
-label-occupied = %index%
-label-occupied-padding = 2
-
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
 
 [module/i3]
 type = internal/i3
@@ -219,7 +146,6 @@ ws-icon-9 = "10;〇"
 ; Default: %mode%
 ;label-mode = %mode%
 label-mode-padding = 0
-;label-mode-background = ${colors.background}
 
 ; focused = Active workspace on focused monitor
 ; Available tokens:
@@ -229,8 +155,7 @@ label-mode-padding = 0
 ;   %output%
 ; Default: %icon%  %name%
 label-focused = %icon%
-label-focused-background = ${colors.background-light}
-;label-focused-underline = ${colors.skin-dark}
+label-focused-background = ${{colors.background-light}}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -241,8 +166,8 @@ label-focused-padding = 2
 ;   %output%
 ; Default: %icon%  %name%
 label-unfocused = %icon%
-label-unfocused-background = ${colors.background-light}
-label-unfocused-foreground = ${colors.foreground-alt}
+label-unfocused-background = ${{colors.background-light}}
+label-unfocused-foreground = ${{colors.foreground-dark}}
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
@@ -253,9 +178,8 @@ label-unfocused-padding = 2
 ;   %output%
 ; Default: %icon%  %name%
 label-visible = %icon%
-label-visible-background = ${self.label-focused-background}
-;label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
+label-visible-background = ${{self.label-focused-background}}
+label-visible-padding = ${{self.label-focused-padding}}
 
 ; urgent = Workspace with urgency hint set
 ; Available tokens:
@@ -265,200 +189,132 @@ label-visible-padding = ${self.label-focused-padding}
 ;   %output%
 ; Default: %icon%  %name%
 label-urgent = %icon%
-label-urgent-foreground = ${colors.alert}
-label-urgent-background = ${colors.background-light}
+label-urgent-foreground = ${{colors.alert}}
+label-urgent-background = ${{colors.background-light}}
 label-urgent-padding = 2
-
-; Separator in between workspaces
-;label-separator = |
-;label-separator-padding = 2
-;label-separator-foreground = ${colors.foreground}
 
 [module/pspace]
 type = custom/text
 content = " "
-;content-font = 0
-content-foreground = ${colors.skin-dark}
-;content-background = ${colors.skin-dark}
+content-foreground = ${{colors.skin-light}}
 
 [module/hspace]
 type = custom/text
 content = " "
-;content-font = 0
-content-background = ${colors.background-light}
+content-background = ${{colors.background-light}}
 
 [module/hspace-alt]
 type = custom/text
 content = " "
-;content-font = 0
-content-background = ${colors.bg-test}
+content-background = ${{colors.skin-dark}}
 
 [module/prarrow]
 type = custom/text
 content = ""
-;content-font = 2
-content-foreground = ${colors.skin-dark}
-content-background = ${colors.background-light}
+content-foreground = ${{colors.skin-light}}
+content-background = ${{colors.background-light}}
 
 [module/prarrow-alt]
 type = custom/text
 content = ""
-;content-font = 2
-content-foreground = ${colors.background-light}
+content-foreground = ${{colors.background-light}}
 
 [module/plarrow]
 type = custom/text
 content = ""
-;content-font = 2
-content-foreground = ${colors.skin-dark}
-content-background = ${colors.background-light}
+content-foreground = ${{colors.skin-light}}
+content-background = ${{colors.background-light}}
 
 [module/plarrow-alt]
 type = custom/text
 content = ""
-;content-font = 2
-content-foreground = ${colors.background-light}
+content-foreground = ${{colors.background-light}}
 
 [module/rarrow-sep-1]
 type = custom/text
 content = ""
-;content-font = 2
-content-foreground = ${colors.bg-test}
-content-background = ${colors.background-light}
+content-foreground = ${{colors.skin-dark}}
+content-background = ${{colors.background-light}}
 
 [module/rarrow-sep-1-alt]
 type = custom/text
 content = ""
-;content-font = 2
-content-foreground = ${colors.skin-dark}
-content-background = ${colors.bg-test}
+content-foreground = ${{colors.skin-light}}
+content-background = ${{colors.skin-dark}}
 
 [module/rarrow-sep-2]
 type = custom/text
 content = ""
-;content-font = 2
-content-foreground = ${colors.background-light}
-content-background = ${colors.foreground-alt}
+content-foreground = ${{colors.background-light}}
+content-background = ${{colors.foreground-dark}}
 
 [module/larrow-sep-1]
 type = custom/text
 content = ""
-;content-font = 2
-content-foreground = ${colors.bg-test}
-content-background = ${colors.background-light}
+content-foreground = ${{colors.skin-dark}}
+content-background = ${{colors.background-light}}
 
 [module/larrow-sep-1-alt]
 type = custom/text
 content = ""
-;content-font = 2
-content-foreground = ${colors.skin-dark}
-content-background = ${colors.bg-test}
+content-foreground = ${{colors.skin-light}}
+content-background = ${{colors.skin-dark}}
 
 [module/larrow-sep-2]
 type = custom/text
 content = ""
-;content-font = 2
-content-foreground = ${colors.background-light}
-content-background = ${colors.bg-test}
-
-
-
-[module/xbacklight]
-type = internal/xbacklight
-
-#format = <label> <bar>
-format = <label> <bar>
-label = 
-
-bar-width = 5
-bar-indicator = |
-bar-indicator-foreground = #ff
-bar-indicator-font = 2
-bar-fill = ―
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ―
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
+content-foreground = ${{colors.background-light}}
+content-background = ${{colors.skin-dark}}
 
 [module/backlight-acpi]
 ;inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
 
-;format-prefix = 
 format-prefix = 
-format-prefix-background = ${colors.background-light}
+format-prefix-background = ${{colors.background-light}}
 label = %percentage%
-label-background = ${colors.background-light}
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = "CPU"
-format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #f90000
-label = %percentage:2%%
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = "RAM"
-format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #4bffdc
-label = %percentage_used%%
+label-background = ${{colors.background-light}}
 
 [module/wlan]
 type = internal/network
 interface = wlp2s0
 interval = 3.0
-;format-prefix = "WLAN"
 format-connected = <ramp-signal><label-connected>
-;format-connected-underline = #9f78e1
-;label-connected = " %signal%% %upspeed:6% %downspeed:6%"
 label-connected = " %signal%%"
-label-connected-foreground = ${colors.foreground-alt}
-label-connected-background = ${colors.background-light}
+label-connected-foreground = ${{colors.foreground-dark}}
+label-connected-background = ${{colors.background-light}}
 
 format-disconnected = 
-format-disconnected-foreground = ${colors.foreground-alt}
-format-disconnected-background = ${colors.background-light}
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected-foreground = ${{colors.foreground-dark}}
+format-disconnected-background = ${{colors.background-light}}
 
 ramp-signal-0 = 
 ramp-signal-0-foreground = #dc3016
-ramp-signal-0-background = ${colors.background-light}
+ramp-signal-0-background = ${{colors.background-light}}
 ramp-signal-1 = 
 ramp-signal-1-foreground = #dca016
-ramp-signal-1-background = ${colors.background-light}
+ramp-signal-1-background = ${{colors.background-light}}
 ramp-signal-2 = 
 ramp-signal-2-foreground = #dcdc16
-ramp-signal-2-background = ${colors.background-light}
+ramp-signal-2-background = ${{colors.background-light}}
 ramp-signal-3 = 
 ramp-signal-3-foreground = #a0dc16
-ramp-signal-3-background = ${colors.background-light}
+ramp-signal-3-background = ${{colors.background-light}}
 ramp-signal-4 = 
 ramp-signal-4-foreground = #30dc16
-ramp-signal-4-background = ${colors.background-light}
+ramp-signal-4-background = ${{colors.background-light}}
 
 [module/eth]
 type = internal/network
 interface = enp1s0
 interval = 3.0
 
-;format-connected-underline = #55aa55
 format-connected-prefix = "ETH"
-format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected-prefix-foreground = ${{colors.foreground-dark}}
 label-connected = %upspeed:7% %local_ip% %downspeed:7%
 
 format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
@@ -471,8 +327,7 @@ time = %H:%M
 time-alt = %H:%M
 
 format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #30db16
+format-prefix-foreground = ${{colors.foreground-dark}}
 
 label = %date% %time%
 
@@ -481,41 +336,37 @@ type = internal/volume
 
 format-volume = <label-volume><bar-volume>
 label-volume = " %percentage%"
-label-volume-foreground = ${root.foreground}
-label-volume-background = ${colors.background-light}
+label-volume-foreground = ${{root.foreground}}
+label-volume-background = ${{colors.background-light}}
 
 format-muted-prefix = 
-format-muted-foreground = ${colors.foreground-alt}
-format-muted-background = ${colors.background-light}
-;label-muted = 
+format-muted-foreground = ${{colors.foreground-dark}}
+format-muted-background = ${{colors.background-light}}
 label-muted = 
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
-bar-volume-background-0 = ${colors.background-light}
+bar-volume-background-0 = ${{colors.background-light}}
 bar-volume-foreground-1 = #55aa55
-bar-volume-background-1 = ${colors.background-light}
+bar-volume-background-1 = ${{colors.background-light}}
 bar-volume-foreground-2 = #55aa55
-bar-volume-background-2 = ${colors.background-light}
+bar-volume-background-2 = ${{colors.background-light}}
 bar-volume-foreground-3 = #55aa55
-bar-volume-background-3 = ${colors.background-light}
+bar-volume-background-3 = ${{colors.background-light}}
 bar-volume-foreground-4 = #55aa55
-bar-volume-background-4 = ${colors.background-light}
+bar-volume-background-4 = ${{colors.background-light}}
 bar-volume-foreground-5 = #f5a70a
-bar-volume-background-5 = ${colors.background-light}
+bar-volume-background-5 = ${{colors.background-light}}
 bar-volume-foreground-6 = #ff5555
-bar-volume-background-6 = ${colors.background-light}
+bar-volume-background-6 = ${{colors.background-light}}
 bar-volume-gradient = true
 bar-volume-indicator = |
-bar-volume-indicator-background = ${colors.background-light}
-;bar-volume-indicator-font = 2
+bar-volume-indicator-background = ${{colors.background-light}}
 bar-volume-fill = ―
-bar-volume-fill-background = ${colors.background-light}
-;bar-volume-fill-font = 2
+bar-volume-fill-background = ${{colors.background-light}}
 bar-volume-empty = ―
-;bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-bar-volume-empty-background = ${colors.background-light}
+bar-volume-empty-foreground = ${{colors.foreground-dark}}
+bar-volume-empty-background = ${{colors.background-light}}
 
 [module/battery]
 type = internal/battery
@@ -541,58 +392,45 @@ time-format = %H:%M
 ;   %time%
 ;   %consumption% (shows current charge rate in watts)
 label-charging = " (%time%)"
-label-charging-foreground = ${colors.foreground-alt}
-label-charging-background = ${colors.background-light}
+label-charging-foreground = ${{colors.foreground-dark}}
+label-charging-background = ${{colors.background-light}}
 ; Available tags:
 ;   <label-charging> (default)
 ;   <bar-capacity>
 ;   <ramp-capacity>
 ;   <animation-charging>
 format-charging = <animation-charging><label-charging>
-;format-charging-underline = #30dc16
 
 label-discharging = " %percentage%%"
-label-discharging-foreground = ${colors.foreground-alt}
-label-discharging-background = ${colors.background-light}
+label-discharging-foreground = ${{colors.foreground-dark}}
+label-discharging-background = ${{colors.background-light}}
 ; Available tags:
 ;   <label-discharging> (default)
 ;   <bar-capacity>
 ;   <ramp-capacity>
 format-discharging = <ramp-capacity><label-discharging>
-format-discharging-background = ${colors.background-light}
-;format-discharging-underline = #dcdc16
+format-discharging-background = ${{colors.background-light}}
 
 label-full = 
 format-full = <label-full>
 format-full-foreground = #30dc16
-format-full-background = ${colors.background-light}
-;format-full-prefix-foreground = ${colors.foreground-alt}
-;format-full-underline = ${self.format-charging-underline}
-
-;bar-capacity-width = 5
-;bar-capacity-indicator = |
-;bar-capacity-indicator-font = 2
-;bar-capacity-fill = ―
-;bar-capacity-fill-font = 2
-;bar-capacity-empty = ―
-;bar-capacity-empty-font = 2
-;bar-capacity-empty-foreground = ${colors.foreground-alt}
+format-full-background = ${{colors.background-light}}
 
 ramp-capacity-0 = 
 ramp-capacity-0-foreground = #dc3016
-ramp-capacity-0-background = ${colors.background-light}
+ramp-capacity-0-background = ${{colors.background-light}}
 ramp-capacity-1 = 
 ramp-capacity-1-foreground = #dca016
-ramp-capacity-1-background = ${colors.background-light}
+ramp-capacity-1-background = ${{colors.background-light}}
 ramp-capacity-2 = 
 ramp-capacity-2-foreground = #dcdc16
-ramp-capacity-2-background = ${colors.background-light}
+ramp-capacity-2-background = ${{colors.background-light}}
 ramp-capacity-3 = 
 ramp-capacity-3-foreground = #a0dc16
-ramp-capacity-3-background = ${colors.background-light}
+ramp-capacity-3-background = ${{colors.background-light}}
 ramp-capacity-4 = 
 ramp-capacity-4-foreground = #30dc16
-ramp-capacity-4-background = ${colors.background-light}
+ramp-capacity-4-background = ${{colors.background-light}}
 
 animation-charging-0 = 
 animation-charging-1 = 
@@ -600,27 +438,8 @@ animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-foreground = #30dc16
-animation-charging-background = ${colors.background-light}
+animation-charging-background = ${{colors.background-light}}
 animation-charging-framerate = 750
-
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = <ramp> <label>
-;format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-;format-warn-underline = ${self.format-underline}
-
-label = %temperature%
-label-warn = %temperature%
-label-warn-foreground = ${colors.skin-light}
-
-ramp-0 = T°
-ramp-1 = T°
-ramp-2 = T°
-ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
@@ -630,40 +449,40 @@ expand-right = true
 format-spacing = 0
 
 label-open = "  "
-label-open-foreground = ${colors.white}
-label-open-background = ${colors.skin-dark}
+label-open-foreground = ${{colors.white}}
+label-open-background = ${{colors.skin-light}}
 label-close = "cancel"
-label-close-foreground = ${colors.background-dark}
-label-close-background = ${colors.skin-dark}
+label-close-foreground = ${{colors.background-dark}}
+label-close-background = ${{colors.skin-light}}
 label-separator = " | "
-label-separator-foreground = ${colors.foreground-alt}
-label-separator-background = ${colors.skin-dark}
+label-separator-foreground = ${{colors.foreground-dark}}
+label-separator-background = ${{colors.skin-light}}
 
 menu-0-0 = reboot
-menu-0-0-foreground = ${colors.white}
-menu-0-0-background = ${colors.skin-dark}
+menu-0-0-foreground = ${{colors.white}}
+menu-0-0-background = ${{colors.skin-light}}
 menu-0-0-exec = menu-open-1
 menu-0-1 = power off
-menu-0-1-foreground = ${colors.white}
-menu-0-1-background = ${colors.skin-dark}
+menu-0-1-foreground = ${{colors.white}}
+menu-0-1-background = ${{colors.skin-light}}
 menu-0-1-exec = menu-open-2
 
 menu-1-0 = cancel
-menu-1-0-foreground = ${colors.white}
-menu-1-0-background = ${colors.skin-dark}
+menu-1-0-foreground = ${{colors.white}}
+menu-1-0-background = ${{colors.skin-light}}
 menu-1-0-exec = menu-open-0
 menu-1-1 = reboot
-menu-1-1-foreground = ${colors.white}
-menu-1-1-background = ${colors.skin-dark}
+menu-1-1-foreground = ${{colors.white}}
+menu-1-1-background = ${{colors.skin-light}}
 menu-1-1-exec = shutdown -r now
 
 menu-2-0 = power off
-menu-2-0-foreground = ${colors.white}
-menu-2-0-background = ${colors.skin-dark}
+menu-2-0-foreground = ${{colors.white}}
+menu-2-0-background = ${{colors.skin-light}}
 menu-2-0-exec = shutdown -h now
 menu-2-1 = cancel
-menu-2-1-foreground = ${colors.white}
-menu-2-1-background = ${colors.skin-dark}
+menu-2-1-foreground = ${{colors.white}}
+menu-2-1-background = ${{colors.skin-light}}
 menu-2-1-exec = menu-open-0
 
 [module/tomatoscript]
@@ -674,27 +493,15 @@ click-left = $HOME/bin/tomato-timer 25
 click-right = $HOME/bin/tomato-timer 5
 click-middle = $HOME/bin/tomato-timer 15
 format = <label>
-format-background = ${colors.background-light}
-
-[module/tomatohook]
-type = custom/ipc
-hook-0 = echo 
-hook-1 = $HOME/bin/tomato-timer 5 && polybar-msg hook tomatohook 4
-hook-2 = $HOME/bin/tomato-timer 15 && polybar-msg hook tomatohook 5
-hook-3 = sleep 1 && polybar-msg hook tomatohook 2
-hook-4 = sleep 1 && polybar-msg hook tomatohook 3
-initial = 1
-click-middle = polybar-msg hook tomatohook 1
-click-left = $HOME/bin/tomato-timer && polybar-msg hook tomatohook 2
-click-right = polybar-msg hook tomatohook 3
+format-background = ${{colors.background-light}}
 
 [module/rofi]
 type = custom/script
 exec = echo -e " \uF002 "
-click-left = "rofi -modi drun,run,window -show drun -theme $HOME/.config/rofi/left_panel.rasi"
+click-left = "rofi -modi drun,run,window -show drun -theme $HOME/.cache/wal/rofi_theme.rasi"
 format = <label>
-format-foreground = ${colors.white}
-format-background = ${colors.skin-dark}
+format-foreground = ${{colors.white}}
+format-background = ${{colors.skin-light}}
 
 [settings]
 screenchange-reload = true

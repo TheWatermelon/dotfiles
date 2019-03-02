@@ -1,0 +1,16 @@
+#!/bin/bash
+# Author : Bastien CHAPUSOT
+# polybar startup script
+
+# kill all polybar instances
+killall -q polybar
+
+# wait for the instances to be killed
+while pgrep -u $UID -x polybar >/dev/null; do
+	sleep 1; 
+done
+
+# start polybar
+#polybar -r example &
+#polybar -r traybar &
+polybar -c ~/.cache/wal/polybar_config -r cleanbar &

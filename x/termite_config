@@ -34,10 +34,10 @@ filter_unmatched_urls = true
 [colors]
 #cursor = #dcdccc
 #cursor_foreground = #dcdccc
-foreground = {color7}
+foreground = {foreground}
 foreground_bold = #FFFFFF
 #background = {color0.rgba}
-background = {background.rgba}
+background = {background}
 # if unset, will reverse foreground and background
 #highlight = #2f2f2f
 
