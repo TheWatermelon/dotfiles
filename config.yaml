@@ -22,6 +22,7 @@ options:
       - bg_changer:   bin/bg_changer
       - todo.sh:      bin/todo.sh
       - polybarstart: bin/polybarstart
+      - dmenu_themed: bin/dmenu_themed
 
 
   termPackage:

@@ -2,6 +2,7 @@
 
 ## Dependencies
 * `rofi` : program launcher 
+* `dmenu` : another program launcher
 * `tmux` : terminal multiplexer
 * `vim` : editor
 * `emacs` : editor
@@ -14,6 +15,7 @@
 * `pywal` : theme changer
 * `feh` : image manager (background setter)
 * `qutebrowser` : web browser
+* `splatmoji` : input emoji/emoticons/kaomoji (https://github.com/cspeterson/splatmoji.git)
 
 ## Usage
 Clone the repo

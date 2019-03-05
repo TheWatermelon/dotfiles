@@ -16,6 +16,7 @@ export ZSH="/home/walter/.oh-my-zsh"
 
 # Include colors
 [[ -f ~/.sh_colors ]] && . ~/.sh_colors
+[[ -f ~/.cache/wal/colors.sh ]] && . ~/.cache/wal/colors.sh
 
 # Include functions
 [[ -f ~/.sh_functions ]] && . ~/.sh_functions

@@ -63,7 +63,7 @@ horizontal_padding = 8
 frame_width = 3
 
 # Defines color of the frame around the notification window.
-frame_color = "{color2}"
+frame_color = "{color3}"
 
 # Define a color for the separator.
 # possible values are:

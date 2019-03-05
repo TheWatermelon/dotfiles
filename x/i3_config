@@ -36,12 +36,13 @@ popup_during_fullscreen smart
 # Exec programs
 #
 set $compton "compton -f --fade-delta=3 &"
+set $dmenu "$HOME/bin/dmenu_themed"
 set $dunst "dunst -config $HOME/.cache/wal/dunst.config &"
 set $i3exit "i3-nagbar -t warning -m 'You pressed the exit \
             shortcut. Do you really want to exit i3? This \
             will end your X session.' -b 'Yes, exit i3' \
             'i3-msg exit'"
-set $pywal "wal -i images/wallpapers/minimalist &"
+set $pywal "wal -i images/wallpapers/minimalist"
 set $rofi "rofi -modi drun,run,window -show drun -theme $HOME/.cache/wal/rofi_theme.rasi"
 set $termite "termite -c $HOME/.cache/wal/termite.config"
 set $unclutter "unclutter -b --timeout 3"
@@ -197,7 +198,7 @@ bindsym $mod4+o resize grow width 2 px or 2 ppt
 ## start rofi (program launcher)
 bindsym $mod4+p exec $rofi
 ## start dmenu (program launcher)
-bindsym $mod4+Shift+p exec dmenu_run 
+bindsym $mod4+Shift+p exec $dmenu
 ## kill focused window
 bindsym $mod4+q kill 
 #bindsym $mod4+Shift+q
@@ -325,15 +326,13 @@ mode "$mode_gaps_inner" {
 
 # Start composite manager
 exec $compton
-# Start polybar
-exec_always $HOME/bin/polybarstart
-# Dunst notifications
-exec $dunst
 # Gestures for the trackpad
 exec libinput-gestures &
 # Hide the cursor after 3 seconds
 exec $unclutter
-# Set background image scaled
-#exec /home/walter/bin/bg_changer ~/images/wallpapers/selected/ 7200 &
-#exec_always feh --bg-scale ~/images/wallpapers/selected/mountain_mars.png &
+# Launch background and colorscheme selector
 exec $pywal
+# Start polybar
+exec_always $HOME/bin/polybarstart
+# Dunst notifications
+exec $dunst

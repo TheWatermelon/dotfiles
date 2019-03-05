@@ -1,1 +1,1 @@
-rofi_command=rofi -dmenu -p 'Search:' -i -monitor -1 -theme $HOME/.config/rofi/left_panel.rasi
+rofi_command=rofi -dmenu -p 'Search:' -i -monitor -1 -theme $HOME/.cache/wal/rofi_theme.rasi
