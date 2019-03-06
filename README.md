@@ -13,9 +13,8 @@
 * `polybar` : status bar
 * `sequestrum` : dotfiles manager
 * `pywal` : theme changer
-* `feh` : image manager (background setter)
 * `qutebrowser` : web browser
-* `splatmoji` : input emoji/emoticons/kaomoji (https://github.com/cspeterson/splatmoji.git)
+* `toggl_tools` : python wrapper for Toggl API (https://github.com/TheWatermelon/toggl_tools.git)
 
 ## Usage
 Clone the repo
@@ -25,4 +24,4 @@ Clone the repo
 
 Launch sequestrum inside the repo directory
 
-`sequestrum -i all`
+`cd dotfiles && sequestrum -i all`

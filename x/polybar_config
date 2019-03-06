@@ -67,7 +67,7 @@ enable-ipc = true
 
 modules-left = rofi rarrow-sep-1-alt hspace-alt rarrow-sep-1 i3 prarrow-alt
 modules-center = date
-modules-right = plarrow-alt tomatoscript hspace hspace hspace backlight-acpi hspace volume hspace hspace wlan hspace hspace battery hspace larrow-sep-1 hspace-alt larrow-sep-1-alt powermenu
+modules-right = plarrow-alt toggl hspace hspace hspace backlight-acpi hspace volume hspace hspace wlan hspace hspace battery hspace larrow-sep-1 hspace-alt larrow-sep-1-alt powermenu
 
 ;bottom = false
 
@@ -502,6 +502,14 @@ click-left = "rofi -modi drun,run,window -show drun -theme $HOME/.cache/wal/rofi
 format = <label>
 format-foreground = ${{colors.white}}
 format-background = ${{colors.skin-light}}
+
+[module/toggl]
+type = custom/script
+exec = $HOME/bin/toggl_tools/toggl_cli.py -p
+format =  <label>
+format-foreground = ${{colors.foreground-dark}}
+format-background = ${{colors.background-light}}
+interval = 30
 
 [settings]
 screenchange-reload = true
