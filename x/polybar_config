@@ -507,8 +507,9 @@ format-background = ${{colors.skin-light}}
 type = custom/script
 exec = $HOME/bin/toggl_tools/toggl_cli.py -p
 format =  <label>
-format-foreground = ${{colors.foreground-dark}}
+format-foreground = ${{colors.foreground-light}}
 format-background = ${{colors.background-light}}
+label-foreground = ${{colors.foreground-dark}}
 interval = 30
 
 [settings]
