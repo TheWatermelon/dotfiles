@@ -67,7 +67,7 @@ enable-ipc = true
 
 modules-left = rofi rarrow-sep-1-alt hspace-alt rarrow-sep-1 i3 prarrow-alt
 modules-center = date
-modules-right = plarrow-alt toggl hspace hspace hspace backlight-acpi hspace volume hspace hspace wlan hspace hspace battery hspace larrow-sep-1 hspace-alt larrow-sep-1-alt powermenu
+modules-right = plarrow-alt togglmenu hspace toggl hspace hspace backlight-acpi hspace volume hspace hspace wlan hspace hspace battery hspace larrow-sep-1 hspace-alt larrow-sep-1-alt powermenu
 
 ;bottom = false
 
@@ -503,14 +503,75 @@ format = <label>
 format-foreground = ${{colors.white}}
 format-background = ${{colors.skin-light}}
 
+[module/togglmenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 0
+
+label-open = ""
+label-open-foreground = ${{colors.white}}
+label-open-background = ${{colors.background-light}}
+label-close = "close"
+label-close-foreground = ${{colors.background-dark}}
+label-close-background = ${{colors.background-light}}
+label-separator = " | "
+label-separator-foreground = ${{colors.foreground-dark}}
+label-separator-background = ${{colors.background-light}}
+
+menu-0-0 = "work"
+menu-0-0-foreground = ${{colors.white}}
+menu-0-0-background = ${{colors.background-light}}
+menu-0-0-exec = menu-open-1
+menu-0-1 = "fun"
+menu-0-1-foreground = ${{colors.white}}
+menu-0-1-background = ${{colors.background-light}}
+menu-0-1-exec = menu-open-2
+;menu-0-2 = "eat"
+;menu-0-2-foreground = ${{colors.white}}
+;menu-0-2-background = ${{colors.background-light}}
+;menu-0-2-exec = menu-open-2
+;menu-0-3 = "sport"
+;menu-0-3-foreground = ${{colors.white}}
+;menu-0-3-background = ${{colors.background-light}}
+;menu-0-3-exec = menu-open-4
+;menu-0-4 = "ugo"
+;menu-0-4-foreground = ${{colors.white}}
+;menu-0-4-background = ${{colors.background-light}}
+;menu-0-4-exec = menu-open-5
+
+menu-1-0 = "back"
+menu-1-0-foreground = ${{colors.white}}
+menu-1-0-background = ${{colors.background-light}}
+menu-1-0-exec = menu-open-0
+menu-1-1 = "Anki"
+menu-1-1-foreground = ${{colors.white}}
+menu-1-1-background = ${{colors.background-light}}
+menu-1-1-exec = toggl start -o work "Anki"
+menu-1-2 = "Study"
+menu-1-2-foreground = ${{colors.white}}
+menu-1-2-background = ${{colors.background-light}}
+menu-1-2-exec = toggl start -o work "Study"
+
+menu-2-0 = "back"
+menu-2-0-foreground = ${{colors.white}}
+menu-2-0-background = ${{colors.background-light}}
+menu-2-0-exec = menu-open-0
+menu-2-1 = "Misc"
+menu-2-1-foreground = ${{colors.white}}
+menu-2-1-background = ${{colors.background-light}}
+menu-2-1-exec = toggl start -o fun "Misc"
+
 [module/toggl]
 type = custom/script
 exec = $HOME/bin/toggl_tools/toggl_cli.py -p
-format =  <label>
+format = <label>
 format-foreground = ${{colors.foreground-light}}
 format-background = ${{colors.background-light}}
 label-foreground = ${{colors.foreground-dark}}
 interval = 30
+click-left = "toggl stop"
 
 [settings]
 screenchange-reload = true
