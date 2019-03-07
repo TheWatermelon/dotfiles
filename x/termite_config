@@ -32,10 +32,10 @@ filter_unmatched_urls = true
 #modify_other_keys = false
 
 [colors]
-#cursor = #dcdccc
-#cursor_foreground = #dcdccc
-foreground = {foreground}
-foreground_bold = #FFFFFF
+#cursor = {background}
+#cursor_foreground = {foreground}
+#foreground = {foreground}
+#foreground_bold = #FFFFFF
 #background = {color0.rgba}
 background = {background}
 # if unset, will reverse foreground and background

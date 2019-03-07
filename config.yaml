@@ -12,6 +12,7 @@ options:
       - vim_config:   .vimrc
       - vim_plugins:  .vim/plugin_list.txt
       - vim_theme:    .vim/colors/white.vim
+      - nvim_config:  .config/nvim.init.vim
       - emacs_config: .emacs
 
   scriptsPackage:

@@ -195,7 +195,7 @@ timeout = 7
 
 [urgency_normal]
 background = "{background}"
-foreground = "#FFFFFF"
+foreground = "{foreground}"
 timeout = 7
 
 

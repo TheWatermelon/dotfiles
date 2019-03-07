@@ -46,7 +46,7 @@ font-3 = siji:pixelsize=16;1
 font-4 = unifont:fontformat=truetype:size=12:antialias=false;3
 
 background = ${{colors.background-dark}}
-foreground = ${{colors.foreground-light}}
+foreground = ${{colors.foreground-dark}}
 
 border-size = 0
 ;border-color = #F00
@@ -155,6 +155,7 @@ label-mode-padding = 0
 ;   %output%
 ; Default: %icon%  %name%
 label-focused = %icon%
+label-focused-foreground = ${{colors.white}}
 label-focused-background = ${{colors.background-light}}
 label-focused-padding = 2
 
@@ -273,6 +274,7 @@ card = intel_backlight
 
 format-prefix = 
 format-prefix-background = ${{colors.background-light}}
+format-prefix-foreground = ${{colors.foreground-light}}
 label = %percentage%
 label-background = ${{colors.background-light}}
 
@@ -326,17 +328,18 @@ date-alt = "%d/%m/%Y "
 time = %H:%M
 time-alt = %H:%M
 
-format-prefix = 
-format-prefix-foreground = ${{colors.foreground-dark}}
+;format-prefix = 
+;format-prefix-foreground = ${{colors.foreground-dark}}
 
 label = %date% %time%
+;label-foreground = ${{ colors.foreground-dark }}
 
 [module/volume]
 type = internal/volume
 
 format-volume = <label-volume><bar-volume>
 label-volume = " %percentage%"
-label-volume-foreground = ${{root.foreground}}
+label-volume-foreground = ${{colors.foreground-light}}
 label-volume-background = ${{colors.background-light}}
 
 format-muted-prefix = 
