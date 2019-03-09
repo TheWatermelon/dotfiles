@@ -9,11 +9,11 @@ options:
   editorsPackage:
     directoryName: editors
     links:
-      - vim_config:   .vimrc
+      - vim_config.vim:   .vimrc
       - vim_plugins:  .vim/plugin_list.txt
-      - vim_theme:    .vim/colors/white.vim
-      - nvim_config:  .config/nvim.init.vim
-      - emacs_config: .emacs
+      - vim_theme.vim:    .vim/colors/white.vim
+      - nvim_config.vim:  .config/nvim/init.vim
+      - emacs_config.el: .emacs
 
   scriptsPackage:
     directoryName: scripts
