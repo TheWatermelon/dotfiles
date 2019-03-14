@@ -338,3 +338,5 @@ exec $pywal
 exec_always $HOME/bin/polybarstart
 # Dunst notifications
 exec $dunst
+# Tweak x config using xinput
+exec $HOME/bin/xinput_config

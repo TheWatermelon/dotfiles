@@ -1,3 +1,4 @@
+/* Telephone */
 @media(min-width: 0px) {
  .card {
   font-family: "Times New Roman", arial;
@@ -9,8 +10,16 @@
 
  .tags {
   color: gray;
-  text-align:left;
+  text-align:justify;
   font-size: 10px;
+ }
+
+ #count {
+  display: inline-block;
+  position: absolute;
+  right: 2em;
+  padding-top: 0px; 
+  margin-top: 0px;
  }
 
  .front {
@@ -34,8 +43,12 @@
   text-align: left;
  }
 
- ul, ol {
+ ul {
   padding-left: 1.2em;
+ }
+
+ ol {
+  padding-left: 1.4em; 
  }
 
  ul li, ol li {
@@ -51,11 +64,25 @@
   padding: 0.2em 0 0 0;
  }
 
- .img {
-  max-width: 75%;
+ img {
+  vertical-align: middle;
+ }
+
+ ul ul ul, ul ol ul, ol ul ul, ol ol ul {
+  list-style: none;
+  margin-left: 0px;
+  padding-left: 1em;
+ }
+
+ ul ul ul > li:before, ul ol ul > li:before, ol ul ul > li:before, ol ol ul > li:before {
+  display: inline-block;
+  content: "-";
+  width: 1em;
+  margin-left: -1em;
  }
 }
 
+/* Demi-écran */
 @media(min-width: 400px) {
  .card {
   font-family: "Times New Roman", arial;
@@ -67,8 +94,16 @@
 
  .tags {
   color: gray;
-  text-align:left;
+  text-align:justify;
   font-size: 14px;
+ }
+
+ #count {
+  display: inline-block;
+  position: absolute;
+  right: 1.2em;
+  padding-top: 0px; 
+  margin-top: 0px;
  }
 
  .front {
@@ -94,8 +129,12 @@
   font-size: 1.4em;
  }
 
- ul, ol {
+ ul {
   padding-left: 1em;
+ }
+
+ ol {
+  padding-left: 1.2em; 
  }
 
  ul li, ol li {
@@ -109,13 +148,23 @@
  ul ul li, ol ol li, ul ol li, ol ul li {
   font-size: 0.94em;
   padding: 0.2em 0 0 0;
- } 
+ }
 
- .img {
-  max-width: 60%;
+ ul ul ul, ul ol ul, ol ul ul, ol ol ul {
+  list-style: none;
+  margin-left: 0px;
+  padding-left: 1em;
+ }
+
+ ul ul ul > li:before, ul ol ul > li:before, ol ul ul > li:before, ol ol ul > li:before {
+  display: inline-block;
+  content: "-";
+  width: 1em;
+  margin-left: -1em;
  }
 }
 
+/* Plein écran */
 @media(min-width: 700px) {
  .card {
   font-family: "Times New Roman", arial;
@@ -127,8 +176,16 @@
 
  .tags {
   color: gray;
-  text-align:left;
+  text-align:justify;
   font-size: 0.7em;
+ }
+
+ #count {
+  display: inline-block;
+  position: absolute;
+  right: 2.2em;
+  padding-top: 0px; 
+  margin-top: 0px;
  }
 
  .front {
@@ -154,8 +211,12 @@
   font-size: 1em;
  }
 
- ul, ol {
+ ul {
   padding-left: 1em;
+ }
+
+ ol {
+  padding-left: 1.2em; 
  }
 
  ul li, ol li {
@@ -167,11 +228,20 @@
  }
 
  ul ul li, ol ol li, ul ol li, ol ul li {
-  font-size: 0.94em;
+  font-size: 0.90em;
   padding: 0.2em 0 0 0;
  } 
 
- img {
-  max-width: 45%;
+ ul ul ul, ul ol ul, ol ul ul, ol ol ul {
+  list-style: none;
+  margin-left: 0px;
+  padding-left: 1em;
+ }
+
+ ul ul ul > li:before, ul ol ul > li:before, ol ul ul > li:before, ol ol ul > li:before {
+  display: inline-block;
+  content: "-";
+  width: 1em;
+  margin-left: -1em;
  }
 }

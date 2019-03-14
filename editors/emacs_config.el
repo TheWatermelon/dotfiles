@@ -163,26 +163,26 @@
 
 ;; Alternatively, you can paint your mode-line in White but then
 ;; you'll have to manually paint it in black again
-(custom-set-faces
- '(mode-line-highlight ((t nil)))
+;;(custom-set-faces
+;; '(mode-line-highlight ((t nil)))
 ;;  '(mode-line ((t (:foreground "white" :background "white"))))
- ;;  '(mode-line-inactive ((t (:background "white" :foreground "white"))))
-)
+;;  '(mode-line-inactive ((t (:background "white" :foreground "white"))))
+;;)
 
 ;; A small minor mode to use a big fringe
-(defvar bzg-big-fringe-mode nil)
-(define-minor-mode bzg-big-fringe-mode
-  "Minor mode to use big fringe in the current buffer."
-  :init-value nil
-  :global t
-  :variable bzg-big-fringe-mode
-  :group 'editing-basics
-  (if (not bzg-big-fringe-mode)
-      (set-fringe-style nil)
-    (set-fringe-mode
-     (/ (- (frame-pixel-width)
-           (* 100 (frame-char-width)))
-        2))))
+;;(defvar bzg-big-fringe-mode nil)
+;;(define-minor-mode bzg-big-fringe-mode
+;;  "Minor mode to use big fringe in the current buffer."
+;;  :init-value nil
+;;  :global t
+;;  :variable bzg-big-fringe-mode
+;;  :group 'editing-basics
+;;  (if (not bzg-big-fringe-mode)
+;;      (set-fringe-style nil)
+;;    (set-fringe-mode
+;;     (/ (- (frame-pixel-width)
+;;           (* 100 (frame-char-width)))
+;;        2))))
 
 ;; Now activate this global minor mode
 ;;(bzg-big-fringe-mode 1)
@@ -202,5 +202,5 @@
 ;; (setq default-cursor-type 'hbar)
 
 ;; Get rid of the indicators in the fringe
-(mapcar (lambda(fb) (set-fringe-bitmap-face fb 'org-hide))
-        fringe-bitmaps)
+;;(mapcar (lambda(fb) (set-fringe-bitmap-face fb 'org-hide))
+;;        fringe-bitmaps)

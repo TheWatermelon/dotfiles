@@ -1,0 +1,5 @@
+webcam_id=$(xinput list | grep 'WebCam' | awk -F= '{print $2}' | awk '{print $1}')
+mouse_id=$(xinput list | grep 'Mouse' | awk -F= '{print $2}' | awk '{print $1}')
+
+xinput set-prop $mouse_id "Device Accel Constant Deceleration" 1.5
+xinput set-prop $webcam_id "Device Enabled" 0

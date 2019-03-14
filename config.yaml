@@ -18,12 +18,13 @@ options:
   scriptsPackage:
     directoryName: scripts
     links:
-      - batstatus:    bin/batstatus
-      - tomato-timer: bin/tomato-timer
-      - bg_changer:   bin/bg_changer
-      - todo.sh:      bin/todo.sh
-      - polybarstart: bin/polybarstart
-      - dmenu_themed: bin/dmenu_themed
+      - batstatus:     bin/batstatus
+      - tomato-timer:  bin/tomato-timer
+      - bg_changer:    bin/bg_changer
+      - todo.sh:       bin/todo.sh
+      - polybarstart:  bin/polybarstart
+      - dmenu_themed:  bin/dmenu_themed
+      - xinput_config: bin/xinput_config
 
 
   termPackage:
