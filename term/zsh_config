@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-PATH=.:~/bin:~/bin/linux_detect_tablet_mode/:/sbin:~/.local/bin:~/.gem/ruby/2.5.0/bin:$PATH
+PATH=.:~/bin:~/bin/linux_detect_tablet_mode/:/sbin:~/.local/bin:/home/walter/.gem/ruby/2.6.0/bin:$PATH
 
 # Setting default editor
 export EDITOR='vim'

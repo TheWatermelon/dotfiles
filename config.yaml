@@ -42,6 +42,9 @@ options:
   xPackage:
     directoryName: x
     links:
+      - blugon_config:            .config/blugon/config
+      - blugon_current:           .config/blugon/current
+      - blugon_gamma:             .config/blugon/gamma
       - dunst_config:             .config/wal/templates/dunst.config
       - i3_config:                .i3/config
       - polybar_config:           .config/wal/templates/polybar_config
