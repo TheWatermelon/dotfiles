@@ -18,13 +18,14 @@ options:
   scriptsPackage:
     directoryName: scripts
     links:
-      - batstatus:     bin/batstatus
-      - tomato-timer:  bin/tomato-timer
-      - bg_changer:    bin/bg_changer
-      - todo.sh:       bin/todo.sh
-      - polybarstart:  bin/polybarstart
-      - dmenu_themed:  bin/dmenu_themed
-      - xinput_config: bin/xinput_config
+      - batstatus:            bin/batstatus
+      - tomato-timer:         bin/tomato-timer
+      - bg_changer:           bin/bg_changer
+      - todo.sh:              bin/todo.sh
+      - polybarstart:         bin/polybarstart
+      - dmenu_themed:         bin/dmenu_themed
+      - xinput_config:        bin/xinput_config
+      - polybar_toggl_module: bin/polybar_toggl_module
 
 
   termPackage:
@@ -43,7 +44,6 @@ options:
     directoryName: x
     links:
       - blugon_config:            .config/blugon/config
-      - blugon_current:           .config/blugon/current
       - blugon_gamma:             .config/blugon/gamma
       - dunst_config:             .config/wal/templates/dunst.config
       - i3_config:                .i3/config

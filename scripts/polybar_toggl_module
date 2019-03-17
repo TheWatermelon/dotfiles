@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cmd=$(~/bin/toggl_tools/toggl_cli.py -p)
+
+echo $cmd | grep "[0-9][0-9]:[0-9][0-9]" >/dev/null
+
+if [[ $? == 0 ]]; then
+	echo "$cmd"
+else
+	echo ""
+fi

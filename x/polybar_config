@@ -36,7 +36,7 @@ wm-restack = i3
 
 ; font-0 : text (clock and info)
 font-0 = "SFNS Display":pixelsize=12;3
-; font-1 : beautiful icons (rofi, tomatoclock, brightness, wifi, battery, powermenu)
+; font-1 : beautiful icons (rofi, tomatoscript, brightness, wifi, battery, powermenu)
 font-1 = FontAwesome:pixelsize=12;3
 ; font-2 : bar look (arrows and spaces)
 font-2 = PowerlineSymbols:pixelsize=14;3
@@ -45,10 +45,10 @@ font-3 = siji:pixelsize=16;1
 ; font-4 : i3 icons
 font-4 = unifont:fontformat=truetype:size=12:antialias=false;3
 
-background = ${{colors.background-dark}}
+background = ${{colors.clear}}
 foreground = ${{colors.foreground-dark}}
 
-border-size = 0
+;border-size = 0
 ;border-color = #F00
 
 ;line-size = 3
@@ -65,9 +65,9 @@ tray-background = ${{colors.skin-light}}
 
 enable-ipc = true
 
-modules-left = rofi rarrow-sep-1-alt hspace-alt rarrow-sep-1 i3 prarrow-alt
-modules-center = date
-modules-right = plarrow-alt hspace toggl hspace hspace backlight-acpi hspace volume hspace hspace wlan hspace hspace battery hspace larrow-sep-1 hspace-alt larrow-sep-1-alt powermenu
+modules-left = rofi rarrow-sep-1-alt hspace-alt tomatoscript hspace-skin-dark toggl rarrow-sep-1 i3 prarrow-alt
+modules-center = 
+modules-right = plarrow-alt hspace backlight-acpi hspace volume hspace hspace wlan hspace hspace battery hspace larrow-sep-1 date hspace-alt larrow-sep-1-alt powermenu
 
 ;bottom = false
 
@@ -204,6 +204,11 @@ type = custom/text
 content = " "
 content-background = ${{colors.background-light}}
 
+[module/hspace-skin-dark]
+type = custom/text
+content = " "
+content-background = ${{colors.skin-dark}}
+
 [module/hspace-alt]
 type = custom/text
 content = " "
@@ -333,6 +338,7 @@ time-alt = %H:%M
 
 label = %date% %time%
 ;label-foreground = ${{ colors.foreground-dark }}
+label-background = ${{colors.skin-dark}}
 
 [module/volume]
 type = internal/volume
@@ -496,7 +502,8 @@ click-left = $HOME/bin/tomato-timer 25
 click-right = $HOME/bin/tomato-timer 5
 click-middle = $HOME/bin/tomato-timer 15
 format = <label>
-format-background = ${{colors.background-light}}
+format-foreground = ${{colors.foreground-light}}
+format-background = ${{colors.skin-dark}}
 
 [module/rofi]
 type = custom/script
@@ -508,10 +515,10 @@ format-background = ${{colors.skin-light}}
 
 [module/toggl]
 type = custom/script
-exec = $HOME/bin/toggl_tools/toggl_cli.py -p
-format = " <label>"
+exec = $HOME/bin/polybar_toggl_module
+format = "<label>"
 format-foreground = ${{colors.foreground-light}}
-format-background = ${{colors.background-light}}
+format-background = ${{colors.skin-dark}}
 label-foreground = ${{colors.foreground-dark}}
 interval = 30
 click-left = "toggl stop"

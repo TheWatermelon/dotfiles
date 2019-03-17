@@ -17,14 +17,14 @@ new_tomato()
 					# Pomodoro in progress
 					sleep 1 &
 					remaining=$(( sec - i ))
-					printf "%02d:%02d" $(( remaining/60 )) $(( remaining%60 ))
+					printf "[%02d:%02d]" $(( remaining/60 )) $(( remaining%60 ))
 					echo 
 					wait
 				else
 					# Pomodoro in pause
 					while [[ $active -eq 0 ]]; do
 						read active sec < $pomodoro_file
-						printf "(%02d:%02d)" $(( remaining/60 )) $(( remaining%60 ))
+						printf "([%02d:%02d])" $(( remaining/60 )) $(( remaining%60 ))
 						echo 
 						sleep 1
 					done
