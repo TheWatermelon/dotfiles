@@ -14,7 +14,8 @@
 * `sequestrum` : dotfiles manager
 * `pywal` : theme changer
 * `qutebrowser` : web browser
-* `toggl_tools` : python wrapper for Toggl API (https://github.com/TheWatermelon/toggl_tools.git)
+* [toggl_tools](https://github.com/TheWatermelon/toggl_tools.git) : python wrapper for Toggl API 
+* [blugon](https://github.com/jumper149/blugon) : blue light filter for X 
 
 ## Usage
 Clone the repo
