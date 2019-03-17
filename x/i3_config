@@ -328,6 +328,8 @@ mode "$mode_gaps_inner" {
 
 # Start composite manager
 exec $compton
+# Blue light filter
+exec blugon &
 # Gestures for the trackpad
 exec libinput-gestures &
 # Hide the cursor after 3 seconds
