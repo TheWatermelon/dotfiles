@@ -14,7 +14,7 @@ margin-bottom = 15
 [colors]
 background-light = {color1}
 background-dark = {color0}
-foreground-light = #F0F0F0
+foreground-light = {color8}
 foreground-dark = {foreground}
 skin-light = {color3}
 skin-dark = {color4}
@@ -337,7 +337,7 @@ time-alt = %H:%M
 ;format-prefix-foreground = ${{colors.foreground-dark}}
 
 label = %date% %time%
-;label-foreground = ${{ colors.foreground-dark }}
+label-foreground = ${{colors.foreground-light}}
 label-background = ${{colors.skin-dark}}
 
 [module/volume]

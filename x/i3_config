@@ -74,6 +74,7 @@ set_from_resource $color13 i3wm.color13 #f0f0f0
 set_from_resource $color14 i3wm.color14 #f0f0f0
 set_from_resource $color15 i3wm.color15 #f0f0f0
 set $white #FFFFFF
+set $clear #FFFFFF00
 
 # old theme
 #set $skin-light #EA1646
@@ -85,12 +86,13 @@ set $white #FFFFFF
 #set $background-dark #170420
 #set $alert #BD2C40
 
-# class                 border     backgr.    text       indicator
-client.focused          $color2    $color3    $white     $color3
-client.focused_inactive $color3    $color4    $color7    $color3
-client.unfocused        $color1    $color1    $color7    $color3
+# class                 border     backgr.    text       indicator  child_border
+client.focused          $color4    $color4    $white     $color3
+client.focused_inactive $color3    $color3    $color7    $color3
+client.unfocused        $clear     $color1    $color7    $color3
 client.urgent           $color4    $color11   $white     $color3
 #client.placeholder      #000000      #0c0c0c     #ffffff #000000
+client.background $clear
 
 #
 # Workspaces

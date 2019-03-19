@@ -13,14 +13,14 @@ new_tomato()
 			read active sec < $pomodoro_file
 			remaining=0
 			for i in `seq $sec`; do
-				if [[ $active -ne 0 ]]; then
+				if [[ $active -eq 1 ]]; then
 					# Pomodoro in progress
 					sleep 1 &
 					remaining=$(( sec - i ))
 					printf "[%02d:%02d]" $(( remaining/60 )) $(( remaining%60 ))
 					echo 
 					wait
-				else
+				elif [[ $active -eq 0 ]]; then
 					# Pomodoro in pause
 					while [[ $active -eq 0 ]]; do
 						read active sec < $pomodoro_file
@@ -28,6 +28,9 @@ new_tomato()
 						echo 
 						sleep 1
 					done
+				else
+					# Neither active nor in pause => quit
+					break
 				fi
 				# Updating active status and pomodoro duration
 				read active sec < $pomodoro_file
