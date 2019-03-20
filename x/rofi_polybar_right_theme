@@ -1,0 +1,81 @@
+/**
+ * ROFI Color theme
+ * User: TheWalternemo
+ */
+
+ configuration {{
+    show-icons:      false;
+    sidebar-mode:    false;
+    font:            "Roboto 12";
+    lines:           6;
+    fixed-num-lines: true;
+}}
+
+* {{
+    skin-light:                  {color3};
+    skin-dark:                   {color4};
+    background-light:            {color1};
+    background-dark:             {color0};
+    foreground-light:            #FFFFFF;
+    foreground-dark:             {foreground};
+
+    background-color:            {color0};
+    border-color:		 {color4};
+
+    line-margin:                 2;
+    line-padding:                2;
+    margin:                      0;
+    padding:                     0;
+}}
+
+window {{
+    location:    north east;
+    //height:      300px;
+    //width:       100%;
+    orientation: horizontal;
+    y-offset:    20px;
+    children:    [mainbox];
+    background:  @background-light;
+    border:      2px solid;
+}}
+
+mainbox {{
+    children: [ entry,listview ];
+}}
+
+entry {{
+    expand:           false;
+    text-color:       @foreground-light;
+    background-color: @background-light;
+    vertical-align:   1;
+    padding:          0px 0px 0px 1em;
+    height:           20px;
+}}
+
+listview {{
+    background-color: @background-dark;
+    dynamic: false;
+    cycle:   true;
+}}
+
+button {{ 
+    padding:          5px 2px; 
+    background-color: @background-light;
+    text-color:       @foreground-dark;
+}}
+
+button selected {{
+    background-color: @skin-dark;
+    text-color:       @foreground-light;
+}}
+
+element {{ 
+    padding: 6px;
+    background-color:  @background-dark;
+    text-color:        @foreground-dark;
+}}
+
+element selected {{
+    background-color: @skin-dark;
+    text-color:       @foreground-light;
+}}

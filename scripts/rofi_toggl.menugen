@@ -1,0 +1,36 @@
+#!/home/walter/bin/rofi_scripts/menugen/menugen
+
+#begin main
+name="Toggl"
+prompt="Toggl menu "
+numbered=false
+add_exec 'Stop current toggl entry' "toggl stop"
+add_link 'Start an entry for @work' 'work'
+add_link 'Start an entry for @fun' 'fun'
+add_link 'Start an entry for @eat' 'eat'
+#end main
+
+#begin work
+name="@work"
+prompt="Select an entry "
+numbered=false
+add_exec 'Anki' "toggl start -o work 'Anki'"
+add_exec 'Study' "toggl start -o work 'Study'"
+#end work
+
+#begin fun
+name="@fun"
+prompt="Select an entry "
+numbered=false
+add_exec 'Misc' "toggl start -o fun 'Misc'"
+#end fun
+
+#begin eat
+name="@eat"
+prompt="Select an entry "
+numbered=false
+add_exec 'Breakfast' "toggl start -o eat 'Breakfast'"
+add_exec 'Meal' "toggl start -o eat 'Meal'"
+add_exec 'Lunch' "toggl start -o eat 'Lunch'"
+add_exec 'Diner' "toggl start -o eat 'Diner'"
+#end eat

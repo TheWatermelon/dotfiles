@@ -1,8 +1,9 @@
 # Dotfiles
 
 ## Dependencies
+* `dmenu` : program launcher
 * `rofi` : program launcher 
-* `dmenu` : another program launcher
+* [menugen](https://github.com/TheWatermelon/menugen.git) : rofi menu generator
 * `tmux` : terminal multiplexer
 * `vim` : editor
 * `emacs` : editor

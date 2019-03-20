@@ -43,7 +43,7 @@ set $i3exit "i3-nagbar -t warning -m 'You pressed the exit \
             will end your X session.' -b 'Yes, exit i3' \
             'i3-msg exit'"
 set $pywal "wal -i images/wallpapers/minimalist"
-set $rofi "rofi -modi drun,run,window -show drun -theme $HOME/.cache/wal/rofi_theme.rasi"
+set $rofi "rofi -modi drun,run,window -show drun -theme $HOME/.cache/wal/rofi_sidebar_theme.rasi"
 set $termite "termite -c $HOME/.cache/wal/termite.config"
 set $unclutter "unclutter -b --timeout 3"
 set $volup "pactl set-sink-volume 0 +5%"

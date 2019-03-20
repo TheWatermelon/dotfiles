@@ -3,7 +3,7 @@
 ! "Window width" 
 !rofi.width:                          20
 ! "Number of lines" 
-rofi.lines:                          23
+!rofi.lines:                          23
 ! "Number of columns" 
 ! rofi.columns:                        1
 ! "Font to use"

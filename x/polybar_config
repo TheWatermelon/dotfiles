@@ -522,20 +522,20 @@ format-background = ${{colors.skin-dark}}
 [module/rofi]
 type = custom/script
 exec = echo -e " \uF002 "
-click-left = "rofi -modi drun,run,window -show drun -theme $HOME/.cache/wal/rofi_theme.rasi"
+click-left = "rofi -modi drun,run,window -show drun -theme $HOME/.cache/wal/rofi_sidebar_theme.rasi"
 format = <label>
 format-foreground = ${{colors.white}}
 format-background = ${{colors.skin-light}}
 
 [module/toggl]
 type = custom/script
-exec = $HOME/bin/polybar_scripts/polybar_toggl
+exec = "$HOME/bin/toggl_tools/toggl_cli.py -p"
 format = "<label>"
 format-foreground = ${{colors.foreground-light}}
 format-background = ${{colors.skin-dark}}
 label-foreground = ${{colors.foreground-dark}}
 interval = 30
-click-left = "toggl stop"
+click-left = "$HOME/bin/rofi_scripts/menugen/menugen $HOME/bin/rofi_scripts/toggl.menugen $HOME/.cache/wal/rofi_polybar_theme.rasi"
 
 [settings]
 screenchange-reload = true

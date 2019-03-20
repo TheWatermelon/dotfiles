@@ -26,6 +26,7 @@ options:
       - dmenu_themed:         bin/dmenu_themed
       - xinput_config:        bin/xinput_config
       - polybar_toggl:        bin/polybar_scripts/polybar_toggl
+      - rofi_toggl.menugen:   bin/rofi_scripts/toggl.menugen
 
 
   termPackage:
@@ -49,7 +50,9 @@ options:
       - i3_config:                .i3/config
       - polybar_config:           .config/wal/templates/polybar_config
       - rofi_config:              .config/rofi/config
-      - rofi_theme:               .config/wal/templates/rofi_theme.rasi
+      - rofi_sidebar_theme:       .config/wal/templates/rofi_sidebar_theme.rasi
+      - rofi_polybar_left_theme:  .config/wal/templates/rofi_polybar_left_theme.rasi
+      - rofi_polybar_right_theme: .config/wal/templates/rofi_polybar_right_theme.rasi
       - termite_config:           .config/wal/templates/termite.config
       - qutebrowser_config:       .config/qutebrowser/config.py
       - libinput-gestures_config: .config/libinput-gestures.conf
