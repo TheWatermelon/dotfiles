@@ -301,7 +301,8 @@ interface = wlp2s0
 interval = 3.0
 ;;%{{A<button>:<command>:}}text to make clickable%{{A}}
 ;;<button> can be 1 to 5 for left/right/middle click or scroll up/down respectively
-format-connected = %{{A1:echo "wlan test">~/wlan_test:}}<ramp-signal><label-connected>%{{A}}
+;format-connected = %{{A1:echo "wlan test">~/wlan_test:}}<ramp-signal><label-connected>%{{A}}
+format-connected = <ramp-signal><label-connected>
 label-connected = " %signal%%"
 label-connected-foreground = ${{colors.foreground-dark}}
 label-connected-background = ${{colors.background-light}}
