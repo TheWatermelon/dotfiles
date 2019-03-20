@@ -16,8 +16,8 @@ background-light = {color1}
 background-dark = {color0}
 foreground-light = {color8}
 foreground-dark = {foreground}
-skin-light = {color3}
-skin-dark = {color4}
+skin-light = {color4}
+skin-dark = {color3}
 alert = #BD2C40
 white = #FFFFFF
 clear = #00FFFFFF
@@ -59,15 +59,15 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-tray-position = right
-tray-transparent = false
-tray-background = ${{colors.skin-light}}
+;tray-position = right
+;tray-transparent = false
+;tray-background = ${{colors.skin-light}}
 
 enable-ipc = true
 
 modules-left = rofi rarrow-sep-1-alt hspace-alt tomatoscript hspace-skin-dark toggl rarrow-sep-1 i3 prarrow-alt
-modules-center = 
-modules-right = plarrow-alt hspace backlight-acpi hspace volume hspace hspace wlan hspace hspace battery hspace larrow-sep-1 date hspace-alt larrow-sep-1-alt powermenu
+modules-center = plarrow-alt larrow-sep-1 date rarrow-sep-1 prarrow-alt
+modules-right = plarrow-alt hspace backlight-acpi hspace volume hspace hspace wlan hspace hspace battery hspace larrow-sep-1 hspace-alt larrow-sep-1-alt powermenu
 
 ;bottom = false
 
@@ -236,6 +236,12 @@ type = custom/text
 content = ""
 content-foreground = ${{colors.background-light}}
 
+[module/rarrow-sep-0]
+type = custom/text
+content = ""
+content-foreground = ${{colors.skin-dark}}
+content-background = ${{colors.background-dark}}
+
 [module/rarrow-sep-1]
 type = custom/text
 content = ""
@@ -253,6 +259,12 @@ type = custom/text
 content = ""
 content-foreground = ${{colors.background-light}}
 content-background = ${{colors.foreground-dark}}
+
+[module/larrow-sep-0]
+type = custom/text
+content = ""
+content-foreground = ${{colors.skin-dark}}
+content-background = ${{colors.background-dark}}
 
 [module/larrow-sep-1]
 type = custom/text
@@ -287,7 +299,9 @@ label-background = ${{colors.background-light}}
 type = internal/network
 interface = wlp2s0
 interval = 3.0
-format-connected = <ramp-signal><label-connected>
+;;%{{A<button>:<command>:}}text to make clickable%{{A}}
+;;<button> can be 1 to 5 for left/right/middle click or scroll up/down respectively
+format-connected = %{{A1:echo "wlan test">~/wlan_test:}}<ramp-signal><label-connected>%{{A}}
 label-connected = " %signal%%"
 label-connected-foreground = ${{colors.foreground-dark}}
 label-connected-background = ${{colors.background-light}}
@@ -337,7 +351,7 @@ time-alt = %H:%M
 ;format-prefix-foreground = ${{colors.foreground-dark}}
 
 label = %date% %time%
-label-foreground = ${{colors.foreground-light}}
+label-foreground = ${{colors.white}}
 label-background = ${{colors.skin-dark}}
 
 [module/volume]
@@ -496,11 +510,11 @@ menu-2-1-exec = menu-open-0
 
 [module/tomatoscript]
 type = custom/script
-exec = $HOME/bin/tomato-timer
+exec = $HOME/bin/polybar_scripts/tomato-timer
 tail = true
-click-left = $HOME/bin/tomato-timer 25
-click-right = $HOME/bin/tomato-timer 5
-click-middle = $HOME/bin/tomato-timer 15
+click-left = $HOME/bin/polybar_scripts/tomato-timer 25
+click-right = $HOME/bin/polybar_scripts/tomato-timer 5
+click-middle = $HOME/bin/polybar_scripts/tomato-timer 15
 format = <label>
 format-foreground = ${{colors.foreground-light}}
 format-background = ${{colors.skin-dark}}
@@ -515,7 +529,7 @@ format-background = ${{colors.skin-light}}
 
 [module/toggl]
 type = custom/script
-exec = $HOME/bin/polybar_toggl_module
+exec = $HOME/bin/polybar_scripts/polybar_toggl
 format = "<label>"
 format-foreground = ${{colors.foreground-light}}
 format-background = ${{colors.skin-dark}}

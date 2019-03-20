@@ -10,22 +10,22 @@ options:
     directoryName: editors
     links:
       - vim_config.vim:   .vimrc
-      - vim_plugins:  .vim/plugin_list.txt
+      - vim_plugins:      .vim/plugin_list.txt
       - vim_theme.vim:    .vim/colors/white.vim
       - nvim_config.vim:  .config/nvim/init.vim
-      - emacs_config.el: .emacs
+      - emacs_config.el:  .emacs
 
   scriptsPackage:
     directoryName: scripts
     links:
       - batstatus:            bin/batstatus
-      - tomato-timer:         bin/tomato-timer
+      - tomato-timer:         bin/polybar_scripts/tomato-timer
       - bg_changer:           bin/bg_changer
-      - todo.sh:              bin/todo.sh
+      - todo.sh:              bin/rofi_scripts/todo.sh
       - polybarstart:         bin/polybarstart
       - dmenu_themed:         bin/dmenu_themed
       - xinput_config:        bin/xinput_config
-      - polybar_toggl_module: bin/polybar_toggl_module
+      - polybar_toggl:        bin/polybar_scripts/polybar_toggl
 
 
   termPackage:
