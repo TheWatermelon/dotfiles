@@ -45,6 +45,7 @@ set $i3exit "i3-nagbar -t warning -m 'You pressed the exit \
 set $pywal "wal -i images/wallpapers/minimalist"
 set $rofi "rofi -modi drun,run,window -show drun -theme $HOME/.cache/wal/rofi_sidebar_theme.rasi"
 set $termite "termite -c $HOME/.cache/wal/termite.config"
+set $toggl "$HOME/bin/rofi_scripts/menugen/menugen $HOME/bin/rofi_scripts/toggl.menugen $HOME/.cache/wal/rofi_polybar_left_theme.rasi"
 set $unclutter "unclutter -b --timeout 3"
 set $volup "pactl set-sink-volume 0 +5%"
 set $voldown "pactl set-sink-volume 0 -5%"
@@ -189,7 +190,7 @@ bindsym $mod4+Shift+e exec --no-startup-id $i3exit
 #bindsym $mod4+r mode "resize" 
 ## restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod4+Shift+R restart 
-#bindsym $mod4+t
+bindsym $mod4+t exec $toggl
 #bindsym $mod4+Shift+t
 bindsym $mod4+y resize shrink width 2 px or 2 ppt
 #bindsym $mod4+Shift+y
@@ -209,7 +210,7 @@ bindsym $mod4+q kill
 #bindsym $mod4+s
 #bindsym $mod4+Shift+s
 ## focus the child
-bindsym $mod4+d focus child 
+#bindsym $mod4+d focus child 
 #bindsym $mod4+Shift+d
 ## set focused window on fullscreen
 bindsym $mod4+f fullscreen 
@@ -243,7 +244,7 @@ bindsym $mod4+x exec $termite
 ## lock the screen
 #bindsym $mod4+Shift+X exec $HOME/bin/i3lock_random_color.sh 
 ## focus parent container
-bindsym $mod4+c focus parent 
+#bindsym $mod4+c focus parent 
 ## split in horizontal orientation
 bindsym $mod4+v split h
 #bindsym $mod4+Shift+v

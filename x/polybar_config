@@ -289,10 +289,10 @@ content-background = ${{colors.skin-dark}}
 type = internal/backlight
 card = intel_backlight
 
-format-prefix = 
+format-prefix = %{{A4:xbacklight -inc 1:}}%{{A5:xbacklight -dec 1:}}%{{A}}%{{A}}
 format-prefix-background = ${{colors.background-light}}
 format-prefix-foreground = ${{colors.foreground-light}}
-label = %percentage%
+label = %{{A4:xbacklight -inc 1:}}%{{A5:xbacklight -dec 1:}}%percentage%%{{A}}%{{A}}
 label-background = ${{colors.background-light}}
 
 [module/wlan]
@@ -536,7 +536,7 @@ format-foreground = ${{colors.foreground-light}}
 format-background = ${{colors.skin-dark}}
 label-foreground = ${{colors.foreground-dark}}
 interval = 30
-click-left = "$HOME/bin/rofi_scripts/menugen/menugen $HOME/bin/rofi_scripts/toggl.menugen $HOME/.cache/wal/rofi_polybar_theme.rasi"
+click-left = "$HOME/bin/rofi_scripts/menugen/menugen $HOME/bin/rofi_scripts/toggl.menugen $HOME/.cache/wal/rofi_polybar_left_theme.rasi"
 
 [settings]
 screenchange-reload = true
