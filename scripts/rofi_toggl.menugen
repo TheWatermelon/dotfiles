@@ -8,6 +8,8 @@ add_exec 'Stop current toggl entry' "toggl stop"
 add_link 'Start an entry for @work' 'work'
 add_link 'Start an entry for @fun' 'fun'
 add_link 'Start an entry for @eat' 'eat'
+add_link 'Start an entry for @ugo' 'ugo'
+add_link 'Start an entry for @sport' 'sport'
 #end main
 
 #begin work
@@ -34,3 +36,18 @@ add_exec 'Meal' "toggl start -o eat 'Meal'"
 add_exec 'Lunch' "toggl start -o eat 'Lunch'"
 add_exec 'Diner' "toggl start -o eat 'Diner'"
 #end eat
+
+#begin ugo
+name="@ugo"
+prompt="Select an entry "
+numbered=false
+add_exec 'Ugo' "toggl start -o ugo 'Ugo'"
+#end ugo
+
+#begin sport
+name="@sport"
+prompt="Select an entry "
+numbered=false
+add_exec 'Cycling' "toggl start -o sport 'Cycling'"
+add_exec 'Walking' "toggl start -o sport 'Walking'"
+#end sport

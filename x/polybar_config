@@ -13,7 +13,7 @@ margin-bottom = 15
 
 [colors]
 background-light = {color1}
-background-dark = {color0}
+background-dark = #88{color0.strip}
 foreground-light = {color8}
 foreground-dark = {foreground}
 skin-light = {color4}
@@ -45,7 +45,7 @@ font-3 = siji:pixelsize=16;1
 ; font-4 : i3 icons
 font-4 = unifont:fontformat=truetype:size=12:antialias=false;3
 
-background = ${{colors.clear}}
+background = ${{colors.background-dark}}
 foreground = ${{colors.foreground-dark}}
 
 ;border-size = 0

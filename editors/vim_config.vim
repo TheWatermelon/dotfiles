@@ -62,6 +62,15 @@ set t_Co=256
 "set termguicolors
 colorscheme colors-wal
 
+" Netrw (directory browser)
+let g:netrw_home = '$HOME/.netrw'
+let g:netrw_dirhistmax = 0		" No recently-visited directory history
+"let g:netrw_liststyle = 3		" Tree view
+let g:netrw_browse_split = 4	" Open file in a new tab
+let g:netrw_winsize = 25		" Netrw takes 20% of window size
+let g:netrw_altv = 1			" Open new window on right side
+let g:netrw_mousemaps = 0		" Disable mouse
+
 " Neocomplcache
 "let g:neocomplcache_enable_at_startup = 1
 " VimShell
@@ -99,4 +108,4 @@ endif
 
 call pathogen#infect()
 
-map <C-x> :NERDTreeToggle <Esc>
+map <C-x> :Vexplore <Esc>
