@@ -67,7 +67,7 @@ enable-ipc = true
 
 modules-left = rofi rarrow-sep-1-alt hspace-alt tomatoscript hspace-skin-dark toggl rarrow-sep-1 i3 prarrow-alt
 modules-center = plarrow-alt larrow-sep-1 date rarrow-sep-1 prarrow-alt
-modules-right = plarrow-alt hspace backlight-acpi hspace volume hspace hspace wlan hspace hspace battery hspace larrow-sep-1 hspace-alt larrow-sep-1-alt powermenu
+modules-right = plarrow-alt hspace backlight-acpi hspace blugon hspace volume hspace hspace larrow-sep-1 wlan hspace hspace battery hspace-alt larrow-sep-1-alt powermenu
 
 ;bottom = false
 
@@ -305,27 +305,27 @@ interval = 3.0
 format-connected = <ramp-signal><label-connected>
 label-connected = " %signal%%"
 label-connected-foreground = ${{colors.foreground-dark}}
-label-connected-background = ${{colors.background-light}}
+label-connected-background = ${{colors.skin-dark}}
 
 format-disconnected = 
 format-disconnected-foreground = ${{colors.foreground-dark}}
-format-disconnected-background = ${{colors.background-light}}
+format-disconnected-background = ${{colors.skin-dark}}
 
 ramp-signal-0 = 
 ramp-signal-0-foreground = #dc3016
-ramp-signal-0-background = ${{colors.background-light}}
+ramp-signal-0-background = ${{colors.skin-dark}}
 ramp-signal-1 = 
 ramp-signal-1-foreground = #dca016
-ramp-signal-1-background = ${{colors.background-light}}
+ramp-signal-1-background = ${{colors.skin-dark}}
 ramp-signal-2 = 
 ramp-signal-2-foreground = #dcdc16
-ramp-signal-2-background = ${{colors.background-light}}
+ramp-signal-2-background = ${{colors.skin-dark}}
 ramp-signal-3 = 
 ramp-signal-3-foreground = #a0dc16
-ramp-signal-3-background = ${{colors.background-light}}
+ramp-signal-3-background = ${{colors.skin-dark}}
 ramp-signal-4 = 
 ramp-signal-4-foreground = #30dc16
-ramp-signal-4-background = ${{colors.background-light}}
+ramp-signal-4-background = ${{colors.skin-dark}}
 
 [module/eth]
 type = internal/network
@@ -417,7 +417,7 @@ time-format = %H:%M
 ;   %consumption% (shows current charge rate in watts)
 label-charging = " (%time%)"
 label-charging-foreground = ${{colors.foreground-dark}}
-label-charging-background = ${{colors.background-light}}
+label-charging-background = ${{colors.skin-dark}}
 ; Available tags:
 ;   <label-charging> (default)
 ;   <bar-capacity>
@@ -427,34 +427,34 @@ format-charging = <animation-charging><label-charging>
 
 label-discharging = " %percentage%%"
 label-discharging-foreground = ${{colors.foreground-dark}}
-label-discharging-background = ${{colors.background-light}}
+label-discharging-background = ${{colors.skin-dark}}
 ; Available tags:
 ;   <label-discharging> (default)
 ;   <bar-capacity>
 ;   <ramp-capacity>
 format-discharging = <ramp-capacity><label-discharging>
-format-discharging-background = ${{colors.background-light}}
+format-discharging-background = ${{colors.skin-dark}}
 
 label-full = 
 format-full = <label-full>
 format-full-foreground = #30dc16
-format-full-background = ${{colors.background-light}}
+format-full-background = ${{colors.skin-dark}}
 
 ramp-capacity-0 = 
 ramp-capacity-0-foreground = #dc3016
-ramp-capacity-0-background = ${{colors.background-light}}
+ramp-capacity-0-background = ${{colors.skin-dark}}
 ramp-capacity-1 = 
 ramp-capacity-1-foreground = #dca016
-ramp-capacity-1-background = ${{colors.background-light}}
+ramp-capacity-1-background = ${{colors.skin-dark}}
 ramp-capacity-2 = 
 ramp-capacity-2-foreground = #dcdc16
-ramp-capacity-2-background = ${{colors.background-light}}
+ramp-capacity-2-background = ${{colors.skin-dark}}
 ramp-capacity-3 = 
 ramp-capacity-3-foreground = #a0dc16
-ramp-capacity-3-background = ${{colors.background-light}}
+ramp-capacity-3-background = ${{colors.skin-dark}}
 ramp-capacity-4 = 
 ramp-capacity-4-foreground = #30dc16
-ramp-capacity-4-background = ${{colors.background-light}}
+ramp-capacity-4-background = ${{colors.skin-dark}}
 
 animation-charging-0 = 
 animation-charging-1 = 
@@ -462,7 +462,7 @@ animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-foreground = #30dc16
-animation-charging-background = ${{colors.background-light}}
+animation-charging-background = ${{colors.skin-dark}}
 animation-charging-framerate = 750
 
 [module/powermenu]
@@ -537,6 +537,16 @@ format-background = ${{colors.skin-dark}}
 label-foreground = ${{colors.foreground-dark}}
 interval = 30
 click-left = "$HOME/bin/rofi_scripts/menugen/menugen $HOME/bin/rofi_scripts/toggl.menugen $HOME/.cache/wal/rofi_polybar_left_theme.rasi"
+
+[module/blugon]
+type = custom/script
+exec ="$HOME/bin/polybar_scripts/polybar_blugon"
+format = " <label>"
+format-foreground = ${{colors.foreground-light}}
+format-background = ${{colors.background-light}}
+label-foreground = ${{colors.foreground-dark}}
+click-left = blugon -S -300
+click-right = blugon -S +300
 
 [settings]
 screenchange-reload = true

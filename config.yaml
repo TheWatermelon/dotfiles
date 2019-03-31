@@ -19,13 +19,14 @@ options:
     directoryName: scripts
     links:
       - batstatus:            bin/batstatus
-      - tomato-timer:         bin/polybar_scripts/tomato-timer
       - bg_changer:           bin/bg_changer
       - todo.sh:              bin/rofi_scripts/todo.sh
-      - polybarstart:         bin/polybarstart
       - dmenu_themed:         bin/dmenu_themed
       - xinput_config:        bin/xinput_config
+      - polybarstart:         bin/polybarstart
       - polybar_toggl:        bin/polybar_scripts/polybar_toggl
+      - polybar_blugon:       bin/polybar_scripts/polybar_blugon
+      - tomato-timer:         bin/polybar_scripts/tomato-timer
       - rofi_toggl.menugen:   bin/rofi_scripts/toggl.menugen
 
 

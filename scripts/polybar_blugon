@@ -1,0 +1,10 @@
+#!/bin/bash
+
+current=$(cat ~/.config/blugon/current)
+
+index=$(expr index $current '.')
+index=$(( index - 1 ))
+
+current=$(expr substr $current 1 $index)
+
+echo $(( ( current - 6600 ) / 300 ))

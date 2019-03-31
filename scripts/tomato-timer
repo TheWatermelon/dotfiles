@@ -3,6 +3,10 @@
 # Author : TheWatermelon
 
 pomodoro_file=/tmp/tomato_timer
+icon_empty=
+icon_start=
+icon_half=
+icon_end=
 
 new_tomato()
 (
@@ -17,14 +21,14 @@ new_tomato()
 					# Pomodoro in progress
 					sleep 1 &
 					remaining=$(( sec - i ))
-					printf "[%02d:%02d]" $(( remaining/60 )) $(( remaining%60 ))
+					printf "%s [%02d:%02d]" $icon_start $(( remaining/60 )) $(( remaining%60 ))
 					echo 
 					wait
 				elif [[ $active -eq 0 ]]; then
 					# Pomodoro in pause
 					while [[ $active -eq 0 ]]; do
 						read active sec < $pomodoro_file
-						printf "([%02d:%02d])" $(( remaining/60 )) $(( remaining%60 ))
+						printf "%s ([%02d:%02d])" $icon_half $(( remaining/60 )) $(( remaining%60 ))
 						echo 
 						sleep 1
 					done
@@ -41,7 +45,7 @@ new_tomato()
 			i3-nagbar -t warning -m "Pomodoro's over" -b "Start 25'" 'echo "1 $(( 25 * 60 ))" > /tmp/tomato_timer' -b "Start 15'" 'echo "1 $(( 15 * 60 ))" > /tmp/tomato_timer' -b "Start 5'" 'echo "1 $(( 5 * 60 ))" > /tmp/tomato_timer' 2&>/dev/null
 		else
 			# No file : pomodoro icon
-			echo 
+			echo $icon_empty
 		fi
 	else
 		# Getting pomodoro duration from argument

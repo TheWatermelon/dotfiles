@@ -42,22 +42,22 @@ background = {background}
 #highlight = #2f2f2f
 
 # colors from color0 to color254 can be set
-#color0 = {color8}
-#color1 = {color9}
-#color2 = {color10}
-#color3 = {color11}
-#color4 = {color12}
-#color5 = {color13}
-#color6 = {color14}
-#color7 = {color7}
-#color8 = {color8}
-#color9 = {color9}
-#color10 = {color10}
-#color11 = {color11}
-#color12 = {color12}
-#color13 = {color13}
-#color14 = {color14}
-#color15 = {color15}
+color0 = {color8}
+color1 = {color9}
+color2 = {color10}
+color3 = {color11}
+color4 = {color12}
+color5 = {color13}
+color6 = {color14}
+color7 = {color7}
+color8 = {color8}
+color9 = {color9}
+color10 = {color10}
+color11 = {color11}
+color12 = {color12}
+color13 = {color13}
+color14 = {color14}
+color15 = {color15}
 
 [hints]
 #font = Monospace 12
