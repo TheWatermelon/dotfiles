@@ -4,9 +4,8 @@
 
 pomodoro_file=/tmp/tomato_timer
 icon_empty=
-icon_start=
-icon_half=
-icon_end=
+icon_load=(  )
+load_index=0
 
 new_tomato()
 (
@@ -21,8 +20,9 @@ new_tomato()
 					# Pomodoro in progress
 					sleep 1 &
 					remaining=$(( sec - i ))
-					printf "%s [%02d:%02d]" $icon_start $(( remaining/60 )) $(( remaining%60 ))
+					printf "%s [%02d:%02d]" ${icon_load[load_index]} $(( remaining/60 )) $(( remaining%60 ))
 					echo 
+					load_index=$(( (load_index + 1) % 3 ))
 					wait
 				elif [[ $active -eq 0 ]]; then
 					# Pomodoro in pause
@@ -41,6 +41,7 @@ new_tomato()
 			done
 			# Pomodoro is over, destructing temporary file
 			rm -f $pomodoro_file
+			echo $icon_empty
 			# Warn the user using i3-nagbar
 			i3-nagbar -t warning -m "Pomodoro's over" -b "Start 25'" 'echo "1 $(( 25 * 60 ))" > /tmp/tomato_timer' -b "Start 15'" 'echo "1 $(( 15 * 60 ))" > /tmp/tomato_timer' -b "Start 5'" 'echo "1 $(( 5 * 60 ))" > /tmp/tomato_timer' 2&>/dev/null
 		else

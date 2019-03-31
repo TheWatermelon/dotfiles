@@ -32,8 +32,8 @@ filter_unmatched_urls = true
 #modify_other_keys = false
 
 [colors]
-#cursor = {background}
-#cursor_foreground = {foreground}
+cursor = {foreground}
+cursor_foreground = {background}
 #foreground = {foreground}
 #foreground_bold = #FFFFFF
 #background = {color0.rgba}

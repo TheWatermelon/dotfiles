@@ -35,6 +35,7 @@ popup_during_fullscreen smart
 #
 # Exec programs
 #
+set $blugon "blugon -r -o"
 set $compton "compton -f --fade-delta=3 &"
 set $dmenu "$HOME/bin/dmenu_themed"
 set $dunst "dunst -config $HOME/.cache/wal/dunst.config &"
@@ -332,7 +333,7 @@ mode "$mode_gaps_inner" {
 # Start composite manager
 exec $compton
 # Blue light filter
-exec blugon &
+exec $blugon
 # Gestures for the trackpad
 exec libinput-gestures &
 # Hide the cursor after 3 seconds
