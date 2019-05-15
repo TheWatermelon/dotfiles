@@ -59,15 +59,15 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-;tray-position = right
-;tray-transparent = false
-;tray-background = ${{colors.skin-light}}
+tray-position = right
+tray-transparent = false
+tray-background = ${{colors.skin-light}}
 
 enable-ipc = true
 
 modules-left = rofi rarrow-sep-1-alt hspace-alt tomatoscript hspace-skin-dark toggl rarrow-sep-1 i3 prarrow-alt
 modules-center = plarrow-alt larrow-sep-1 date rarrow-sep-1 prarrow-alt
-modules-right = plarrow-alt hspace backlight-acpi hspace blugon hspace volume hspace hspace larrow-sep-1 wlan hspace hspace battery hspace-alt larrow-sep-1-alt powermenu
+modules-right = plarrow-alt hspace backlight-acpi hspace hspace blugon hspace volume hspace hspace larrow-sep-1 wlan hspace hspace battery hspace-alt larrow-sep-1-alt powermenu
 
 ;bottom = false
 
@@ -541,7 +541,7 @@ click-left = "$HOME/bin/rofi_scripts/menugen/menugen $HOME/bin/rofi_scripts/togg
 [module/blugon]
 type = custom/script
 exec ="$HOME/bin/polybar_scripts/polybar_blugon"
-format = " <label>"
+format = "<label>"
 format-foreground = ${{colors.foreground-light}}
 format-background = ${{colors.background-light}}
 label-foreground = ${{colors.foreground-dark}}

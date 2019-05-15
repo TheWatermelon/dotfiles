@@ -59,22 +59,22 @@ set $voldown "pactl set-sink-volume 0 -5%"
 # color[0-15] available
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources.
-set_from_resource $color0 i3wm.color0 #f0f0f0
-set_from_resource $color1 i3wm.color1 #f0f0f0
-set_from_resource $color2 i3wm.color2 #f0f0f0
-set_from_resource $color3 i3wm.color3 #f0f0f0
-set_from_resource $color4 i3wm.color4 #f0f0f0
-set_from_resource $color5 i3wm.color5 #f0f0f0
-set_from_resource $color6 i3wm.color6 #f0f0f0
-set_from_resource $color7 i3wm.color7 #f0f0f0
-set_from_resource $color8 i3wm.color8 #f0f0f0
-set_from_resource $color9 i3wm.color9 #f0f0f0
-set_from_resource $color10 i3wm.color10 #f0f0f0
-set_from_resource $color11 i3wm.color11 #f0f0f0
-set_from_resource $color12 i3wm.color12 #f0f0f0
-set_from_resource $color13 i3wm.color13 #f0f0f0
-set_from_resource $color14 i3wm.color14 #f0f0f0
-set_from_resource $color15 i3wm.color15 #f0f0f0
+set_from_resource $color0 color0 #f0f0f0
+set_from_resource $color1 color1 #f0f0f0
+set_from_resource $color2 color2 #f0f0f0
+set_from_resource $color3 color3 #f0f0f0
+set_from_resource $color4 color4 #f0f0f0
+set_from_resource $color5 color5 #f0f0f0
+set_from_resource $color6 color6 #f0f0f0
+set_from_resource $color7 color7 #f0f0f0
+set_from_resource $color8 color8 #f0f0f0
+set_from_resource $color9 color9 #f0f0f0
+set_from_resource $color10 color10 #f0f0f0
+set_from_resource $color11 color11 #f0f0f0
+set_from_resource $color12 color12 #f0f0f0
+set_from_resource $color13 color13 #f0f0f0
+set_from_resource $color14 color14 #f0f0f0
+set_from_resource $color15 color15 #f0f0f0
 set $white #FFFFFF
 set $clear #FFFFFF00
 
@@ -345,4 +345,4 @@ exec_always $HOME/bin/polybarstart
 # Dunst notifications
 exec $dunst
 # Tweak x config using xinput
-exec $HOME/bin/xinput_config
+exec_always $HOME/bin/xinput_config

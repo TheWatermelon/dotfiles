@@ -33,6 +33,7 @@ options:
   termPackage:
     directoryName: term
     links:
+      - colors.sh:                .config/wal/templates/colors.sh
       - tmux_config:              .tmux.conf
       - tmux_conky_config:        .conkyrc_tmux
       - zsh_config:               .zshrc
