@@ -1,0 +1,82 @@
+body {
+    background-color: #F8ECC2;
+    font-family: sans-serif;
+}
+
+h1 {
+    color: #5F4223;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 80%;
+}
+
+.search-container {
+    width:408px;
+    margin:auto;
+    margin-bottom: 2em;
+    padding: 6px 6px 0px 6px;
+}
+
+.search-bar {
+    overflow:hidden;
+    padding:0;
+    width:100%;
+    height:40px;
+}
+
+.group {
+    background-color: white;
+    display: block;
+    margin: 0 0.5em 0 0.5em;
+    padding-top: 0;
+    padding-bottom: 1em;
+    text-align: center;
+}
+
+.group-name {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px;
+    margin: 0px;
+}
+
+.study {
+    background-color: #5F4223;
+}
+
+.games {
+    background-color: #FAA652;
+}
+
+.reddit {
+    background-color: #2CCC96;
+}
+
+.prog {
+    background-color: #3BC6A4;
+}
+
+.site {
+    padding: 1em 1em 0 1em;
+}
+
+.site a {
+    text-decoration: none;
+    color: gray;
+}
+
+.site a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+#search_wrapper_homepage {
+    position: absolute;
+}

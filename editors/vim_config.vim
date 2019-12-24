@@ -48,9 +48,9 @@ set ignorecase		" Do case insensitive matching
 set incsearch		" Incremental search
 set autowrite		" Automatically save before commands like :next and :make
 "set hidden             " Hide buffers when they are abandoned
-"set mouse=a		" Enable mouse usage (all modes)
+set mouse=a		" Enable mouse usage (all modes)
 set smartindent         " Auto indentation for C and C++
-"set number             " Show line number in the first column
+set number             " Show line number in the first column
 set foldmethod=indent   " Set fold method to indentation
 set noexpandtab
 set tabstop=2
@@ -60,7 +60,7 @@ set statusline=%<%h%r\ %f\ %m%=\ %y\ %l,%c\ %P
 " Change colorscheme
 set t_Co=256
 "set termguicolors
-colorscheme colors-wal
+colorscheme default
 
 " Netrw (directory browser)
 let g:netrw_home = '$HOME/.netrw'

@@ -11,10 +11,10 @@
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
+(add-to-list 'package-archives '("gnu" . "http://mirrors.163.com/elpa/gnu/"))
 
 ;; Properties ;;
 (setq package-enable-at-startup nil)
-(set-default-font "Source Code Pro-13")
 (setq inhibit-startup-screen nil)
 
 ;; Initialization ;;
@@ -31,6 +31,20 @@
 (eval-when-compile
   (require 'use-package))
 
+;;;    ;;;
+;; PATH ;;
+;;;    ;;;
+(defun set-exec-path-from-shell-PATH ()
+  "Sets the exec-path to the same value used by the user shell"
+  (let ((path-from-shell
+         (replace-regexp-in-string
+          "[[:space:]\n]*$" ""
+          (shell-command-to-string "$SHELL -l -c 'echo $PATH'"))))
+    (setenv "PATH" path-from-shell)
+    (setq exec-path (split-string path-from-shell path-separator))))
+
+;; call function now
+(set-exec-path-from-shell-PATH)
 
 ;;;                           ;;;
 ;; Evil (vim-like keybindings) ;;
@@ -97,6 +111,25 @@
 ;; Long lines will flow and adjust to the width of the window
 (add-hook 'org-mode-hook 'visual-line-mode)
 
+
+;;;           ;;;
+;; KEYBINDINGS ;;
+;;;           ;;;
+
+;; ALT is considered as ALT and not interpreted as META
+(setq-default mac-option-modifier nil)
+
+;; Fn is considered as META and not interpreted as Fn
+(setq-default mac-function-modifier 'meta)
+
+;; Menu bar on right click
+(global-set-key [mouse-3]
+  `(menu-item ,(purecopy "Menu Bar") ignore
+    :filter (lambda (_)
+              (if (zerop (or (frame-parameter nil 'menu-bar-lines) 0))
+                  (mouse-menu-bar-map)
+                (mouse-menu-major-mode-map)))))
+
 ;;;                      ;;;
 ;; Distraction-free setup ;;
 ;;;                      ;;;
@@ -106,9 +139,11 @@
 ;; Disable the scroll bar
 (scroll-bar-mode 0)
 ;; Disable the menu bar
-(menu-bar-mode 0)
+;(menu-bar-mode 0)
 ;; Disable the tool bar
 (tool-bar-mode 0)
+;; Disable left and right fringes
+(fringe-mode 0)
 ;; Don't use messages you don't read
 (setq initial-scratch-messages "")
 (setq inhibit-startup-messages t)
@@ -117,90 +152,75 @@
 ;; Inhibits the initial startup echo area message
 (setq inhibit-startup-echo-area-message "walter")
 
-;; See http://bzg.fr/emacs-hide-mode-line.html
-;;(defvar-local hidden-mode-line-mode nil)
-;;(defvar-local hide-mode-line nil)
+;;;                    ;;;
+;; CUSTOM-SET-VARIABLES ;;
+;;;                    ;;;
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default bold shadow italic underline bold bold-italic bold])
+ '(ansi-color-names-vector
+   ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
+ '(custom-safe-themes
+   (quote
+    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" "8dce5b23232d0a490f16d62112d3abff6babeef86ae3853241a85856f9b0a6e7" "604ac011fc9bd042bc041330b3a5e5a86e764a46f7e9fe13e2a1f9f83bf44327" "732b807b0543855541743429c9979ebfb363e27ec91e82f463c91e68c772f6e3" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default)))
+ '(fci-rule-color "#ECEFF1")
+ '(hl-sexp-background-color "#efebe9")
+ '(hl-todo-keyword-faces
+   (quote
+    (("TODO" . "#dc752f")
+     ("NEXT" . "#dc752f")
+     ("THEM" . "#2d9574")
+     ("PROG" . "#3a81c3")
+     ("OKAY" . "#3a81c3")
+     ("DONT" . "#f2241f")
+     ("FAIL" . "#f2241f")
+     ("DONE" . "#42ae2c")
+     ("NOTE" . "#b1951d")
+     ("KLUDGE" . "#b1951d")
+     ("HACK" . "#b1951d")
+     ("TEMP" . "#b1951d")
+     ("FIXME" . "#dc752f")
+     ("XXX+" . "#dc752f")
+     ("\\?\\?\\?+" . "#dc752f"))))
+ '(org-support-shift-select t)
+ '(package-selected-packages
+   (quote
+    (tango-plus-theme twilight-bright-theme spacemacs-theme org-bullets evil use-package)))
+ '(pdf-view-midnight-colors (quote ("#655370" . "#fbf8ef")))
+ '(vc-annotate-background nil)
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#B71C1C")
+     (40 . "#FF5722")
+     (60 . "#FFA000")
+     (80 . "#558b2f")
+     (100 . "#00796b")
+     (120 . "#2196f3")
+     (140 . "#4527A0")
+     (160 . "#B71C1C")
+     (180 . "#FF5722")
+     (200 . "#FFA000")
+     (220 . "#558b2f")
+     (240 . "#00796b")
+     (260 . "#2196f3")
+     (280 . "#4527A0")
+     (300 . "#B71C1C")
+     (320 . "#FF5722")
+     (340 . "#FFA000")
+     (360 . "#558b2f"))))
+ '(vc-annotate-very-old-color nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 
-;;(define-minor-mode hidden-mode-line-mode
-;;  "Minor mode to hide the mode-line in the current buffer."
-;;  :init-value nil
-;;  :global nil
-;;  :variable hidden-mode-line-mode
-;;  :group 'editing-basics
-;;  (if hidden-mode-line-mode
-;;      (setq hide-mode-line mode-line-format
-;;            mode-line-format nil)
-;;    (setq mode-line-format hide-mode-line
-;;          hide-mode-line nil))
-;;  (force-mode-line-update)
-;;  ;; Apparently force-mode-line-update is not always enough to
-;;  ;; redisplay the mode-line
-;;  (redraw-display)
-;;  (when (and (called-interactively-p 'interactive)
-;;             hidden-mode-line-mode)
-;;    (run-with-idle-timer
-;;     0 nil 'message
-;;     (concat "Hidden Mode Line Mode enabled.  "
-;;             "Use M-x hidden-mode-line-mode to make the mode-line appear."))))
-
-;; Activate hidden-mode-line-mode
-;;(hidden-mode-line-mode 1)
-
-;; Command to toggle the display of the mode-line as a header
-;;(defvar-local header-line-format nil)
-;;(defun mode-line-in-header ()
-;;  (interactive)
-;;  (if (not header-line-format)
-;;      (setq header-line-format mode-line-format
-;;            mode-line-format nil)
-;;    (setq mode-line-format header-line-format
-;;          header-line-format nil))
-;;  (set-window-buffer nil (current-buffer)))
-;;(global-set-key (kbd "C-s-SPC") 'mode-line-in-header)
-
-;; If you want to hide the mode-line in all new buffers
-;;(add-hook 'after-change-major-mode-hook 'hidden-mode-line-mode)
-
-;; Alternatively, you can paint your mode-line in White but then
-;; you'll have to manually paint it in black again
-;;(custom-set-faces
-;; '(mode-line-highlight ((t nil)))
-;;  '(mode-line ((t (:foreground "white" :background "white"))))
-;;  '(mode-line-inactive ((t (:background "white" :foreground "white"))))
-;;)
-
-;; A small minor mode to use a big fringe
-;;(defvar bzg-big-fringe-mode nil)
-;;(define-minor-mode bzg-big-fringe-mode
-;;  "Minor mode to use big fringe in the current buffer."
-;;  :init-value nil
-;;  :global t
-;;  :variable bzg-big-fringe-mode
-;;  :group 'editing-basics
-;;  (if (not bzg-big-fringe-mode)
-;;      (set-fringe-style nil)
-;;    (set-fringe-mode
-;;     (/ (- (frame-pixel-width)
-;;           (* 100 (frame-char-width)))
-;;        2))))
-
-;; Now activate this global minor mode
-;;(bzg-big-fringe-mode 1)
-
-;; To activate the fringe by default and deactivate it when windows
-;; are split vertically, uncomment this:
-;;(add-hook 'window-configuration-change-hook
-;;          (lambda ()
-;;            (if (delq nil
-;;                      (let ((fw (frame-width)))
-;;                        (mapcar (lambda(w) (< (window-width w) (/ fw 2)))
-;;                                (window-list))))
-;;                (bzg-big-fringe-mode 0)
-;;              (bzg-big-fringe-mode 1))))
-
-;; Use a minimal cursor
-;; (setq default-cursor-type 'hbar)
-
-;; Get rid of the indicators in the fringe
-;;(mapcar (lambda(fb) (set-fringe-bitmap-face fb 'org-hide))
-;;        fringe-bitmaps)
+;;;     ;;;
+;; THEME ;;
+;;;     ;;;
+(load-theme 'tango-plus t)
