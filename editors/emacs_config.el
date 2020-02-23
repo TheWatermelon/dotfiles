@@ -189,7 +189,7 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (tango-plus-theme twilight-bright-theme spacemacs-theme org-bullets evil use-package)))
+    (flucui-themes tango-plus-theme twilight-bright-theme spacemacs-theme org-bullets evil use-package)))
  '(pdf-view-midnight-colors (quote ("#655370" . "#fbf8ef")))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
