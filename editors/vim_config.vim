@@ -60,7 +60,7 @@ set statusline=%<%h%r\ %f\ %m%=\ %y\ %l,%c\ %P
 " Change colorscheme
 set t_Co=256
 "set termguicolors
-colorscheme default
+colorscheme white
 
 " Netrw (directory browser)
 let g:netrw_home = '$HOME/.netrw'
