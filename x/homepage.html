@@ -9,7 +9,16 @@
 <body>
     <h1>HOMEPAGE</h1>
     <div class="search-container">
-        <iframe src="https://duckduckgo.com/search.html?prefill=Search DuckDuckGo&focus=yes" class="search-bar" frameborder="0"></iframe>
+			<p id="prompt">NemoBook :: ~ »</p>
+			<form method="get" id="search" action="https://duckduckgo.com/" autocomplete="off">
+				<!-- see https://duckduckgo.com/params for info
+				<input type="hidden" name="k8" value="#444444"/>
+				<input type="hidden" name="k9" value="#D51920"/>
+				<input type="hidden" name="kh" value="1"/>
+				-->
+				<input type="text" name="q" maxlength="255" placeholder="" autofocus/>
+				<input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
+			</form>
     </div>
     <div class="container">
         <div class="group">

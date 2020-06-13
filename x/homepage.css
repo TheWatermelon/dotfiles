@@ -1,11 +1,18 @@
+@font-face {
+	font-family: "operator";
+	src: url(OperatorMono-Book.woff);
+}
+
 body {
     background-color: #002b36;
-    font-family: sans-serif;
+		color: #D4D4D4;
+    font: 16px "operator";
 }
 
 h1 {
     color: #d33682;
     text-align: center;
+		display: none;
 }
 
 .container {
@@ -31,52 +38,62 @@ h1 {
 }
 
 .group {
-    background-color: white;
     display: block;
     margin: 0 0.5em 0 0.5em;
     padding-top: 0;
     padding-bottom: 1em;
-    text-align: center;
+    text-align: left;
+}
+
+.group::after {
+	content: "}";
+	color: #9a6cc4;
+	padding-top: 0.5em;
 }
 
 .group-name {
-    color: white;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 5px;
+    color: #9a6cc4;
+    text-transform: lowercase;
+    text-align: left;
+    //padding: 5px;
     margin: 0px;
 }
 
-.study {
-    background-color: #5F4223;
+.group-name::before {
+	content: ".";
+	color: #9a6cc4;
 }
 
-.games {
-    background-color: #FAA652;
-}
-
-.entertainment {
-    background-color: #2CCC96;
-}
-
-.prog {
-    background-color: #3BC6A4;
+.group-name::after {
+	content: " {";
+	color: #9a6cc4;
 }
 
 .site {
-    padding: 1em 1em 0 1em;
+    padding: 0.5em 1em 0 1em;
 }
 
 .site a {
     text-decoration: none;
-    color: gray;
+    color: #D4D4D4;
 }
 
 .site a:hover {
-    text-decoration: underline;
-    color: #9a6cc4;
+    font-weight: bold;
+    color: white;
 }
 
-#search_wrapper_homepage {
-    position: absolute;
+#prompt {
+	display: inline;
+}
+
+form {
+	display: inline;
+}
+
+input {
+	background-color: #002B36;
+	color: #D4D4D4;
+	border: 0px solid black;
+	font: 15px "operator";
 }
