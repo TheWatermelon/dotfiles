@@ -1,247 +1,259 @@
 /* Telephone */
 @media(min-width: 0px) {
- .card {
-  font-family: "Times New Roman", arial;
-  font-size: 1em;
-  text-align: center;
-  color: black;
-  background-color: white;
- }
+	.card {
+		font-family: "Times New Roman", arial;
+		font-size: 1em;
+		text-align: center;
+		color: black;
+		background-color: white;
+	}
 
- .tags {
-  color: gray;
-  text-align:justify;
-  font-size: 10px;
- }
+	.tags {
+		color: gray;
+		text-align:justify;
+		font-size: 10px;
+	}
 
- #count {
-  display: inline-block;
-  position: absolute;
-  right: 2em;
-  padding-top: 0px; 
-  margin-top: 0px;
- }
+	#count {
+		display: inline-block;
+		position: absolute;
+		right: 2em;
+		padding: 0px 0px 0px 0px; 
+		margin: 0px 0px 0px 0px;
+	}
 
- .front {
-  border: 1px solid blue;
-  //box-shadow: 3px 3px 3px grey;
-  margin: auto;
-  margin-top: 2em;
-  padding: 1em 0 1em 0;
-  font-size: 2em;
- }
+	.front {
+		border: 1px solid blue;
+		//box-shadow: 3px 3px 3px grey;
+		margin: auto;
+		margin-top: 2em;
+		padding: 1em 0 1em 0;
+		font-size: 2em;
+	}
 
- .front-side {
-  margin: auto;
-  margin-bottom: 1em;
-  width: 100%;
-  border: 1px solid blue;
-  //box-shadow: 1px 1px 1px grey;
- }
+	.front-side {
+		margin: auto;
+		margin-bottom: 1em;
+		width: 100%;
+		border: 1px solid blue;
+		//box-shadow: 1px 1px 1px grey;
+	}
 
- .back {
-  text-align: left;
- }
+	.back {
+		text-align: left;
+	}
 
- ul {
-  padding-left: 1.2em;
- }
+	ul {
+		padding-left: 1.2em;
+	}
 
- ol {
-  padding-left: 1.4em; 
- }
+	ol {
+		padding-left: 1.4em; 
+	}
 
- ul li, ol li {
-  padding-top: 0.5em;
-}
+	ul li, ol li {
+		padding-top: 0.5em;
+	}
 
- li:first-child {
-  padding-top: 0px;
- }
+	li:first-child {
+		padding-top: 0px;
+	}
 
- ul ul li, ol ol li, ul ol li, ol ul li {
-  font-size: 0.94em;
-  padding: 0.2em 0 0 0;
- }
+	ul ul li, ol ol li, ul ol li, ol ul li {
+		font-size: 0.94em;
+		padding: 0.2em 0 0 0;
+	}
 
- img {
-  vertical-align: middle;
- }
+	img {
+		vertical-align: middle;
+	}
 
- ul ul ul, ul ol ul, ol ul ul, ol ol ul {
-  list-style: none;
-  margin-left: 0px;
-  padding-left: 1em;
- }
+	ul ul ul, ul ol ul, ol ul ul, ol ol ul {
+		list-style: none;
+		margin-left: 0px;
+		padding-left: 1em;
+	}
 
- ul ul ul > li:before, ul ol ul > li:before, ol ul ul > li:before, ol ol ul > li:before {
-  display: inline-block;
-  content: "-";
-  width: 1em;
-  margin-left: -1em;
- }
+	ul ul ul > li:before, ul ol ul > li:before, ol ul ul > li:before, ol ol ul > li:before {
+		display: inline-block;
+		content: "-";
+		width: 1em;
+		margin-left: -1em;
+	}
+
+	img {
+		vertical-align: bottom;
+	}
 }
 
 /* Demi-écran */
 @media(min-width: 400px) {
- .card {
-  font-family: "Times New Roman", arial;
-  font-size: 1em;
-  text-align: center;
-  color: black;
-  background-color: white;
- }
+	.card {
+		font-family: "Times New Roman", arial;
+		font-size: 0.7em;
+		text-align: center;
+		color: black;
+		background-color: white;
+	}
 
- .tags {
-  color: gray;
-  text-align:justify;
-  font-size: 14px;
- }
+	.tags {
+		color: gray;
+		text-align:justify;
+		font-size: 14px;
+	}
 
- #count {
-  display: inline-block;
-  position: absolute;
-  right: 1.2em;
-  padding-top: 0px; 
-  margin-top: 0px;
- }
+	#count {
+		display: inline-block;
+		position: absolute;
+		right: 1.2em;
+		padding-top: 0px; 
+		margin-top: 0px;
+	}
 
- .front {
-  border: 1px solid blue;
-  //box-shadow: 3px 3px 3px grey;
-  margin: auto;
-  margin-top: 2em;
-  padding: 1em 0 1em 0;
-  font-size: 2em;
- }
+	.front {
+		border: 1px solid blue;
+		//box-shadow: 3px 3px 3px grey;
+		margin: auto;
+		margin-top: 2em;
+		padding: 1em 0 1em 0;
+		font-size: 2em;
+	}
 
- .front-side {
-  margin: auto;
-  margin-bottom: 1em;
-  width: 100%;
-  border: 1px solid blue;
-  font-size: 1.5em;
-  //box-shadow: 1px 1px 1px grey;
- }
+	.front-side {
+		margin: auto;
+		margin-bottom: 1em;
+		width: 100%;
+		border: 1px solid blue;
+		font-size: 1.5em;
+		//box-shadow: 1px 1px 1px grey;
+	}
 
- .back {
-  text-align: left;
-  font-size: 1.4em;
- }
+	.back {
+		text-align: left;
+		font-size: 1.4em;
+	}
 
- ul {
-  padding-left: 1em;
- }
+	ul {
+		padding-left: 1em;
+	}
 
- ol {
-  padding-left: 1.2em; 
- }
+	ol {
+		padding-left: 1.2em; 
+	}
 
- ul li, ol li {
-  padding-top: 0.5em;
-}
+	ul li, ol li {
+		padding-top: 0.5em;
+	}
 
- li:first-child {
-  padding-top: 0px;
- }
+	li:first-child {
+		padding-top: 0px;
+	}
 
- ul ul li, ol ol li, ul ol li, ol ul li {
-  font-size: 0.94em;
-  padding: 0.2em 0 0 0;
- }
+	ul ul li, ol ol li, ul ol li, ol ul li {
+		font-size: 0.94em;
+		padding: 0.2em 0 0 0;
+	}
 
- ul ul ul, ul ol ul, ol ul ul, ol ol ul {
-  list-style: none;
-  margin-left: 0px;
-  padding-left: 1em;
- }
+	ul ul ul, ul ol ul, ol ul ul, ol ol ul {
+		list-style: none;
+		margin-left: 0px;
+		padding-left: 1em;
+	}
 
- ul ul ul > li:before, ul ol ul > li:before, ol ul ul > li:before, ol ol ul > li:before {
-  display: inline-block;
-  content: "-";
-  width: 1em;
-  margin-left: -1em;
- }
+	ul ul ul > li:before, ul ol ul > li:before, ol ul ul > li:before, ol ol ul > li:before {
+		display: inline-block;
+		content: "-";
+		width: 1em;
+		margin-left: -1em;
+	}
+
+	img {
+		vertical-align: middle;
+	}
 }
 
 /* Plein écran */
 @media(min-width: 700px) {
- .card {
-  font-family: "Times New Roman", arial;
-  font-size: 2em;
-  text-align: center;
-  color: black;
-  background-color: white;
- }
+	.card {
+		font-family: "Times New Roman", arial;
+		font-size: 1.3em;
+		text-align: center;
+		color: black;
+		background-color: white;
+	}
 
- .tags {
-  color: gray;
-  text-align:justify;
-  font-size: 0.7em;
- }
+	.tags {
+		color: gray;
+		text-align:justify;
+		font-size: 0.7em;
+	}
 
- #count {
-  display: inline-block;
-  position: absolute;
-  right: 2.2em;
-  padding-top: 0px; 
-  margin-top: 0px;
- }
+	#count {
+		display: inline-block;
+		position: absolute;
+		right: 1.2em;
+		padding-top: 0px; 
+		margin-top: 0px;
+	}
 
- .front {
-  border: 1px solid blue;
-  //box-shadow: 3px 3px 3px grey;
-  margin: auto;
-  margin-top: 1em;
-  padding: 1em;
-  font-size: 1.5em;
- }
+	.front {
+		border: 1px solid blue;
+		//box-shadow: 3px 3px 3px grey;
+		margin: auto;
+		margin-top: 1em;
+		padding: 1em;
+		font-size: 1.5em;
+	}
 
- .front-side {
-  margin: auto;
-  width: 100%;
-  border: 1px solid blue;
-  margin-bottom: 1em;
-  //box-shadow: 1px 1px 1px grey;
-  font-size: 1em;
- }
+	.front-side {
+		margin: auto;
+		width: 100%;
+		border: 1px solid blue;
+		margin-bottom: 1em;
+		//box-shadow: 1px 1px 1px grey;
+		font-size: 1em;
+	}
 
- .back {
-  text-align: left;
-  font-size: 1em;
- }
+	.back {
+		text-align: left;
+		font-size: 1em;
+	}
 
- ul {
-  padding-left: 1em;
- }
+	ul {
+		padding-left: 1em;
+	}
 
- ol {
-  padding-left: 1.2em; 
- }
+	ol {
+		padding-left: 1.2em; 
+	}
 
- ul li, ol li {
-  padding-top: 0.5em;
-}
+	ul li, ol li {
+		padding-top: 0.5em;
+	}
 
- li:first-child {
-  padding-top: 0px;
- }
+	li:first-child {
+		padding-top: 0px;
+	}
 
- ul ul li, ol ol li, ul ol li, ol ul li {
-  font-size: 0.90em;
-  padding: 0.2em 0 0 0;
- } 
+	ul ul li, ol ol li, ul ol li, ol ul li {
+		font-size: 0.90em;
+		padding: 0.2em 0 0 0;
+	} 
 
- ul ul ul, ul ol ul, ol ul ul, ol ol ul {
-  list-style: none;
-  margin-left: 0px;
-  padding-left: 1em;
- }
+	ul ul ul, ul ol ul, ol ul ul, ol ol ul {
+		list-style: none;
+		margin-left: 0px;
+		padding-left: 1em;
+	}
 
- ul ul ul > li:before, ul ol ul > li:before, ol ul ul > li:before, ol ol ul > li:before {
-  display: inline-block;
-  content: "-";
-  width: 1em;
-  margin-left: -1em;
- }
+	ul ul ul > li:before, ul ol ul > li:before, ol ul ul > li:before, ol ol ul > li:before {
+		display: inline-block;
+		content: "-";
+		width: 1em;
+		margin-left: -1em;
+	}
+
+	img {
+		vertical-align: middle;
+	}
 }

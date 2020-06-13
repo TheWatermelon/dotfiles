@@ -1,0 +1,41 @@
+<!-- FRONT TEMPLATE -->
+<div class="tags" id="tags">{{#Tags}}{{Tags}}{{/Tags}}</div>
+<div class="front"><b>{{Question name}}</b>
+	<div class="items">{{Items}}</div></div>
+
+<script type="text/javascript">
+var tags_div = document.getElementById("tags");
+var x = document.getElementsByClassName("front");
+if(tags_div.innerHTML.indexOf("marked") != -1) {
+	for (var i = 0; i < x.length; i++) {
+		x[i].style.background = "#fdfd96";
+	}
+} else if(tags_div.innerHTML.indexOf("leech") != -1) {
+	for (var i = 0; i < x.length; i++) {
+		x[i].style.background = "#ff6961";
+	}
+}
+</script>
+
+
+
+<!-- BACK TEMPLATE -->
+<div class="tags" id="tags">{{#Tags}}{{Tags}}{{/Tags}}</div>
+<div class="front"><b>{{Question name}}</b>
+	<div class="items">{{Items}}</div></div>
+<div class="answer">Réponse(s) : {{Answer}}</div>
+<div class="back">{{Details}}</div>
+
+<script type="text/javascript">
+var tags_div = document.getElementById("tags");
+var x = document.getElementsByClassName("front-side");
+if(tags_div.innerHTML.indexOf("marked") != -1) {
+	  for (var i = 0; i < x.length; i++) {
+			    x[i].style.background = "#fdfd96";
+					  }
+} else if(tags_div.innerHTML.indexOf("leech") != -1) {
+	  for (var i = 0; i < x.length; i++) {
+			    x[i].style.background = "#ff6961";
+					  }
+}
+</script>

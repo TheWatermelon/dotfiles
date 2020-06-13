@@ -1,6 +1,13 @@
 # Dotfiles
+These dotfiles are managed by [sequestrum](https://github.com/KauntaOfficial/sequestrum).
 
-## Dependencies
+## MacOS Dependencies
+* `tmux` : terminal multiplexer
+* `vim` : editor
+* `firefox` : web browser
+* `anki` : flashcards software
+
+## Linux Dependencies
 * `dmenu` : program launcher
 * `rofi` : program launcher 
 * [menugen](https://github.com/TheWatermelon/menugen.git) : rofi menu generator
@@ -12,11 +19,11 @@
 * `dunst` : notifications daemon
 * `compton` : window manager compositor
 * `polybar` : status bar
-* `sequestrum` : dotfiles manager
 * `pywal` : theme changer
 * `qutebrowser` : web browser
 * [toggl_tools](https://github.com/TheWatermelon/toggl_tools.git) : python wrapper for Toggl API 
 * [blugon](https://github.com/jumper149/blugon) : blue light filter for X 
+* `anki` : flashcards software
 
 ## Usage
 Clone the repo

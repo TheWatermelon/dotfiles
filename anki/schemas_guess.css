@@ -1,177 +1,192 @@
+/* Telephone */
 @media(min-width: 0px) {
- .card {
-  font-family: "Times New Roman", arial;
-  font-size: 1em;
-  text-align: center;
-  color: black;
-  background-color: white;
-  margin-top: 0;
- }
+	.card {
+		font-family: "Times New Roman", arial;
+		font-size: 1em;
+		text-align: center;
+		color: black;
+		background-color: white;
+		margin-top: 0;
+	}
 
- .front {
-  /* images */
- }
+	.front {
+		/* images */
+	}
 
- .front-side {
-  /* images */
- }
+	.front-side {
+		/* images */
+	}
 
- .tags {
-  color: gray;
-  text-align:left;
-  font-size: 14px;
- }
+	.tags {
+		color: gray;
+		text-align:left;
+		font-size: 10px;
+	}
 
- .title {
-  font-weight: bold;
-  text-decoration: underline;
-  text-align: center;
-  font-size: 1.5em;
- }
+	.title {
+		font-weight: bold;
+		text-decoration: underline;
+		text-align: center;
+		font-size: 1.5em;
+	}
 
- .back {
-  text-align: left;
- }
+	.back {
+		text-align: left;
+	}
 
- ul, ol {
-  padding-left: 1em;
- }
+	ul {
+		padding-left: 1.2em;
+	}
 
- ul li, ol li {
-  padding-top: 0.5em;
-}
+	ol {
+		padding-left: 1.4em; 
+	}
 
- li:first-child {
-  padding-top: 0px;
- }
+	ul li, ol li {
+		padding-top: 0.5em;
+	}
 
- ul ul li, ol ol li, ul ol li, ol ul li {
-  font-size: 0.94em;
-  padding: 0.2em 0 0 0;
- } 
+	li:first-child {
+		padding-top: 0px;
+	}
 
- img {
-  max-width: 90%;
-  max-height: 90%;
- }
+	ul ul li, ol ol li, ul ol li, ol ul li {
+		font-size: 0.94em;
+		padding: 0.2em 0 0 0;
+	} 
+
+	img {
+		max-width: 90%;
+		max-height: 90%;
+		vertical-align: middle;
+	}
 }
 
 @media(min-width: 400px) {
- .card {
-  font-family: "Times New Roman", arial;
-  font-size: 1em;
-  text-align: center;
-  color: black;
-  background-color: white;
-  margin-top: 0;
- }
+	.card {
+		font-family: "Times New Roman", arial;
+		font-size: 1em;
+		text-align: center;
+		color: black;
+		background-color: white;
+		margin-top: 0;
+	}
 
- .front {
-  /* images */
-  font-size: 1.4em;
- }
+	.front {
+		/* images */
+		font-size: 1.4em;
+	}
 
- .front-side {
-  /* images */
-  font-size: 1.4em;
- }
+	.front-side {
+		/* images */
+		font-size: 1.4em;
+	}
 
- .tags {
-  color: gray;
-  text-align:left;
-  font-size: 10px;
- }
+	.tags {
+		color: gray;
+		text-align:left;
+		font-size: 14px;
+	}
 
- .title {
-  font-weight: bold;
-  text-decoration: underline;
-  text-align: center;
-  font-size: 1.4em;
- }
+	.title {
+		font-weight: bold;
+		text-decoration: underline;
+		text-align: center;
+		font-size: 1.4em;
+	}
 
- .back {
-  text-align: left;
-  font-size: 1.4em;
- }
+	.back {
+		text-align: left;
+		font-size: 1.4em;
+	}
 
- ul, ol {
-  padding-left: 1em;
- }
+	ul {
+		padding-left: 1em;
+	}
 
- ul li, ol li {
-  padding-top: 0.5em;
+	ol {
+		padding-left: 1.2em; 
+	}
+
+	ul li, ol li {
+		padding-top: 0.5em;
+	}
+
+	li:first-child {
+		padding-top: 0px;
+	}
+
+	ul ul li, ol ol li, ul ol li, ol ul li {
+		font-size: 0.94em;
+		padding: 0.2em 0 0 0;
+	} 
+
+	img {
+		max-width: 90%;
+		max-height: 90%;
+	}
 }
 
- li:first-child {
-  padding-top: 0px;
- }
-
- ul ul li, ol ol li, ul ol li, ol ul li {
-  font-size: 0.94em;
-  padding: 0.2em 0 0 0;
- } 
-
- img {
-  max-width: 90%;
-  max-height: 90%;
- }
-}
-
+/* Ordinateur */
 @media(min-width: 700px) {
- .card {
-  font-family: "Times New Roman", arial;
-  font-size: 2em;
-  text-align: center;
-  color: black;
-  background-color: white;
-  margin-top: 0;
- }
+	.card {
+		font-family: "Times New Roman", arial;
+		font-size: 1em;
+		text-align: center;
+		color: black;
+		background-color: white;
+		margin-top: 0;
+	}
 
- .front {
-  font-size: 1em;
- }
+	.front {
+		font-size: 1em;
+	}
 
- .front-side {
-  font-size: 1em;
- }
+	.front-side {
+		font-size: 1em;
+	}
 
- .tags {
-  color: gray;
-  text-align:left;
-  font-size: 10px;
- }
+	.tags {
+		color: gray;
+		text-align:left;
+		font-size: 1em;
+	}
 
- .title {
-  font-weight: bold;
-  text-decoration: underline;
-  text-align: center;
-  font-size: 1em;
- }
+	.title {
+		font-weight: bold;
+		text-decoration: underline;
+		text-align: center;
+		font-size: 1.5em;
+	}
 
- .back {
-  text-align: left;
-  font-size: 1em;
- }
+	.back {
+		text-align: left;
+		font-size: 1em;
+	}
 
- ul, ol {
-  padding-left: 1em;
- }
+	ul {
+		padding-left: 1em;
+	}
 
- ul li, ol li {
-  padding-top: 0.5em;
-}
+	ol {
+		padding-left: 1.2em; 
+	}
 
- li:first-child {
-  padding-top: 0px;
- }
+	ul li, ol li {
+		padding-top: 0.5em;
+	}
 
- ul ul li, ol ol li, ul ol li, ol ul li {
-  font-size: 0.94em;
-  padding: 0.2em 0 0 0;
- } 
+	li:first-child {
+		padding-top: 0px;
+	}
 
- img {
-  max-width: 90%;
-  max-height: 90%;
- }
+	ul ul li, ol ol li, ul ol li, ol ul li {
+		font-size: 0.94em;
+		padding: 0.2em 0 0 0;
+	} 
+
+	img {
+		max-width: 90%;
+		max-height: 90%;
+	}
 }

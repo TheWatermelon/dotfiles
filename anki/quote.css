@@ -1,132 +1,137 @@
+/* Telephone */
 @media(min-width: 0px) {
- .card {
-  font-family: "Times New Roman", arial;
-  font-size: 1em;
-  text-align: center;
-  color: black;
-  background-color: white;
- }
+	.card {
+		font-family: "Times New Roman", arial;
+		font-size: 1em;
+		text-align: center;
+		color: black;
+		background-color: white;
+	}
 
- .tags {
-  color: gray;
-  text-align:left;
-  font-size: 10px;
- }
+	.tags {
+		color: gray;
+		text-align:left;
+		font-size: 10px;
+	}
 
- .front {
-  border: 1px solid sandybrown;
-  margin: auto;
-  margin-top: 2em;
-  padding: 1em 0 1em 0;
-  font-size: 2em;
- }
+	.front {
+		border: 1px solid sandybrown;
+		margin: auto;
+		margin-top: 2em;
+		padding: 1em 0 1em 0;
+		font-size: 2em;
+	}
 
- .front-side {
-  margin: auto;
-  margin-bottom: 1em;
-  width: 100%;
-  border: 1px solid sandybrown;
- }
+	.front-side {
+		margin: auto;
+		margin-bottom: 1em;
+		width: 100%;
+		border: 1px solid sandybrown;
+	}
 
- .back {
-  text-align: justify;
-  text-indent: 1em;
-  font-style: italic;
-  padding: 0 1em 0 1em;
- }
+	.back {
+		text-align: justify;
+		text-indent: 1em;
+		font-style: italic;
+		padding: 0 1em 0 1em;
+	}
 
- .author {
-  text-align: right;
-   font-weight: bold;
- }
+	.author {
+		text-align: right;
+		font-weight: bold;
+	}
+
+	img {
+		vertical-align: middle;
+	}
 }
 
 @media(min-width: 400px) {
- .card {
-  font-family: "Times New Roman", arial;
-  font-size: 1em;
-  text-align: center;
-  color: black;
-  background-color: white;
- }
+	.card {
+		font-family: "Times New Roman", arial;
+		font-size: 0.7em;
+		text-align: center;
+		color: black;
+		background-color: white;
+	}
 
- .tags {
-  color: gray;
-  text-align:left;
-  font-size: 14px;
- }
+	.tags {
+		color: gray;
+		text-align:left;
+		font-size: 14px;
+	}
 
- .front {
-  border: 1px solid sandybrown;
-  margin: auto;
-  margin-top: 2em;
-  padding: 1em 0 1em 0;
-  font-size: 2em;
- }
+	.front {
+		border: 1px solid sandybrown;
+		margin: auto;
+		margin-top: 2em;
+		padding: 1em 0 1em 0;
+		font-size: 2em;
+	}
 
- .front-side {
-  margin: auto;
-  margin-bottom: 1em;
-  width: 100%;
-  border: 1px solid sandybrown;
-  font-size: 1.5em;
- }
+	.front-side {
+		margin: auto;
+		margin-bottom: 1em;
+		width: 100%;
+		border: 1px solid sandybrown;
+		font-size: 1.5em;
+	}
 
- .back {
-  text-align: justify;
-  text-indent: 1em;
-  font-style: italic;
-  font-size: 1.4em;
-  padding: 0 1em 0 1em;
- }
+	.back {
+		text-align: justify;
+		text-indent: 1em;
+		font-style: italic;
+		font-size: 1.4em;
+		padding: 0 1em 0 1em;
+	}
 
- .author {
-  text-align: right;
-   font-weight: bold;
- }
+	.author {
+		text-align: right;
+		font-weight: bold;
+	}
 }
 
 @media(min-width: 700px) {
- .card {
-  font-family: "Times New Roman", arial;
-  font-size: 2em;
-  text-align: center;
-  color: black;
-  background-color: white;
- }
+	.card {
+		font-family: "Times New Roman", arial;
+		font-size: 2em;
+		text-align: center;
+		color: black;
+		background-color: white;
+	}
 
- .tags {
-  color: gray;
-  text-align:left;
-  font-size: 0.7em;
- }
+	.tags {
+		color: gray;
+		text-align:left;
+		font-size: 0.7em;
+	}
 
- .front {
-  border: 1px solid sandybrown;
-  margin: auto;
-  margin-top: 1em;
-  padding: 1em;
-  font-size: 1.5em;
- }
+	.front {
+		border: 1px solid sandybrown;
+		margin: auto;
+		margin-top: 1em;
+		padding: 1em;
+		font-size: 1.5em;
+	}
 
- .front-side {
-  margin: auto;
-  width: 100%;
-  border: 1px solid sandybrown;
-  margin-bottom: 1em;
-  font-size: 1em;
- }
+	.front-side {
+		margin: auto;
+		width: 100%;
+		border: 1px solid sandybrown;
+		margin-bottom: 1em;
+		font-size: 1em;
+	}
 
- .back {
-  text-align: justify;
-  text-indent: 1em;
-  font-style: italic;
-  font-size: 1em;
-  padding: 0 1em 0 1em;
- }
+	.back {
+		text-align: justify;
+		text-indent: 1em;
+		font-style: italic;
+		font-size: 1em;
+		padding: 0 1em 0 1em;
+	}
 
- .author {
-  text-align: right;
-   font-weight: bold;
- }
+	.author {
+		text-align: right;
+		font-weight: bold;
+	}
 }

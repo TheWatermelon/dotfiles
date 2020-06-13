@@ -1,0 +1,75 @@
+<!-- FRONT TEMPLATE -->
+<div class="tags" id="tags"><p style="display: inline-block; padding-top: 0px; margin-top: 0px;">{{#Tags}}{{Tags}}{{/Tags}}</p><p id="count"></p></div>
+<div class="front">{{Front}}</div>
+
+<div id="back" style="display: none;">{{Back}}</div>
+
+<script type="text/javascript">
+var tags_div = document.getElementById("tags");
+var x = document.getElementsByClassName("front");
+if(tags_div.innerHTML.indexOf("marked") != -1) {
+	  for (var i = 0; i < x.length; i++) {
+			    x[i].style.background = "#fdfd96";
+					  }
+} else if(tags_div.innerHTML.indexOf("leech") != -1) {
+	  for (var i = 0; i < x.length; i++) {
+			    x[i].style.background = "#ff6961";
+					  }
+}
+
+var c = document.getElementById('back').children;
+document.getElementById("count").innerHTML = c[0].children.length;
+
+var list_info = [];
+var list = c[0].children;
+for (var i = 0; i < list.length; i++) {
+	    list_info[i] = list[i].children.length;
+			    if (list_info[i] > 0) {
+						        list_info[i] = 0;
+										        for (var j = 0; j < list[i].children.length; j++) {
+															            //console.log(list[i].children[j].children.length);
+															            list_info[i] += list[i].children[j].children.length;
+																					        }
+														    }
+}
+//document.getElementById("count").innerHTML = list_info.length+" ["+list_info+"]";
+</script>
+
+
+
+<!-- BACK TEMPLATE -->
+<div class="tags" id="tags"><p style="display: inline-block; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;">{{#Tags}}{{Tags}}{{/Tags}}</p><p id="count"></p></div>
+<div class="front-side">{{Front}}</div>
+<div id="back" class="back">{{Back}}</div>
+
+<script type="text/javascript">
+var tags_div = document.getElementById("tags");
+var x = document.getElementsByClassName("front-side");
+if(tags_div.innerHTML.indexOf("marked") != -1) {
+	  for (var i = 0; i < x.length; i++) {
+			    x[i].style.background = "#fdfd96";
+					  }
+} else if(tags_div.innerHTML.indexOf("leech") != -1) {
+	  for (var i = 0; i < x.length; i++) {
+			    x[i].style.background = "#ff6961";
+					  }
+}
+
+
+var c = document.getElementById('back').children;
+//document.getElementById("count").innerHTML = c[0].children.length;
+
+var list_info = [];
+var list = c[0].children;
+for (var i = 0; i < list.length; i++) {
+	    list_info[i] = list[i].children.length;
+			    if (list_info[i] > 0) {
+						        list_info[i] = 0;
+										        for (var j = 0; j < list[i].children.length; j++) {
+															            //console.log(list[i].children[j].children.length);
+															            list_info[i] += list[i].children[j].children.length;
+																					        }
+														    }
+}
+document.getElementById("count").innerHTML = list_info.length+" ["+list_info+"]";
+</script>
