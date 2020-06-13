@@ -2,10 +2,6 @@
 # behaviour
 ##
 
-# utf8 is on
-set -g utf8 on
-set -g status-utf8 on
-
 # address vim mode switching delay (http://superuser.com/a/252717/65504)
 set -s escape-time 0
 
@@ -26,12 +22,17 @@ bind r source-file ~/.tmux.conf \; display "Config reloaded!"
 set-option -g default-command "reattach-to-user-namespace -l zsh"
 
 # Using the mouse to switch panes
-set -g mouse on
+set-option -g mouse on
 
-# emacs key bindings in tmux command prompt (prefix + :) are better than
-# vi keys, even for vim users
-set -g status-keys emacs
-
+##
+# copy mode
+##
+set-option -g status-keys vi
+setw -g mode-keys vi
+bind-key -T copy-mode-vi 'v' send -X begin-selection     # Begin selection in copy mode.
+bind-key -T copy-mode-vi 'C-v' send -X rectangle-toggle  # Begin selection in copy mode.
+bind-key -T copy-mode-vi 'y' send -X copy-selection      # Yank selection in copy mode.
+unbind-key -T copy-mode-vi v
 ##
 # look
 ##
@@ -41,7 +42,6 @@ set-option -g status-bg default
 
 set-option -g status-justify centre
 
-set-option -g status-keys vi
 
 set-option -g status-left ""
 set-option -g status-right ""
@@ -54,7 +54,16 @@ set -g monitor-activity on
 set -g pane-border-style 'fg=colour04'
 set -g pane-active-border-style 'fg=colour250'
 
-set -g message-style 'bg=colour04'
+set -g message-bg 'colour04'
+
+##
+# mouse feel
+##
+set -g @scroll-down-exit-copy-mode 'off'
+set -g @scroll-without-changing-pane 'on'
+set -g @scroll-in-moused-over-pane 'on'
+set -g @scroll-speed-num-lines-per-scroll '1'
+set -g @emulate-scroll-for-no-mouse-alternate-buffer 'on'
 
 ##
 # plugins using tpm
@@ -65,7 +74,7 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-pain-control'
 set -g @plugin 'tmux-plugins/tmux-yank'
 set -g @plugin 'tmux-plugins/tmux-copycat'
-#set -g @plugin 'nhdaly/tmux-better-mouse-mode'
+set -g @plugin 'nhdaly/tmux-better-mouse-mode'
 # set -g @plugin 'tmux-plugins/tmux-sensible'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
