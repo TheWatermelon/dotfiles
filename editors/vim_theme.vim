@@ -1,6 +1,6 @@
 " This is a 256 color colorscheme.
 " Maintainer:   Bastien Chapusot
-" Last Change:  June, 9 2020
+" Last Change:  June, 13 2020
 
 hi clear
 if exists("syntax_on")
@@ -19,7 +19,7 @@ hi IncSearch    ctermfg=8          ctermbg=136
 hi CursorLine   cterm=bold
 hi CursorColumn cterm=bold
 
-hi TabLine      ctermfg=15     ctermbg=8
+hi TabLine      ctermfg=4     ctermbg=8
 hi TabLineSel   ctermfg=8     ctermbg=15
 hi TabLineFill  ctermfg=8      
 
@@ -65,7 +65,7 @@ hi Number       ctermfg=6
 hi Float				ctermfg=6
 
 hi Identifier   ctermfg=white cterm=none
-hi Function     ctermfg=white
+hi Function     ctermfg=13
 
 hi Special      ctermfg=white
 " hi SpecialChar

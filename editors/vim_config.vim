@@ -41,21 +41,35 @@ endif
 
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
-"set showcmd		" Show (partial) command in status line.
-"set showmatch		" Show matching brackets.
-set ignorecase		" Do case insensitive matching
-"set smartcase		" Do smart case matching
-set incsearch		" Incremental search
-set autowrite		" Automatically save before commands like :next and :make
-"set hidden             " Hide buffers when they are abandoned
-set mouse=a		" Enable mouse usage (all modes)
-set smartindent         " Auto indentation for C and C++
-set number             " Show line number in the first column
-set foldmethod=indent   " Set fold method to indentation
+"set showcmd             " Show (partial) command in status line.
+"set showmatch           " Show matching brackets.
+set ignorecase           " Do case insensitive matching
+"set smartcase           " Do smart case matching
+set incsearch            " Incremental search
+set autowrite            " Automatically save before commands like :next and :make
+"set hidden              " Hide buffers when they are abandoned
+set mouse=a              " Enable mouse usage (all modes)
+set smartindent          " Auto indentation for C and C++
+set number               " Show line number in the first column
+"set foldmethod=indent   " Set fold method to indentation
 set noexpandtab
 set tabstop=2
 set shiftwidth=2
-set statusline=%<%h%r\ %f\ %m%=\ %y\ %l,%c\ %P
+"set statusline=%<%h%r\ %f\ %m%=\ %y\ %l,%c\ %P
+set laststatus=2         " Always show status bar
+set statusline=
+"set statusline+=%m\
+set statusline+=%=
+set statusline+=%#PmenuSel#
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%#Comment#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+"set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=\ 
 
 " Change colorscheme
 set t_Co=256
@@ -65,36 +79,12 @@ colorscheme white
 " Netrw (directory browser)
 let g:netrw_home = '$HOME/.netrw'
 let g:netrw_dirhistmax = 0		" No recently-visited directory history
-"let g:netrw_liststyle = 3		" Tree view
+let g:netrw_liststyle = 3		" Tree view
 let g:netrw_browse_split = 4	" Open file in a new tab
 let g:netrw_winsize = 25		" Netrw takes 20% of window size
 let g:netrw_altv = 1			" Open new window on right side
 let g:netrw_mousemaps = 0		" Disable mouse
 
-" Neocomplcache
-"let g:neocomplcache_enable_at_startup = 1
-" VimShell
-"let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
-"let g:vimshell_prompt = "<".$USER."@vimshell> $ "
-
-" Airline
-let g:airline#extensions#tmuxline#enabled = 0
-"if !exists('g:airline_symbols')
-"  let g:airline_symbols = {}
-"endif
-" unicode symbols
-"let g:airline_left_sep = '»'
-"let g:airline_left_sep = '▶'
-"let g:airline_right_sep = '«'
-"let g:airline_right_sep = '◀'
-"let g:airline_symbols.linenr = '␊'
-"let g:airline_symbols.linenr = '␤'
-"let g:airline_symbols.linenr = '¶'
-"let g:airline_symbols.branch = '⎇'
-"let g:airline_symbols.paste = 'ρ'
-"let g:airline_symbols.paste = 'Þ'
-"let g:airline_symbols.paste = '∥'
-"let g:airline_symbols.whitespace = 'Ξ'
 
 " Antlr 3 and 4 hightlight support
 au BufRead,BufNewFile *.g set filetype=antlr3
@@ -109,3 +99,6 @@ endif
 call pathogen#infect()
 
 map <C-x> :Vexplore <Esc>
+
+" Set tmux title from vim current file
+"autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%"))
