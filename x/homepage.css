@@ -1,10 +1,10 @@
 body {
-    background-color: #F8ECC2;
+    background-color: #002b36;
     font-family: sans-serif;
 }
 
 h1 {
-    color: #5F4223;
+    color: #d33682;
     text-align: center;
 }
 
@@ -74,7 +74,7 @@ h1 {
 
 .site a:hover {
     text-decoration: underline;
-    color: black;
+    color: #9a6cc4;
 }
 
 #search_wrapper_homepage {
