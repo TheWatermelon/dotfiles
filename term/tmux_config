@@ -54,7 +54,10 @@ set -g monitor-activity on
 set -g pane-border-style 'fg=colour04'
 set -g pane-active-border-style 'fg=colour250'
 
-set -g message-bg 'colour04'
+set -g message-style 'bg=colour04'
+
+set -g window-status-current-format "[#W]"
+set -g window-status-format "#W"
 
 ##
 # mouse feel
