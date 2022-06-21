@@ -4,8 +4,9 @@
 }
 
 body {
-    background-color: #002b36;
-		color: #D4D4D4;
+    //background-color: #002b36;
+	background-color: #f0f0f4;
+		color: #262626;
     font: 16px "operator";
 }
 
@@ -74,12 +75,12 @@ h1 {
 
 .site a {
     text-decoration: none;
-    color: #D4D4D4;
+    color: #262626;
 }
 
 .site a:hover {
     font-weight: bold;
-    color: white;
+    color: #D4D4D4;
 }
 
 #prompt {
@@ -91,8 +92,8 @@ form {
 }
 
 input {
-	background-color: #002B36;
-	color: #D4D4D4;
+	background-color: #F0F0F4;
+	color: #262626;
 	border: 0px solid black;
 	font: 15px "operator";
 }
