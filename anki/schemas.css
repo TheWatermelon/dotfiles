@@ -1,191 +1,113 @@
-/* Telephone */
+/* GLOBAL */
+* {
+    font-family: "Times New Roman", arial;
+    color: black;
+    background-color: white;
+    margin-top: 0;
+}
+
+.tags {
+    color: gray;
+    text-align: center;
+    font-size: 14px;
+}
+
+.front, .front-side {
+    text-align: center;
+}
+
+.title {
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.back {
+    text-align: left;
+}
+
+img {
+    vertical-align: middle;
+}
+
+ul,
+ol {
+    padding-left: 17px;
+}
+
+ul li,
+ol li {
+    padding-top: 0.5em;
+}
+
+li:first-child {
+    padding-top: 0px;
+}
+
+ul ul li,
+ol ol li,
+ul ol li,
+ol ul li {
+    font-size: 0.94em;
+    padding: 0.2em 0 0 0;
+}
+
+ul ul ul,
+ul ol ul,
+ol ul ul,
+ol ol ul {
+    list-style: none;
+    margin-left: 0px;
+    padding-left: 1em;
+}
+
+ul ul ul>li:before,
+ul ol ul>li:before,
+ol ul ul>li:before,
+ol ol ul>li:before {
+    display: inline-block;
+    content: "-";
+    width: 1em;
+    margin-left: -1em;
+}
+
+ul ul ul li,
+ul ol ul li,
+ol ul ul li,
+ol ol ul li {
+    font-size: 0.9em;
+    padding: 0.05em 0 0 0;
+}
+
+/* Telephone portrait */
 @media(min-width: 0px) {
-	.card {
-		font-family: "Times New Roman", arial;
-		font-size: 1em;
-		text-align: center;
-		color: black;
-		background-color: white;
-		margin-top: 0;
-	}
+    * {
+        font-size: 16px;
+    }
 
-	.front {
-		/* images */
-	}
-
-	.front-side {
-		/* images */
-	}
-
-	.tags {
-		color: gray;
-		text-align:center;
-		font-size: 0.7em;
-	}
-
-	.title {
-		font-weight: bold;
-		text-decoration: underline;
-		text-align: center;
-		font-size: 1.5em;
-	}
-
-	.back {
-		text-align: left;
-	}
-
-	ul {
-		padding-left: 1.2em;
-	}
-
-	ol {
-		padding-left: 1.4em; 
-	}
-
-	ul li, ol li {
-		padding-top: 0.5em;
-	}
-
-	li:first-child {
-		padding-top: 0px;
-	}
-
-	ul ul li, ol ol li, ul ol li, ol ul li {
-		font-size: 0.94em;
-		padding: 0.2em 0 0 0;
-	} 
-
-	img {
-		max-width: 90%;
-		max-height: 90%;
-		vertical-align: middle;
-	}
+    img {
+        max-width: 90%;
+    }
 }
 
-@media(min-width: 400px) {
-	.card {
-		font-family: "Times New Roman", arial;
-		font-size: 0.7em;
-		text-align: center;
-		color: black;
-		background-color: white;
-		margin-top: 0;
-	}
+/* Telephone paysage */
+@media(min-width: 420px) {
+    * {
+        font-size: 18px;
+    }
 
-	.front {
-		/* images */
-		font-size: 1.4em;
-	}
-
-	.front-side {
-		/* images */
-		font-size: 1.4em;
-	}
-
-	.tags {
-		color: gray;
-		text-align:center;
-		font-size: 1em;
-	}
-
-	.title {
-		font-weight: bold;
-		text-decoration: underline;
-		text-align: center;
-		font-size: 1.4em;
-	}
-
-	.back {
-		text-align: left;
-		font-size: 1.4em;
-	}
-
-	ul {
-		padding-left: 1em;
-	}
-
-	ol {
-		padding-left: 1.2em; 
-	}
-
-	ul li, ol li {
-		padding-top: 0.5em;
-	}
-
-	li:first-child {
-		padding-top: 0px;
-	}
-
-	ul ul li, ol ol li, ul ol li, ol ul li {
-		font-size: 0.94em;
-		padding: 0.2em 0 0 0;
-	} 
-
-	img {
-		max-width: 90%;
-		max-height: 90%;
-	}
+    img {
+        max-width: 70%;
+    }
 }
 
-@media(min-width: 700px) {
-	.card {
-		font-family: "Times New Roman", arial;
-		font-size: 1.2em;
-		text-align: center;
-		color: black;
-		background-color: white;
-		margin-top: 0;
-	}
+/* Ordi et tablette */
+@media(min-width: 920px) {
+    * {
+        font-size: 18px;
+    }
 
-	.front {
-		font-size: 1em;
-	}
-
-	.front-side {
-		font-size: 1em;
-	}
-
-	.tags {
-		color: gray;
-		text-align:center;
-		font-size: 0.7em;
-	}
-
-	.title {
-		font-weight: bold;
-		text-decoration: underline;
-		text-align: center;
-		font-size: 1em;
-	}
-
-	.back {
-		text-align: left;
-		font-size: 1em;
-	}
-
-	ul {
-		padding-left: 1em;
-	}
-
-	ol {
-		padding-left: 1.2em; 
-	}
-
-	ul li, ol li {
-		padding-top: 0.5em;
-	}
-
-	li:first-child {
-		padding-top: 0px;
-	}
-
-	ul ul li, ol ol li, ul ol li, ol ul li {
-		font-size: 0.94em;
-		padding: 0.2em 0 0 0;
-	} 
-
-	img {
-		max-width: 90%;
-		max-height: 90%;
-	}
+    img {
+        max-width: 60%;
+    }
 }

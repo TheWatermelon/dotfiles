@@ -1,198 +1,111 @@
 /* GLOBAL */
+* {
+    font-family: "Times New Roman", arial;
+    font-size: 16px;
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+
+.tags {
+    color: gray;
+    text-align: left;
+}
+
+.front {
+    border: 1px solid red;
+    margin: auto;
+    margin-top: 2em;
+    padding: 1em 0 1em 0;
+}
+
+.front-side {
+    margin: auto;
+    margin-bottom: 1em;
+    width: 100%;
+    text-decoration: underline;
+}
+
+.formula {
+    border: 1px solid red;
+    padding: 10px;
+    margin: auto;
+}
+
+.details {
+    margin-left: 1em;
+    text-align: left;
+}
+
+img {
+    vertical-align: middle;
+}
+
 table {
-	margin: auto;
+    margin: auto;
 }
 
-/* Telephone */
+/* Telephone portrait */
 @media(min-width: 0px) {
-	.card {
-		font-family: "Times New Roman", arial;
-		font-size: 1em;
-		text-align: center;
-		color: black;
-		background-color: white;
-	}
+    * {
+        font-size: 16px;
+    }
 
-	.tags {
-		color: gray;
-		text-align:left;
-		font-size: 10px;
-	}
+    .tags {
+        font-size: 14px;
+    }
 
-	.front {
-		border: 1px solid red;
-		//box-shadow: 3px 3px 3px grey;
-		margin: auto;
-		margin-top: 2em;
-		padding: 1em 0 1em 0;
-		font-size: 2em;
-	}
+    .front {
+        font-size: 20px;
+    }
 
-	.front-side {
-		margin: auto;
-		margin-bottom: 1em;
-		width: 100%;
-		border: 1px solid red;
-		//box-shadow: 1px 1px 1px grey;
-	}
+    .front-side {
+        font-size: 18px;
+    }
 
-	.details {
-		margin-left: 1em;
-		text-align: left;
-	}
+    .formula {}
 
-	ul {
-		padding-left: 1.2em;
-	}
-
-	ol {
-		padding-left: 1.4em; 
-	}
-
-	ul li, ol li {
-		padding-top: 0.5em;
-	}
-
-	li:first-child {
-		padding-top: 0px;
-	}
-
-	ul ul li, ol ol li, ul ol li, ol ul li {
-		font-size: 0.94em;
-		padding: 0.2em 0 0 0;
-	} 
-
-	img {
-		vertical-align: middle;
-	}
+    .details {}
 }
 
-@media(min-width: 400px) {
-	.card {
-		font-family: "Times New Roman", arial;
-		font-size: 0.7em;
-		text-align: center;
-		color: black;
-		background-color: white;
-	}
+/* Telephone paysage */
+@media(min-width: 420px) {
+    * {
+        font-size: 16px;
+    }
 
-	.tags {
-		color: gray;
-		text-align:left;
-		font-size: 14px;
-	}
+    .tags {}
 
-	.front {
-		border: 1px solid red;
-		//box-shadow: 3px 3px 3px grey;
-		margin: auto;
-		margin-top: 2em;
-		padding: 1em 0 1em 0;
-		font-size: 2em;
-	}
+    .front {
+        font-size: 22px;
+    }
 
-	.front-side {
-		margin: auto;
-		margin-bottom: 1em;
-		width: 100%;
-		border: 1px solid red;
-		font-size: 1.5em;
-		//box-shadow: 1px 1px 1px grey;
-	}
+    .front-side {
+        font-size: 20px;
+    }
 
-	.formula {
-		font-size: 1.4em;
-	}
+    .formula {}
 
-	.details {
-		margin-left: 1em;
-		text-align: left;
-		font-size: 1.4em;
-	}
-
-	ul {
-		padding-left: 1em;
-	}
-
-	ol {
-		padding-left: 1.2em; 
-	}
-
-	ul li, ol li {
-		padding-top: 0.5em;
-	}
-
-	li:first-child {
-		padding-top: 0px;
-	}
-
-	ul ul li, ol ol li, ul ol li, ol ul li {
-		font-size: 0.94em;
-		padding: 0.2em 0 0 0;
-	} 
+    .details {}
 }
 
-@media(min-width: 700px) {
-	.card {
-		font-family: "Times New Roman", arial;
-		font-size: 1.5em;
-		text-align: center;
-		color: black;
-		background-color: white;
-	}
+/* Ordi et tablette */
+@media(min-width: 920px) {
+    * {
+        font-size: 18px;
+    }
 
-	.tags {
-		color: gray;
-		text-align:left;
-		font-size: 0.7em;
-	}
+    .tags {}
 
-	.front {
-		border: 1px solid red;
-		//box-shadow: 3px 3px 3px grey;
-		margin: auto;
-		margin-top: 1em;
-		padding: 1em;
-		font-size: 1.5em;
-	}
+    .front {
+        font-size: 24px;
+    }
 
-	.front-side {
-		margin: auto;
-		width: 100%;
-		border: 1px solid red;
-		margin-bottom: 1em;
-		//box-shadow: 1px 1px 1px grey;
-		font-size: 1em;
-	}
+    .front-side {
+        font-size: 22px;
+    }
 
-	.formula {
-		font-size: 1em;
-	}
+    .formula {}
 
-	.details {
-		margin-left: 1em;
-		text-align: left;
-		font-size: 1em;
-	}
-
-	ul {
-		padding-left: 1em;
-	}
-
-	ol {
-		padding-left: 1.2em; 
-	}
-
-	ul li, ol li {
-		padding-top: 0.5em;
-	}
-
-	li:first-child {
-		padding-top: 0px;
-	}
-
-	ul ul li, ol ol li, ul ol li, ol ul li {
-		font-size: 0.94em;
-		padding: 0.2em 0 0 0;
-	} 
+    .details {}
 }

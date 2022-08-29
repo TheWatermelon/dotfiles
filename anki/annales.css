@@ -1,112 +1,65 @@
-/* Telephone */
+/* GLOBAL */
+* {
+    font-family: "Times New Roman", arial;
+    text-align: left;
+    color: black;
+    background-color: white;
+}
+
+.tags {
+    color: gray;
+    text-align: left;
+    font-size: 14px;
+}
+
+.front {
+    border: 1px solid grey;
+    box-shadow: 0px 0px 5px grey;
+    margin: auto;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    padding: 1em 0 1em 17px;
+}
+
+.answer {
+    margin: 0 0 0.5em 10px;
+}
+
+img {
+    vertical-align: middle;
+}
+
+ol {
+    margin: 0px;
+    padding-left: 20px;
+    list-style: upper-alpha;
+}
+
+li {
+    margin: 0px;
+}
+
+p {
+    margin: 0px;
+}
+
+/* Telephone portrait */
 @media(min-width: 0px) {
-	.card {
-		font-family: "Times New Roman", arial;
-		font-size: 1em;
-		text-align: left;
-		color: black;
-		background-color: white;
-	}
-
-	.tags {
-		color: gray;
-		text-align:left;
-		font-size: 10px;
-	}
-
-	.front {
-		border: 1px solid grey;
-		//box-shadow: 3px 3px 3px grey;
-		margin: auto;
-		margin-top: 1em;
-		padding: 1em 0 1em 0;
-		font-size: 1em;
-	}
-
-	.front-side {
-		margin: auto;
-		margin-bottom: 1em;
-		width: 100%;
-		border: 1px solid grey;
-		//box-shadow: 1px 1px 1px grey;
-	}
-
-	.back {
-	}
-
-	img {
-		vertical-align: middle;
-	}
+    * {
+        font-size: 16px;
+    }
 }
 
-/* Petit ordi et One Plus */
-@media(min-width: 400px) {
-	.card {
-		font-family: "Times New Roman", arial;
-		font-size: 1em;
-		text-align: left;
-		color: black;
-		background-color: white;
-	}
-
-	.tags {
-		color: gray;
-		text-align:left;
-		font-size: 14px;
-	}
-
-	.front {
-		box-shadow: 0px 0px 5px grey;
-		margin: auto;
-		margin-top: 0.5em;
-		margin-bottom: 1em;
-		padding: 0.3em;
-		border: 1px solid grey;
-		//font-size: 1em;
-	}
-
-	.answer {
-		font-size: 1.2em;
-	}
-
-	.back {
-		margin: 1em 0 1em 0;
-		//font-size: 1em;
-	}
+/* Telephone paysage */
+@media(min-width: 420px) {
+    * {
+        font-size: 18px;
+    }
 }
 
-/* Grand ordi */
-@media(min-width: 700px) {
-	.card {
-		font-family: "Times New Roman", arial;
-		font-size: 1.3em;
-		text-align: left;
-		color: black;
-		background-color: white;
-	}
-
-	.tags {
-		color: gray;
-		text-align:left;
-		font-size: 0.7em;
-	}
-
-	.front {
-		border: 1px solid grey;
-		box-shadow: 0px 0px 5px grey;
-		margin: auto;
-		margin-top: 1em;
-		margin-bottom: 1em;
-		padding: 1em;
-		font-size: 1em;
-	}
-
-	. answer {
-		font-size: 1em;
-	}
-
-	.back {
-		font-size: 1em;
-		margin: 1em 0 1em 0;
-	}
+/* Ordi et tablette */
+@media(min-width: 920px) {
+    * {
+        font-size: 18px;
+    }
 }

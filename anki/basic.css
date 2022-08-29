@@ -1,118 +1,78 @@
-/* Telephone */
-@media(min-width: 0px) {
-	.card {
-		font-family: "Times New Roman", arial;
-		font-size: 1em;
-		text-align: center;
-		color: black;
-		background-color: white;
-	}
-
-	.tags {
-		color: gray;
-		text-align:left;
-		font-size: 10px;
-	}
-
-	.front {
-		border: 1px solid grey;
-		//box-shadow: 3px 3px 3px grey;
-		margin: auto;
-		margin-top: 2em;
-		padding: 1em 0 1em 0;
-		font-size: 2em;
-	}
-
-	.front-side {
-		margin: auto;
-		margin-bottom: 1em;
-		width: 100%;
-		border: 1px solid grey;
-		//box-shadow: 1px 1px 1px grey;
-	}
-
-	.back {
-	}
-
-	img {
-		vertical-align: middle;
-	}
+* {
+    font-family: "Times New Roman", arial;
+    font-size: 16px;
+    text-align: center;
+    color: black;
+    background-color: white;
 }
 
-/* Petit ordi et One Plus */
-@media(min-width: 400px) {
-	.card {
-		font-family: "Times New Roman", arial;
-		font-size: 0.7em;
-		text-align: center;
-		color: black;
-		background-color: white;
-	}
+.tags {
+    color: gray;
+    text-align: left;
+    font-size: 14px;
+}
 
-	.tags {
-		color: gray;
-		text-align:left;
-		font-size: 14px;
-	}
+.front {
+    border: 1px solid grey;
+    margin: auto;
+    margin-top: 2em;
+    padding: 1em 0 1em 0;
+}
 
-	.front {
-		border: 1px solid grey;
-		//box-shadow: 3px 3px 3px grey;
-		margin: auto;
-		margin-top: 2em;
-		padding: 1em 0 1em 0;
-		font-size: 2em;
-	}
+.front-side {
+    margin: auto;
+    margin-bottom: 1em;
+    padding: 0.2em 0 0.2em 0;
+    width: 100%;
+    border: 1px solid grey;
+}
 
-	.front-side {
-		margin: auto;
-		margin-bottom: 1em;
-		width: 100%;
-		border: 1px solid grey;
-		font-size: 1.5em;
-		//box-shadow: 1px 1px 1px grey;
-	}
+img {
+    vertical-align: middle;
+    max-width: 65%;
+}
 
-	.back {
-		font-size: 1.4em;
-	}
+/* Telephone en portrait */
+@media(min-width: 0px) {
+    * {
+        font-size: 16px;
+    }
+
+    .front {
+        font-size: 20px;
+    }
+
+    .front-side {
+        font-size: 18px;
+    }
+}
+
+/* Telephone en paysage */
+@media(min-width: 420px) {
+    * {
+        font-size: 16px;
+    }
+
+    .front {
+        font-size: 22px;
+    }
+
+    .front-side {
+        font-size: 20px;
+    }
 }
 
 /* Grand ordi */
-@media(min-width: 700px) {
-	.card {
-		font-family: "Times New Roman", arial;
-		font-size: 1.3em;
-		text-align: center;
-		color: black;
-		background-color: white;
-	}
+@media(min-width: 920px) {
+    * {
+        font-size: 18px;
+    }
 
-	.tags {
-		color: gray;
-		text-align:left;
-		font-size: 0.7em;
-	}
+    .front {
+        font-size: 24px;
+    }
 
-	.front {
-		border: 1px solid grey;
-		//box-shadow: 3px 3px 3px grey;
-		margin: auto;
-		margin-top: 1em;
-		padding: 1em;
-		font-size: 1.5em;
-	}
-
-	.front-side {
-		margin: auto;
-		width: 100%;
-		border: 1px solid grey;
-		margin-bottom: 1em;
-		//box-shadow: 1px 1px 1px grey;
-		font-size: 1em;
-	}
-
-	.back {
-		font-size: 1em;
-	}
+    .front-side {
+        font-size: 22px;
+    }
 }
