@@ -7,29 +7,33 @@
 }
 
 .tags p {
+    width: 96%;
     color: gray;
-    text-align: justify;
+    text-align: left;
     font-size: 14px;
 }
 
 #count {
+    width: 20px;
     display: inline-block;
     position: absolute;
     padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
+    margin: 0px 7px 0px 0px;
+    text-align: right;
 }
 
 .front {
     border: 1px solid blue;
-    margin: auto;
-    margin-top: 2em;
-    padding: 1em 0 1em 0;
+    margin: 2em 0 0 0;
+    padding: 1em 0.1em 1em 0.1em;
+    width: 100%;
     text-align: center;
 }
 
 .front-side {
     margin: auto;
     margin-bottom: 1em;
+    padding: 0.2em 0.1em 0.2em 0.1em;
     width: 100%;
     border: 1px solid blue;
     text-align: center;
@@ -39,6 +43,22 @@
     text-align: left;
 }
 
+sub, sup {
+    font-size: 60%;
+}
+
+.def {
+    text-decoration-color: crimson;
+}
+
+strong, b, u {
+    font-size: 1em;
+}
+
+em, i {
+    font-size: 104%;
+}
+
 ul,
 ol {
     padding-left: 17px;
@@ -46,7 +66,7 @@ ol {
 
 ul li,
 ol li {
-    padding-top: 0.5em;
+    padding: 0.5em 0 0 0;
 }
 
 li:first-child {
@@ -58,7 +78,7 @@ ol ol li,
 ul ol li,
 ol ul li {
     font-size: 0.94em;
-    padding: 0.2em 0 0 0;
+    padding: 0.3em 0 0 0;
 }
 
 ul ul ul,
@@ -84,12 +104,27 @@ ul ul ul li,
 ul ol ul li,
 ol ul ul li,
 ol ol ul li {
-    font-size: 0.9em;
-    padding: 0.05em 0 0 0;
+    font-size: 90%;
+    padding: 0 0 0.15em 0;
 }
 
 img {
-    vertical-align: middle;
+    vertical-align: text-top;
+}
+
+.small-img {
+    display: block;
+    max-width: 25%;
+}
+
+.medium-img {
+    display: block;
+    max-width: 50%;
+}
+
+.big-img {
+    display: block;
+    max-width: 90%;
 }
 
 p {
