@@ -48,12 +48,10 @@ h1 {
 
 .group::after {
 	content: "}";
-	color: #9a6cc4;
 	padding-top: 0.5em;
 }
 
 .group-name {
-    color: #9a6cc4;
     text-transform: lowercase;
     text-align: left;
     margin: 0px;
@@ -61,12 +59,31 @@ h1 {
 
 .group-name::before {
 	content: ".";
-	color: #9a6cc4;
 }
 
 .group-name::after {
 	content: " {";
-	color: #9a6cc4;
+}
+
+/* RAINBOW COLORS FOR CATEGORIES */
+#study .group-name::before, #study .group-name, #study .group-name::after, #study::after, #study .site a:hover {
+	color: #D12229;
+}
+
+#games .group-name::before, #games .group-name, #games .group-name::after, #games::after, #games .site a:hover {
+	color: #F68A1E;
+}
+
+#entertainment .group-name::before, #entertainment .group-name, #entertainment .group-name::after, #entertainment::after, #entertainment .site a:hover {
+	color: #FFBB11;
+}
+
+#prog .group-name::before, #prog .group-name, #prog .group-name::after, #prog::after, #prog .site a:hover {
+	color: #007940;
+}
+
+#misc .group-name::before, #misc .group-name, #misc .group-name::after, #misc::after, #misc .site a:hover {
+	color: #2440BE;
 }
 
 .site {
@@ -80,7 +97,7 @@ h1 {
 
 .site a:hover {
     font-weight: bold;
-    color: #D4D4D4;
+    color: #E30B5D;
 }
 
 #prompt {
