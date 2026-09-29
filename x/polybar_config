@@ -65,9 +65,12 @@ tray-background = ${{colors.skin-light}}
 
 enable-ipc = true
 
-modules-left = rofi rarrow-sep-1-alt hspace-alt tomatoscript hspace-skin-dark toggl rarrow-sep-1 i3 prarrow-alt
-modules-center = plarrow-alt larrow-sep-1 date rarrow-sep-1 prarrow-alt
-modules-right = plarrow-alt hspace backlight-acpi hspace hspace blugon hspace volume hspace hspace larrow-sep-1 wlan hspace hspace battery hspace-alt larrow-sep-1-alt powermenu
+;modules-left = rofi rarrow-sep-1-alt hspace-alt tomatoscript hspace-skin-dark toggl rarrow-sep-1 i3 prarrow-alt
+modules-left = i3
+;modules-center = plarrow-alt larrow-sep-1 date rarrow-sep-1 prarrow-alt
+modules-center = date
+;modules-right = plarrow-alt hspace backlight-acpi hspace hspace blugon hspace volume hspace hspace larrow-sep-1 wlan hspace hspace battery hspace-alt larrow-sep-1-alt powermenu
+modules-right = hspace volume hspace eth hspace hspace powermenu
 
 ;bottom = false
 
@@ -124,16 +127,26 @@ format = <label-state> <label-mode>
 ; NOTE: The label needs to match the name of the i3 workspace
 ; NOTE: You cannot skip icons, e.g. to get a ws-icon-6
 ; you must also define a ws-icon-5. 
-ws-icon-0 = "1;一"
-ws-icon-1 = "2;二"
-ws-icon-2 = "3;三"
-ws-icon-3 = "4;四"
-ws-icon-4 = "5;五"
-ws-icon-5 = "6;六"  
-ws-icon-6 = "7;七"
-ws-icon-7 = "8;八"
-ws-icon-8 = "9;九"
-ws-icon-9 = "10;〇"
+;ws-icon-0 = "1;一"
+;ws-icon-1 = "2;二"
+;ws-icon-2 = "3;三"
+;ws-icon-3 = "4;四"
+;ws-icon-4 = "5;五"
+;ws-icon-5 = "6;六"  
+;ws-icon-6 = "7;七"
+;ws-icon-7 = "8;八"
+;ws-icon-8 = "9;九"
+;ws-icon-9 = "10;〇"
+ws-icon-0 = "1;I"
+ws-icon-1 = "2;II"
+ws-icon-2 = "3;III"
+ws-icon-3 = "4;IV"
+ws-icon-4 = "5;V"
+ws-icon-5 = "6;VI"  
+ws-icon-6 = "7;VII"
+ws-icon-7 = "8;VIII"
+ws-icon-8 = "9;IX"
+ws-icon-9 = "10;X"
 ;ws-icon-0 = 1;
 ;ws-icon-1 = 2;
 ;ws-icon-2 = 3;
@@ -523,7 +536,7 @@ format-background = ${{colors.skin-dark}}
 [module/rofi]
 type = custom/script
 exec = echo -e " \uF002 "
-click-left = "rofi -modi drun,run,window -show drun -theme $HOME/.cache/wal/rofi_sidebar_theme.rasi"
+click-left = "rofi -modi drun,run,window -show drun -theme $HOME/.config/wal/templates/rofi_sidebar_theme.rasi"
 format = <label>
 format-foreground = ${{colors.white}}
 format-background = ${{colors.skin-light}}

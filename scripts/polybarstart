@@ -13,4 +13,4 @@ done
 # start polybar
 #polybar -r example &
 #polybar -r traybar &
-polybar -c ~/.cache/wal/polybar_config -r cleanbar &
+polybar -c ~/.config/wal/templates/polybar_config -r cleanbar &

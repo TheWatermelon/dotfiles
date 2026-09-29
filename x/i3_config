@@ -44,9 +44,11 @@ shortcut. Do you really want to exit i3? This \
 will end your X session.' -b 'Yes, exit i3' \
 'i3-msg exit'"
 set $pywal "wal -i images/wallpapers/crunchbang.png"
-set $rofi "rofi -modi drun,run,window -show drun -theme $HOME/.cache/wal/rofi_sidebar_theme.rasi"
-set $termite "termite -c $HOME/.cache/wal/termite.config"
-set $toggl "$HOME/bin/rofi_scripts/menugen/menugen $HOME/bin/rofi_scripts/toggl.menugen $HOME/.cache/wal/rofi_polybar_left_theme.rasi"
+#set $rofi "rofi -modi drun,run,window -show drun -theme $HOME/.config/wal/templates/rofi_sidebar_theme.rasi"
+set $rofi "rofi -modi drun,run,window -show drun"
+#set $termite "termite -c $HOME/.cache/wal/termite.config"
+set $termite "konsole"
+set $toggl "$HOME/bin/rofi_scripts/menugen/menugen $HOME/bin/rofi_scripts/toggl.menugen $HOME/.config/wal/templates/rofi_polybar_left_theme.rasi"
 set $unclutter "unclutter -b --timeout 3"
 set $volup "pactl set-sink-volume 0 +5%"
 set $voldown "pactl set-sink-volume 0 -5%"
@@ -282,11 +284,11 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-smart_gaps on
-set $mode_gaps Gaps: (o)uter, (i)nner, [Esc] to quit
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod4+Shift+g mode "$mode_gaps"
+#smart_gaps on
+#set $mode_gaps Gaps: (o)uter, (i)nner, [Esc] to quit
+#set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+#set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+#bindsym $mod4+Shift+g mode "$mode_gaps"
 
 mode "$mode_gaps" {
         bindsym o      mode "$mode_gaps_outer"
@@ -333,16 +335,16 @@ mode "$mode_gaps_inner" {
 # Start composite manager
 exec $compton
 # Blue light filter
-exec $blugon
+#exec $blugon
 # Gestures for the trackpad
-exec libinput-gestures &
+#exec libinput-gestures &
 # Hide the cursor after 3 seconds
 exec $unclutter
 # Launch background and colorscheme selector
-exec $pywal
+#exec $pywal
 # Start polybar
-exec_always $HOME/bin/polybarstart
+#exec_always $HOME/bin/polybarstart
 # Dunst notifications
-exec $dunst
+#exec $dunst
 # Tweak x config using xinput
 exec_always $HOME/bin/xinput_config
